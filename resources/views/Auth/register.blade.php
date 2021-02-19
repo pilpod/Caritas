@@ -15,7 +15,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-    <form method=POST action="{{route('register')}}">
+    <form method="POST" action="{{route('register')}}">
     @csrf
         <input type="text" id="name" placeholder="Insert your name" name="name" required>
         <input type="email" id="email" placeholder="Your email" name="email" required>

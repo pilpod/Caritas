@@ -17,5 +17,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/dashboard', function() {
-    return view('backoffice.dasboard');
+    return view('Backoffice.dashboard');
 })->name('dashboard');
