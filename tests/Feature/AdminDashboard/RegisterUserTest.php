@@ -48,4 +48,18 @@ class RegisterUserTest extends TestCase
         $response->assertStatus(302)
                 ->assertRedirect('dashboard');
     }
+
+    public function testNewUserHasAdminRole() 
+    {
+        $this->withoutExceptionHandling();
+
+        Role::factory()->create();
+
+        $user = User::factory()->create();
+       
+        $response = $user->role->role;
+
+        $this->assertEquals('admin', $response);
+
+    }
 }
