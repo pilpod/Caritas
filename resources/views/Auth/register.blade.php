@@ -15,13 +15,45 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-    <form method="POST" action="{{route('register')}}">
-    @csrf
-        <input type="text" id="name" placeholder="Insert your name" name="name" required>
-        <input type="email" id="email" placeholder="Your email" name="email" required>
-        <input type="password" id="password" placeholder="Choose a Password" name="password" required>
-        <input type="password" id="password-confirm" placeholder="Confirm your Password" name="password-confirm" required>
-        <button type="submit">Register</button>
-    </form>
+    
+
+    <div>
+        <form method="POST" action="{{ route('register') }}">
+            @csrf
+            <div class="">
+                <label for="name" class="">Name</label>
+                <input id="name" type="text" class=" @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus placeholder="Name">
+
+            </div>
+            @error('name')
+            <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+            @enderror
+            <div class="">
+                <label for="email" class="">Email</label>
+                <input id="email" type="email" class=" @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="Email address">
+                @error('email')
+                <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+            </div>
+            <div class="">
+                <label for="password" class="">Password</label>
+                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" placeholder="Password">
+                @error('password')
+                    <span class="" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+            </div>
+            <div class="">
+                <label for="password" class="">Password Confirm</label>
+                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password" placeholder="Confirm password">
+            </div>
+            <input name="register" id="register" class="" type="submit" value="Register">
+        </form>
+    </div>
 </body>
 </html>

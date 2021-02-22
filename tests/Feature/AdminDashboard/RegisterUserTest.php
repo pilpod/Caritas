@@ -22,20 +22,24 @@ class RegisterUserTest extends TestCase
 
         $response->assertStatus(200);
     }
+
     public function testCreatesAdminUser()
     {
+        $this->withoutExceptionHandling();
+
         $user = [
             'name' => 'giacomo',
             'email' =>'giacomo@dffd.com',
-            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+            'password' => '123456789',
+            'password_confirmation' => '123456789'
         ];
         $response = $this->post('register', $user);
+
         $this->assertDatabaseCount('users', 1)
             ->assertDatabaseHas('users', ['name' => 'giacomo']);
         
 
         $response->assertStatus(302)
-                ->assertViewIs('Backoffice.dashboard');
-
+                ->assertRedirect('dashboard');
     }
 }

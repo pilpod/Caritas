@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,5 +18,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/dashboard', function() {
+    dd(Auth::user());
     return view('Backoffice.dashboard');
 })->name('dashboard');
