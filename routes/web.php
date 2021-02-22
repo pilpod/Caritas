@@ -18,6 +18,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/dashboard', function() {
-    dd(Auth::user());
     return view('Backoffice.dashboard');
-})->name('dashboard');
+})->name('dashboard')->middleware('admin');

@@ -35,13 +35,14 @@ class RegisterUserTest extends TestCase
             'email' =>'giacomo@dffd.com',
             'password' => '123456789',
             'password_confirmation' => '123456789',
+            
         ];
         $response = $this->post('register', $user);
 
         $this->assertDatabaseCount('users', 1)
             ->assertDatabaseHas('users', [
                 'name' => 'giacomo',
-                'id_role' => 1
+                'role_id' => 1
                 ]);
         
 
