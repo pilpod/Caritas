@@ -14,20 +14,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
-<body>
-    <div>
-        <form method="POST" action="{{route('password.email')}}" >
-        @csrf
-        <label for="email">Email</label>
-            <input id="email" type="email" class= "@error('email') is-invalid @enderror" name="email" required autocomplete="email">
-
-            @error('email')
-            <span role="alert">
-                <strong>{{ $message }}</strong>
-            </span>
-            @enderror
-            <button type="submit">Enviar</button>
-        </form>
-    </div>
-</body>
+    <body>
+        <div>hola</div>
+    </body>
 </html>
