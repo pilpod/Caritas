@@ -43,7 +43,6 @@ class LoginUserTest extends TestCase
         $this->withoutExceptionHandling();
         Role::factory()->create();
         $user = User::factory()->create();
-        
         $response = $this->actingAs($user)->get(route('dashboard'));
 
         $response->assertStatus(200)
