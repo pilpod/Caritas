@@ -22,3 +22,4 @@ Route::get('/dashboard', function() {
 })->name('dashboard')->middleware('admin');
 
 Route::get('/register', [RegisterController::class, 'index'])->name('register');
+Route::post('/register', [RegisterController::class, 'store']);

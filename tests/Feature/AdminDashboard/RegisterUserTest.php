@@ -24,7 +24,15 @@ class RegisterUserTest extends TestCase
         $response->assertStatus(200)
         ->assertViewIs('Auth.register');
     }
+    public function testIfThereIsAlreadyAdminRegisterViewDisabled()
+    {
+        Role::factory()->create();
+        User::factory()->create();
 
+        $response = $this->get('/register');
+        $response->assertStatus(404);
+    }
+    
     public function testCreatesAdminUser()
     {
         $this->withoutExceptionHandling();
@@ -46,7 +54,6 @@ class RegisterUserTest extends TestCase
                 'role_id' => 1
                 ]);
         
-
         $response->assertStatus(302)
                 ->assertRedirect('dashboard');
     }
