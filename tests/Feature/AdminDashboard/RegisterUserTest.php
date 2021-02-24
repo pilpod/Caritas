@@ -21,7 +21,8 @@ class RegisterUserTest extends TestCase
     {
         $response = $this->get('/register');
 
-        $response->assertStatus(200);
+        $response->assertStatus(200)
+        ->assertViewIs('Auth.register');
     }
 
     public function testCreatesAdminUser()

@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
-
+use App\Http\Controllers\RegisterController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,3 +20,5 @@ Route::get('/', function () {
 Route::get('/dashboard', function() {
     return view('Backoffice.dashboard');
 })->name('dashboard')->middleware('admin');
+
+Route::get('/register', [RegisterController::class, 'index'])->name('register');
