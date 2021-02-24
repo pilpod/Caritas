@@ -34,6 +34,7 @@ class RegisterController extends Controller
         ];
 
         $userCount = $this->users->count();
+
         if(!$userCount) {
             try {
                 $createNewUser = new CreateNewUser;
@@ -43,6 +44,7 @@ class RegisterController extends Controller
             catch (Exception $ex){
                 abort(400, 'User not registered, please try again');
             }
-        }
+        } 
+        return view('Errors.400');
     }
 }

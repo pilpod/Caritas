@@ -32,7 +32,7 @@ class RegisterUserTest extends TestCase
         $response = $this->get('/register');
         $response->assertStatus(404);
     }
-    
+
     public function testCreatesAdminUser()
     {
         $this->withoutExceptionHandling();
@@ -57,6 +57,27 @@ class RegisterUserTest extends TestCase
         $response->assertStatus(302)
                 ->assertRedirect('dashboard');
     }
+
+    public function testIfThereIsAlreadyAdminUserCanNotRegisterAnotherUser()
+    {
+        $this->withoutExceptionHandling();
+
+        Role::factory()->create();
+        User::factory()->create();
+
+        $user = [
+            'name' => 'giacomo',
+            'email' =>'giacomo@dffd.com',
+            'password' => '123456789',
+            'password_confirmation' => '123456789',
+            
+        ];
+        $response = $this->post('register', $user);
+        $response->assertViewIs('Errors.400');           
+        
+        
+    }
+
 
     public function testNewUserHasAdminRole() 
     {
