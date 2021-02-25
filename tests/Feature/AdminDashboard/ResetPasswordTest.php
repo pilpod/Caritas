@@ -52,7 +52,6 @@ class ResetPasswordTest extends TestCase
                 return true;
             });
             
-
         $response = $this->get(route('password.reset', [
             'email' => $user->email,
             'token' => $token,
@@ -63,7 +62,44 @@ class ResetPasswordTest extends TestCase
         $response->assertStatus(200)
          ->assertViewIs('Auth.newPassword');
     
+    }
 
+    public function testAdminCanUpdatePasswordAfterReceiveEmailToUpdate()
+    {
+        Notification::fake();
+        Role::factory()->create();
+
+        $user = User::create([
+       'name' => 'alvaro',
+       'email' => 'alvaro@org.org',
+       'password' => '87538753',
+       'password_confirmation' => '87538753',
+       'role_id' => 1
+   ]);
+        $this->post(route('password.email', ['email' => $user->email]));
+        
+        $token = '';
+        
+        Notification::assertSentTo(
+            $user,
+            \Illuminate\Auth\Notifications\ResetPassword::class,
+            function ($notification, $channels) use (&$token) {
+                $token = $notification->token;
+                
+                return true;
+            });
+        
+        $data = [
+                'token' => $token,
+                'email' => $user->email ,
+                'password' => '123qweas',
+                'password_confirmation' => '123qweas'
+        ];
+        $response = $this->post(route('password.update', $data));
+
+        $response->assertStatus(302)
+         ->assertRedirect('login');
+    
     }
 
 }
