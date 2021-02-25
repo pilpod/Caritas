@@ -52,8 +52,7 @@ class ResetPasswordTest extends TestCase
                 return true;
             });
             
-    
-       
+
         $response = $this->get(route('password.reset', [
             'email' => $user->email,
             'token' => $token,
@@ -61,8 +60,10 @@ class ResetPasswordTest extends TestCase
             'password_confirmation' => '87538753'
         ]));
 
-        $response->assertStatus(200);
+        $response->assertStatus(200)
+         ->assertViewIs('Auth.newPassword');
     
 
     }
+
 }
