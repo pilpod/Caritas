@@ -39,7 +39,7 @@ class RegisterController extends Controller
             try {
                 $createNewUser = new CreateNewUser;
                 $createNewUser->create($data);
-                return redirect(route('dashboard'));
+                return redirect(route('login'));
             }
             catch (Exception $ex){
                 abort(400, 'User not registered, please try again');

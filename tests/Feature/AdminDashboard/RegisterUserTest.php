@@ -55,7 +55,7 @@ class RegisterUserTest extends TestCase
                 ]);
         
         $response->assertStatus(302)
-                ->assertRedirect('dashboard');
+                ->assertRedirect('login');
     }
 
     public function testIfThereIsAlreadyAdminUserCanNotRegisterAnotherUser()
