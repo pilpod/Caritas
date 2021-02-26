@@ -3,6 +3,8 @@
         @csrf
         <button type="submit">logout</button>
     </form>
+
+    
 </div>
 
-<div>Hola</div>
+<div><span>{{$user->email}}</span></div>
