@@ -16,24 +16,38 @@ class OrganizationProfileTest extends TestCase
      *
      * @return void
      */
+
+    protected User $user;
+    protected Role $role;
+
+    public function setUp(): void
+    {
+        parent::setUp();
+        $this->role = Role::factory()->create();
+        $this->user = User::factory()->create();
+    }
     public function testAdminCanAccessDashboardAfterLoggedIn()
     {
-        
-        Role::factory()->create();
-        $user = User::factory()->create();
-        $response = $this->actingAs($user)->get('/dashboard');
+
+        $response = $this->actingAs($this->user)->get('/dashboard');
 
         $response->assertStatus(200)
-            ->assertViewHas('user', $user);
+            ->assertViewHas('user', $this->user);
     }
 
     public function testIfNoProfileAdminCanSeeCreateProfileSection()
     {
-        Role::factory()->create();
-        $user = User::factory()->create();
-        $response = $this->actingAs($user)->get('/dashboard');
+
+        $response = $this->actingAs($this->user)->get('/dashboard');
 
         $response->assertStatus(200)
-                ->assertSee("Crear perfil de l'organització");
+            ->assertSee("Crear perfil de l'organització");
+    }
+
+    public function testAdminCanAccessToCreateProfileForm()
+    {
+        $response = $this->actingAs($this->user)->get(route('dashboard.create'))
+            ->assertStatus(200)
+            ->assertViewIs(('Backoffice.profileCreate'));
     }
 }

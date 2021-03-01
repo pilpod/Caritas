@@ -11,4 +11,9 @@ class DashboardController extends Controller
         $user = auth()->user();
         return view('Backoffice.dashboard', ['user' => $user]);
     }
+
+    public function create()
+    {
+        return view('Backoffice.profileCreate');
+    }
 }
