@@ -15,23 +15,34 @@
         @csrf
             <fieldset>
                 <label for="direction">{{__('create-profile-direction')}}</label>
-                <input type="text" name="direction" id="direction"  class=" @error('direction') is-invalid @enderror">
+                <input type="text" name="direction" id="direction"  class=" @error('direction') is-invalid @enderror" required>
                 @error('direction')
-                <div class="alert alert-danger">{{ __('validation.required')}}
-                </div>
+                    <div role="alert"> {{ $message }}</div>
                 @enderror
                
                 <label for="city">{{__('create-profile-city')}}</label>
                 <input type="text" name="city" id="city"  class=" @error('city') is-invalid @enderror" required>
+                @error('city')
+                    <div role="alert"> {{ $message }}</div>
+                @enderror
 
                 <label for="phone">{{__('create-profile-phone')}}</label>
                 <input type="text" name="phone" id="phone"  class=" @error('phone') is-invalid @enderror" required>
+                @error('phone')
+                    <div role="alert"> {{ $message }}</div>
+                @enderror
 
                 <label for="bankAccount">{{__('create-profile-bankAccount')}}</label>
                 <input type="text" name="bankAccount" id="bankAccount"  class=" @error('bankAccount') is-invalid @enderror" required>
+                @error('bankAccount')
+                    <div role="alert"> {{ $message }}</div>
+                @enderror
 
                 <label for="bizum">{{__('create-profile-bizum')}}</label>
                 <input type="text" name="bizum" id="bizum"  class=" @error('bizum') is-invalid @enderror" required>
+                @error('bizum')
+                    <div role="alert"> {{ $message }}</div>
+                @enderror
 
                 <button>{{__('buttons.create')}}</button>
             </fieldset>
