@@ -26,7 +26,10 @@
 
     <section>
         <h3>Crear perfil de l&#039;organització</h3>
-        <button>{{__('buttons.create')}}</button>
+        <a href="{{route('dashboard.create')}}" type="button">
+        {{__('buttons.create')}}
+        </a>
+
     </section>
 </body>
 

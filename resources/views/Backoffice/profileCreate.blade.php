@@ -11,11 +11,15 @@
 <body>
     <div>
         <h2>{{__('create-profile-title')}}</h2>
-        <form method="POST" action="{{route('dashboard.store)}}">
+        <form method="POST" action="{{route('dashboard.store')}}">
         @csrf
             <fieldset>
                 <label for="direction">{{__('create-profile-direction')}}</label>
-                <input type="text" name="direction" id="direction"  class=" @error('direction') is-invalid @enderror" required>
+                <input type="text" name="direction" id="direction"  class=" @error('direction') is-invalid @enderror">
+                @error('direction')
+                <div class="alert alert-danger">{{ __('validation.required')}}
+                </div>
+                @enderror
                
                 <label for="city">{{__('create-profile-city')}}</label>
                 <input type="text" name="city" id="city"  class=" @error('city') is-invalid @enderror" required>
