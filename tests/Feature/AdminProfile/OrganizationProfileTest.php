@@ -16,7 +16,7 @@ class OrganizationProfileTest extends TestCase
      *
      * @return void
      */
-    public function test_example()
+    public function testAdminCanAccessDashboardAfterLoggedIn()
     {
         
         Role::factory()->create();

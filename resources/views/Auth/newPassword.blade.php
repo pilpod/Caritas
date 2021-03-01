@@ -18,6 +18,7 @@
         <div>
             <form method="POST" action="{{ route('password.update') }}">
             @csrf
+            <input type="hidden" name="token" value="{{$request->route('token')}}">
             <label for="email">Email</label>
                 <input id="email" type="email" class= "@error('email') is-invalid @enderror" name="email" required autocomplete="email" value="{{$request->email}}">
 
