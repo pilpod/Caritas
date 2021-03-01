@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'update' => 'Update',
-    'create' => 'Create'
+    'update' => 'Actualitzar',
+    'create' => 'Crear'
 
 ];

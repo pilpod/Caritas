@@ -26,4 +26,14 @@ class OrganizationProfileTest extends TestCase
         $response->assertStatus(200)
             ->assertViewHas('user', $user);
     }
+
+    public function testIfNoProfileAdminCanSeeCreateProfileSection()
+    {
+        Role::factory()->create();
+        $user = User::factory()->create();
+        $response = $this->actingAs($user)->get('/dashboard');
+
+        $response->assertStatus(200)
+                ->assertSee("Crear perfil de l'organització");
+    }
 }
