@@ -15,39 +15,37 @@ class RegisterController extends Controller
     {
         $this->users = User::all();
     }
-
+    
     public function index()
     {
-        $usersQuantity = $this->users->count();
-        if(!$usersQuantity) {
+        $userCount = $this->users->count();
+        if (!$userCount) {
             return view('Auth.register');
         }
-        return abort(404);
+        abort(404, 'page disabled');
     }
 
-    public function store(Request $request) {
-        
+    public function store(Request $request)
+    {
         $data = [
-            'name' => $request['name'],
-            'email' => $request['email'],
-            'password' => $request['password'],
-            'password_confirmation' => $request['password_confirmation']
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => $request->password,
+            'password_confirmation' => $request->password_confirmation,
         ];
-        
-        $usersQuantity = $this->users->count();
-        if(!$usersQuantity) {
+
+        $userCount = $this->users->count();
+
+        if(!$userCount) {
             try {
-                $createNewUser= new CreateNewUser;
+                $createNewUser = new CreateNewUser;
                 $createNewUser->create($data);
-                return redirect(route('dashboard'));
+                return redirect(route('login'));
             }
-            catch (Exception $ex) {
-                abort(418, $ex);
+            catch (Exception $ex){
+                abort(400, 'User not registered, please try again');
             }
-
-        } else {
-            abort(418, 'Operación no permitida');
-        }
-
+        } 
+        return view('Errors.400');
     }
 }

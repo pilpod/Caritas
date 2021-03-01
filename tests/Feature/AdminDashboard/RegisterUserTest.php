@@ -21,7 +21,16 @@ class RegisterUserTest extends TestCase
     {
         $response = $this->get('/register');
 
-        $response->assertStatus(200);
+        $response->assertStatus(200)
+        ->assertViewIs('Auth.register');
+    }
+    public function testIfThereIsAlreadyAdminRegisterViewDisabled()
+    {
+        Role::factory()->create();
+        User::factory()->create();
+
+        $response = $this->get('/register');
+        $response->assertStatus(404);
     }
 
     public function testCreatesAdminUser()
@@ -45,10 +54,30 @@ class RegisterUserTest extends TestCase
                 'role_id' => 1
                 ]);
         
-
         $response->assertStatus(302)
-                ->assertRedirect('dashboard');
+                ->assertRedirect('login');
     }
+
+    public function testIfThereIsAlreadyAdminUserCanNotRegisterAnotherUser()
+    {
+        $this->withoutExceptionHandling();
+
+        Role::factory()->create();
+        User::factory()->create();
+
+        $user = [
+            'name' => 'giacomo',
+            'email' =>'giacomo@dffd.com',
+            'password' => '123456789',
+            'password_confirmation' => '123456789',
+            
+        ];
+        $response = $this->post('register', $user);
+        $response->assertViewIs('Errors.400');           
+        
+        
+    }
+
 
     public function testNewUserHasAdminRole() 
     {
