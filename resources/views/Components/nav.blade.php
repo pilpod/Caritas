@@ -1,6 +1,3 @@
 <nav>
-    <x-logo></x-logo>
-
-
-
+    <x-logo href="http://santjosepbdn.com/" />
 </nav>
