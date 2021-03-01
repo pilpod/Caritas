@@ -9,7 +9,30 @@
 </head>
 
 <body>
-    <div>Hola</div>
+    <div>
+        <h2>{{__('create-profile-title')}}</h2>
+        <form method="POST" action="{{route('dashboard.store)}}">
+        @csrf
+            <fieldset>
+                <label for="direction">{{__('create-profile-direction')}}</label>
+                <input type="text" name="direction" id="direction"  class=" @error('direction') is-invalid @enderror" required>
+               
+                <label for="city">{{__('create-profile-city')}}</label>
+                <input type="text" name="city" id="city"  class=" @error('city') is-invalid @enderror" required>
+
+                <label for="phone">{{__('create-profile-phone')}}</label>
+                <input type="text" name="phone" id="phone"  class=" @error('phone') is-invalid @enderror" required>
+
+                <label for="bankAccount">{{__('create-profile-bankAccount')}}</label>
+                <input type="text" name="bankAccount" id="bankAccount"  class=" @error('bankAccount') is-invalid @enderror" required>
+
+                <label for="bizum">{{__('create-profile-bizum')}}</label>
+                <input type="text" name="bizum" id="bizum"  class=" @error('bizum') is-invalid @enderror" required>
+
+                <button>{{__('buttons.create')}}</button>
+            </fieldset>
+        </form>
+    </div>
 </body>
 
 </html>

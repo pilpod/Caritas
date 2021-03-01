@@ -18,8 +18,10 @@ use App\Http\Controllers\RegisterController;
 Route::get('/', function () {
     return view('welcome');
 });
+
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('admin');
 Route::get('/dashboard/profile/', [DashboardController::class, 'create'])->name('dashboard.create')->middleware('admin');
+Route::post('/dashboard/profile/', [DashboardController::class, 'store'])->name('dashboard.store')->middleware('admin');
 
 Route::get('/register', [RegisterController::class, 'index'])->name('register');
 Route::post('/register', [RegisterController::class, 'store']);
