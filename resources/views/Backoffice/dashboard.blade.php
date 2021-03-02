@@ -37,22 +37,27 @@
     <a href="{{route('dashboard.edit', $profile->id)}}" type="button">
         {{__('buttons.update')}}
         </a>
-        <h4>Direcio: 
+        <h4>Organització: 
+        <span>
+            {{$profile->name}}
+        </span>
+        </h4>
+        <h4>Direcció: 
         <span>
             {{$profile->direction}}
         </span>
         </h4>
-        <h4>Poblacio: 
+        <h4>Població: 
         <span>
             {{$profile->city}}
         </span>
         </h4>
-        <h4>Telefono: 
+        <h4>Telèfono: 
         <span>
             {{$profile->phone}}
         </span>
         </h4>
-        <h4>Cuenta bancaria: 
+        <h4>Compte bancari: 
         <span>
             {{$profile->bankAccount}}
         </span>

@@ -43,24 +43,24 @@ class DashboardController extends Controller
     {
 
         $request->validated();
-
         $user = auth()->user();
-
-        $profile = Profile::create([
-            'direction' => $request->direction,
-            'city' => $request->city,
-            'phone' => $request->phone,
-            'bankAccount' => $request->bankAccount,
-            'bizum' => $request->bizum,
-            'user_id' => $user->id
-        ]);
-        $profile->saveOrFail();
-        $profile = User::find($user->id)->profile;
-
-        return view('Backoffice.dashboard', [
-            'user' => $user,
-            'profile' => $profile
-        ]);
+        $user = User::find(auth()->user()->id);
+        if(!$user->profile){
+            $profile = Profile::create([
+                'name' => $request->name,
+                'direction' => $request->direction,
+                'city' => $request->city,
+                'phone' => $request->phone,
+                'bankAccount' => $request->bankAccount,
+                'bizum' => $request->bizum,
+                'user_id' => $user->id
+            ]);
+            $profile->saveOrFail();
+            $profile = $user->profile;
+    
+            return redirect(route('dashboard'));
+        }
+        return abort(404, 'Profile already created');
     }
 
     public function edit($id)
@@ -74,6 +74,7 @@ class DashboardController extends Controller
         $request->validated();
         $profile = Profile::find($id);
         $profile->update([
+            'name' => $request->name,
             'direction' => $request->direction,
             'city' => $request->city,
             'phone' => $request->phone,

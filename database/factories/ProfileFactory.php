@@ -22,6 +22,7 @@ class ProfileFactory extends Factory
     public function definition()
     {
         return [
+            'name' => 'Caritas Badalona',
             'direction' => 'Carrer blablabla',
             'city' => 'Badalona',
             'phone' => $this->faker->phoneNumber,

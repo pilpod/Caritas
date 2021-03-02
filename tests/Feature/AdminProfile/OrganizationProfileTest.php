@@ -67,6 +67,7 @@ class OrganizationProfileTest extends TestCase
         $this->withoutExceptionHandling();
         $data = [
             'user_id'=> 1,
+            'name' => 'Caritas Badalona',
             'direction' => 'carrer blablabla',
             'city' => 'Badalona',
             'phone' => '123456789',
@@ -75,7 +76,7 @@ class OrganizationProfileTest extends TestCase
             'logo' => null
         ];
         $response = $this->actingAs($this->user)->post(route('dashboard.store'), $data)
-        ->assertStatus(200);
+        ->assertStatus(302);
         $this->assertDatabaseCount('profiles', 1);
         $this->assertDatabaseHas('profiles', $data);
     }
@@ -95,6 +96,7 @@ class OrganizationProfileTest extends TestCase
         $this->withoutExceptionHandling();
         $profile = Profile::factory()->create();
         $data = [
+            'name' => 'Caritas Badalona',
             'direction' => 'carrer blablabla',
             'city' => 'Badalona',
             'phone' => '123456789',
