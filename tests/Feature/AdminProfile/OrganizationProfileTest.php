@@ -2,6 +2,7 @@
 
 namespace Tests\Feature\Feature\AdminProfile;
 
+use App\Models\Profile;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
@@ -52,6 +53,15 @@ class OrganizationProfileTest extends TestCase
             ->assertViewIs(('Backoffice.profileCreate'));
     }
 
+    public function testAdminCanNotAccessCreateProfileFormIfAProfileExists()
+    {
+        
+        Profile::factory()->create();
+        $response = $this->actingAs($this->user)->get(route('dashboard.create'))
+            ->assertStatus(404);
+           
+    }
+
     public function testAdminCanStoreCaritasProfile()
     {
         $this->withoutExceptionHandling();
@@ -65,7 +75,7 @@ class OrganizationProfileTest extends TestCase
             'logo' => null
         ];
         $response = $this->actingAs($this->user)->post(route('dashboard.store'), $data)
-        ->assertStatus(201);
+        ->assertStatus(200);
         $this->assertDatabaseCount('profiles', 1);
         $this->assertDatabaseHas('profiles', $data);
     }

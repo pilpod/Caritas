@@ -24,6 +24,7 @@
 
     </section>
 
+    @if(!$profile)
     <section>
         <h3>Crear perfil de l&#039;organització</h3>
         <a href="{{route('dashboard.create')}}" type="button">
@@ -31,6 +32,35 @@
         </a>
 
     </section>
+    @else
+    <section>
+        <h4>Direcio: 
+        <span>
+            {{$profile->direction}}
+        </span>
+        </h4>
+        <h4>Poblacio: 
+        <span>
+            {{$profile->city}}
+        </span>
+        </h4>
+        <h4>Telefono: 
+        <span>
+            {{$profile->phone}}
+        </span>
+        </h4>
+        <h4>Cuenta bancaria: 
+        <span>
+            {{$profile->bankAccount}}
+        </span>
+        </h4>
+        <h4> Bizum:
+        <span>
+            {{$profile->bizum}}
+        </span>
+        </h4>
+    </section>
+    @endif
 </body>
 
 </html>

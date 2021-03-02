@@ -17,21 +17,29 @@ class DashboardController extends Controller
     public function index()
     {
         $user = auth()->user();
-        return view('Backoffice.dashboard', ['user' => $user]);
+        $profile = $user->profile();
+        return view('Backoffice.dashboard', [
+            'user' => $user,
+            'profile' => $profile
+        ]);
     }
 
     public function create()
     {
-        return view('Backoffice.profileCreate');
+        $profileCount = Profile::all();
+        if ($profileCount->isEmpty()) {
+            return view('Backoffice.profileCreate');
+        }
+        abort(404, 'page disabled');
     }
 
-    
+
     public function store(StoreProfileRequest $request)
     {
-        
+
         $request->validated();
 
-        $userId = auth()->user()->id;
+        $user = auth()->user();
 
         $profile = Profile::create([
             'direction' => $request->direction,
@@ -39,10 +47,13 @@ class DashboardController extends Controller
             'phone' => $request->phone,
             'bankAccount' => $request->bankAccount,
             'bizum' => $request->bizum,
-            'user_id' => $userId
+            'user_id' => $user->id
         ]);
         $profile->saveOrFail();
 
-        return redirect(route('dashboard'), 201);
+        return view('Backoffice.dashboard', [
+            'user' => $user,
+            'profile' => $profile
+        ]);
     }
 }
