@@ -105,7 +105,7 @@ class OrganizationProfileTest extends TestCase
         $response = $this->actingAs($this->user)->put(route('dashboard.update', $profile->id), $data)
             ->assertStatus(200);
         $this->assertDatabaseHas('profiles', [
-            'direction' => 'Carrer blablabla'
+            'direction' => 'carrer blablabla'
         ]);
     }
 }

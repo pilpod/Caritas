@@ -22,6 +22,6 @@ class Profile extends Model
 
     public function user() 
     {
-        $this->belongsTo(User::class);
+        $this->hasOne(User::class);
     }
 }

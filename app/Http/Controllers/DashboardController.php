@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\Models\Profile;
 use Illuminate\Contracts\Validation\Validator;
 use App\Http\Requests\StoreProfileRequest;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
+
 
 class DashboardController extends Controller
 {
@@ -17,7 +20,8 @@ class DashboardController extends Controller
     public function index()
     {
         $user = auth()->user();
-        $profile = $user->profile();
+        
+        $profile = User::find($user->id)->profile;
         return view('Backoffice.dashboard', [
             'user' => $user,
             'profile' => $profile
@@ -51,6 +55,7 @@ class DashboardController extends Controller
             'user_id' => $user->id
         ]);
         $profile->saveOrFail();
+        $profile = User::find($user->id)->profile;
 
         return view('Backoffice.dashboard', [
             'user' => $user,
@@ -58,19 +63,24 @@ class DashboardController extends Controller
         ]);
     }
 
-    public function edit($id) 
+    public function edit($id)
     {
         $profile = Profile::find($id);
         return view('Backoffice.profileEdit', ['profile' => $profile]);
     }
 
-    public function update(StoreProfileRequest $request, $id) 
+    public function update(StoreProfileRequest $request, $id)
     {
         $request->validated();
-        
         $profile = Profile::find($id);
-        $profile->update([$request->all()]);
-        
+        $profile->update([
+            'direction' => $request->direction,
+            'city' => $request->city,
+            'phone' => $request->phone,
+            'bankAccount' => $request->bankAccount,
+            'bizum' => $request->bizum,
+        ]);
+
         $user = auth()->user();
         return view('Backoffice.dashboard', [
             'user' => $user,

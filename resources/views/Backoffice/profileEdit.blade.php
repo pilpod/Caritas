@@ -11,7 +11,8 @@
 <body>
     <div>
         <h2>{{__('edit-profile-title')}}</h2>
-        <form method="POST" action="{{route('dashboard.store')}}">
+        <form method="POST" action="{{ route('dashboard.update', $profile->id) }}">
+        @method('PUT')
         @csrf
             <fieldset>
                 <label for="direction">{{__('edit-profile-direction')}}</label>
@@ -21,28 +22,28 @@
                 </div>
                 @enderror
                
-                <label for="city">{{__('create-profile-city')}}</label>
+                <label for="city">{{__('edit-profile-city')}}</label>
                 <input type="text" name="city" id="city"  class=" @error('city') is-invalid @enderror" required value="{{ $profile->city }}">
                 @error('city')
                 <div class="alert alert-danger">{{ $message }}
                 </div>
                 @enderror
 
-                <label for="phone">{{__('create-profile-phone')}}</label>
+                <label for="phone">{{__('edit-profile-phone')}}</label>
                 <input type="text" name="phone" id="phone"  class=" @error('phone') is-invalid @enderror" required value="{{ $profile->phone }}">
                 @error('phone')
                 <div class="alert alert-danger">{{ $message }}
                 </div>
                 @enderror
 
-                <label for="bankAccount">{{__('create-profile-bankAccount')}}</label>
+                <label for="bankAccount">{{__('edit-profile-bankAccount')}}</label>
                 <input type="text" name="bankAccount" id="bankAccount"  class=" @error('bankAccount') is-invalid @enderror" required value="{{ $profile->bankAccount }}">
                 @error('bankAccount')
                 <div class="alert alert-danger">{{ $message }}
                 </div>
                 @enderror
 
-                <label for="bizum">{{__('create-profile-bizum')}}</label>
+                <label for="bizum">{{__('edit-profile-bizum')}}</label>
                 <input type="text" name="bizum" id="bizum"  class=" @error('bizum') is-invalid @enderror" required value="{{ $profile->bizum }}">
                 @error('bizum')
                 <div class="alert alert-danger">{{ $message }}
