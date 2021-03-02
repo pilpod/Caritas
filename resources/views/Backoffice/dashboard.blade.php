@@ -34,6 +34,9 @@
     </section>
     @else
     <section>
+    <a href="{{route('dashboard.edit', $profile->id)}}" type="button">
+        {{__('buttons.update')}}
+        </a>
         <h4>Direcio: 
         <span>
             {{$profile->direction}}

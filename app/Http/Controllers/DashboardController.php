@@ -26,8 +26,9 @@ class DashboardController extends Controller
 
     public function create()
     {
-        $profileCount = Profile::all();
-        if ($profileCount->isEmpty()) {
+        $profiles = Profile::all();
+        $profileCount = $profiles->count();
+        if (!$profileCount) {
             return view('Backoffice.profileCreate');
         }
         abort(404, 'page disabled');
@@ -55,5 +56,11 @@ class DashboardController extends Controller
             'user' => $user,
             'profile' => $profile
         ]);
+    }
+
+    public function edit($id) 
+    {
+        $profile = Profile::find($id);
+        return view('Backoffice.profileEdit', ['profile' => $profile]);
     }
 }

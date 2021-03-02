@@ -5,7 +5,14 @@
    "create-profile-city": "Població",
    "create-profile-phone": "Telèfono",
    "create-profile-bankAccount": "Compte Bancari",
-   "create-profile-bizum": "Bizum"
+   "create-profile-bizum": "Bizum",
+
+   "edit-profile-title": "Editar perfil de l'organització",
+   "edit-profile-direction": "Direcció",
+   "edit-profile-city": "Població",
+   "edit-profile-phone": "Telèfono",
+   "edit-profile-bankAccount": "Compte Bancari",
+   "edit-profile-bizum": "Bizum"
 
 
 }

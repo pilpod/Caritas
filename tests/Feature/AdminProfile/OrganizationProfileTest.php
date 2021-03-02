@@ -79,4 +79,14 @@ class OrganizationProfileTest extends TestCase
         $this->assertDatabaseCount('profiles', 1);
         $this->assertDatabaseHas('profiles', $data);
     }
+
+    public function testAdminCanAccessUpdateProfileForm()
+    {
+        $this->withoutExceptionHandling();
+        $profile = Profile::factory()->create();
+        $response = $this->actingAs($this->user)->get(route('dashboard.edit', $profile->id))
+            ->assertStatus(200)
+            ->assertViewIs('Backoffice.profileEdit')
+            ->assertViewHas('profile');
+    }
 }
