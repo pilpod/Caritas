@@ -29,29 +29,7 @@ class LoginUserTest extends TestCase
             ->assertViewIs('Auth.login');
     }
 
-    // public function testAdminUserCanLogin()
-    // {
-    //     $this->withoutExceptionHandling();
-    //     Role::factory()->create();
-        
-    //     $user = User::create([
-    //         'name' => 'giacomo',
-    //         'email' =>'giacomo@dffd.com',
-    //         'password' => '123456789',
-    //         'password_confirmation' => '123456789',
-    //         'role_id' => 1
-    //     ]);
-        
-    //     $data = [
-    //         'email' => $user->email,
-    //         'password' => '123456789',
-    //         '_token' => '' como generar un token??????
-    //     ];
-    //     $response = $this->post('login', $data );
-
-    //     $response->assertStatus(302)
-    //         ->assertSessionHasNoErrors();
-    // }
+ 
     public function testNonAdminCanNotAccessDashboard()
     {
         $this->withoutExceptionHandling();
