@@ -89,4 +89,23 @@ class OrganizationProfileTest extends TestCase
             ->assertViewIs('Backoffice.profileEdit')
             ->assertViewHas('profile');
     }
+
+    public function testAdminCanUpdateProfile()
+    {
+        $this->withoutExceptionHandling();
+        $profile = Profile::factory()->create();
+        $data = [
+            'direction' => 'carrer blablabla',
+            'city' => 'Badalona',
+            'phone' => '123456789',
+            'bankAccount' => 'ES1212341234123412341234',
+            'bizum' => '11234567890123',
+            'logo' => null
+        ];
+        $response = $this->actingAs($this->user)->put(route('dashboard.update', $profile->id), $data)
+            ->assertStatus(200);
+        $this->assertDatabaseHas('profiles', [
+            'direction' => 'Carrer blablabla'
+        ]);
+    }
 }

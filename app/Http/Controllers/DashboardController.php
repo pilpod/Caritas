@@ -63,4 +63,18 @@ class DashboardController extends Controller
         $profile = Profile::find($id);
         return view('Backoffice.profileEdit', ['profile' => $profile]);
     }
+
+    public function update(StoreProfileRequest $request, $id) 
+    {
+        $request->validated();
+        
+        $profile = Profile::find($id);
+        $profile->update([$request->all()]);
+        
+        $user = auth()->user();
+        return view('Backoffice.dashboard', [
+            'user' => $user,
+            'profile' => $profile
+        ]);
+    }
 }

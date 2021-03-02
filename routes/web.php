@@ -23,6 +23,7 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard
 Route::get('/dashboard/profile/', [DashboardController::class, 'create'])->name('dashboard.create')->middleware('admin');
 Route::post('/dashboard/profile/', [DashboardController::class, 'store'])->name('dashboard.store')->middleware('admin');
 Route::get('/dashboard/profile/{id}', [DashboardController::class, 'edit'])->name('dashboard.edit')->middleware('admin');
+Route::put('/dashboard/profile/{id}', [DashboardController::class, 'update'])->name('dashboard.update')->middleware('admin');
 
 Route::get('/register', [RegisterController::class, 'index'])->name('register');
 Route::post('/register', [RegisterController::class, 'store']);
