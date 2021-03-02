@@ -1,6 +1,6 @@
 @props(['title'])
 
-  <ul>
-    <p>{{ $title }}</p>
-    {{ $slot }}
-  </ul>
+<ul>
+  <p>{{ $title }}</p>
+  {{ $slot }}
+</ul>
