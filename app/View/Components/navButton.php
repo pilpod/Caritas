@@ -38,7 +38,7 @@ class navButton extends Component
     public function render()
     {
         return <<<'blade'
-    <button {{ openModal() }}> {{ $btnText }} </button>
+    <button> {{ $btnText }} </button>
     blade;
     }
 }
