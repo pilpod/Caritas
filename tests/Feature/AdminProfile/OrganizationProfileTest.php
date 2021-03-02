@@ -80,7 +80,7 @@ class OrganizationProfileTest extends TestCase
         $this->assertDatabaseHas('profiles', $data);
     }
 
-    public function testAdminCanAccessUpdateProfileForm()
+    public function testAdminCanAccessEditProfileForm()
     {
         $this->withoutExceptionHandling();
         $profile = Profile::factory()->create();
