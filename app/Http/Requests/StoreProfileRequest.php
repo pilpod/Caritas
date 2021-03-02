@@ -27,9 +27,9 @@ class StoreProfileRequest extends FormRequest
         return [
             'direction' => 'required | string',
             'city' => 'required | string ',
-            'phone' => 'required | integer',
-            'bankAccount' => 'required',
-            'bizum' => 'required | integer',
+            'phone' => 'required | regex:/^[0-9]{9}/',
+            'bankAccount' => 'required | regex:/^[a-zA-Z]{2}[0-9]{22}/',
+            'bizum' => 'required | regex:/^[0-9]{13}/',
         ];
     }
 }
