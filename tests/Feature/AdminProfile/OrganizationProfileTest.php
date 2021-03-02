@@ -54,13 +54,14 @@ class OrganizationProfileTest extends TestCase
 
     public function testAdminCanStoreCaritasProfile()
     {
+        $this->withoutExceptionHandling();
         $data = [
             'user_id'=> 1,
             'direction' => 'carrer blablabla',
             'city' => 'Badalona',
-            'phone' => '123123123',
-            'bankAccount' => 'ES191231123232',
-            'bizum' => '123123123',
+            'phone' => '123456789',
+            'bankAccount' => 'ES1212341234123412341234',
+            'bizum' => '11234567890123',
             'logo' => null
         ];
         $response = $this->actingAs($this->user)->post(route('dashboard.store'), $data)

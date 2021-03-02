@@ -5,9 +5,15 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Profile;
 use Illuminate\Contracts\Validation\Validator;
+use App\Http\Requests\StoreProfileRequest;
 
 class DashboardController extends Controller
 {
+    /**
+     *
+     * @param  \App\Http\Requests\StoreProfileRequest
+     * @return Illuminate\Http\Response
+     */
     public function index()
     {
         $user = auth()->user();
@@ -19,20 +25,14 @@ class DashboardController extends Controller
         return view('Backoffice.profileCreate');
     }
 
-    public function store(Request $request)
+    
+    public function store(StoreProfileRequest $request)
     {
-
         
-        $this->validate($request, [
-            'direction' => ['required', 'string', 'max:255'],
-            'city' => ['required', 'string', 'max:255'],
-            'phone' => ['required', 'string', 'max:9'],
-            'bankAccount' => ['required', 'string', 'max:24'],
-            'bizum' => ['required', 'string', 'max:13'],
-        ]);
+        $request->validated();
 
         $userId = auth()->user()->id;
-        
+
         $profile = Profile::create([
             'direction' => $request->direction,
             'city' => $request->city,
