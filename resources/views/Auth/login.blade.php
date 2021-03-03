@@ -21,7 +21,7 @@
             <form method="POST" action="{{ route('login') }}">
                 @csrf
                     <div class=" flex flex-col mb-5">
-                        <label for="email">Email</label>
+                        <label for="email">Correo Electrònic</label>
                         <input id="email" type="email" class="@error('email') is-invalid @enderror border-gray-200 border-2 p-2 rounded " name="email" required autocomplete="email">
 
                         @error('email')
@@ -33,7 +33,7 @@
                     </div>
 
                     <div class=" flex flex-col mb-10">
-                        <label for="password">Password</label>
+                        <label for="password">Contrasenya</label>
                         <input id="password" type="password" class="@error('password') is-invalid @enderror border-gray-200 border-2 p-2 rounded" name="password" required>
                         @error('password')
                         <span role="alert">
@@ -42,7 +42,7 @@
                         @enderror
 
                         <a class="hover:text-red-500" href="{{ route('password.request') }}">
-                            {{ __('Forgot Your Password?') }}
+                            Recuperar Contrasenya
                         </a>
                     </div>
 
@@ -50,11 +50,11 @@
                         <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
                         <label class="form-check-label" for="remember">
-                            {{ __('Remember Me') }}
+                            Recorda'm
                         </label>
                     </div>
                     <button type="submit" class="block w-1/2 mx-auto bg-red-500 hover:bg-red-300 text-white font-bold py-2 px-4 rounded border-b-4 border-red-500">
-                        {{ __('Login') }}
+                        Connectar-se
                     </button>
 
             </form>

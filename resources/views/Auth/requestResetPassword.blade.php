@@ -21,7 +21,7 @@
         <form method="POST" action="{{route('password.email')}}" class="flex flex-col">
             @csrf
             <div class="flex flex-col">
-                <label class="mb-2" for="email">Per restablir la contrasenya, si us plau introduïu el vostre email</label>
+                <label class="mb-2" for="email">Per restablir la contrasenya, si us plau introduïu el vostre Correo Electrònic</label>
                 <input id="email" type="email" class=" border-gray-200 border-2 p-2 mb-10 rounded @error('email') is-invalid @enderror" name="email" placeholder="email" required autocomplete="email">
 
                 @error('email')
