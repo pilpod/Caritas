@@ -19,7 +19,7 @@
             <form method="POST" action="{{ route('password.update') }}">
             @csrf
             <input type="hidden" name="token" value="{{$request->route('token')}}">
-            <label for="email">Email</label>
+            <label for="email">Correo Electrònic</label>
                 <input id="email" type="email" class= "@error('email') is-invalid @enderror" name="email" required autocomplete="email" value="{{$request->email}}">
 
                 @error('email')
@@ -29,7 +29,7 @@
                 @enderror
             
             <div class="">
-                <label for="password" class="">Password</label>
+                <label for="password" class="">Contrasenya</label>
                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" placeholder="Password">
                 @error('password')
                     <span class="" role="alert">
@@ -38,10 +38,10 @@
                 @enderror
             </div>
             <div class="">
-                <label for="password" class="">Password Confirm</label>
+                <label for="password" class="">Confirmar Contrasenya</label>
                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password" placeholder="Confirm password">
             </div>
-            <input name="update" id="update" class="" type="submit" value="Update">
+            <input name="update" id="update" class="" type="submit" value="Actualitzar">
         </form>
         </div>
     </body>

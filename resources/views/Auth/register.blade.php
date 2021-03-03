@@ -21,7 +21,7 @@
         <form method="POST" action="{{ route('register') }}">
             @csrf
             <div class="">
-                <label for="name" class="">Name</label>
+                <label for="name" class="">Nom</label>
                 <input id="name" type="text" class=" @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus placeholder="Name">
 
             </div>
@@ -31,7 +31,7 @@
                     </span>
             @enderror
             <div class="">
-                <label for="email" class="">Email</label>
+                <label for="email" class="">Correo Electrònic</label>
                 <input id="email" type="email" class=" @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="Email address">
                 @error('email')
                 <span class="invalid-feedback" role="alert">
@@ -40,7 +40,7 @@
                 @enderror
             </div>
             <div class="">
-                <label for="password" class="">Password</label>
+                <label for="password" class="">Contrasenya</label>
                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" placeholder="Password">
                 @error('password')
                     <span class="" role="alert">
@@ -49,10 +49,10 @@
                 @enderror
             </div>
             <div class="">
-                <label for="password" class="">Password Confirm</label>
+                <label for="password" class="">Confirmar Contrasenya</label>
                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password" placeholder="Confirm password">
             </div>
-            <input name="register" id="register" class="" type="submit" value="Register">
+            <input name="register" id="register" class="" type="submit" value="Registrar">
         </form>
     </div>
 </body>

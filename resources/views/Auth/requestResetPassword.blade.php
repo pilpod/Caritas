@@ -18,7 +18,7 @@
     <div>
         <form method="POST" action="{{route('password.email')}}" >
         @csrf
-        <label for="email">Email</label>
+        <label for="email">Correo Electrònic</label>
             <input id="email" type="email" class= "@error('email') is-invalid @enderror" name="email" required autocomplete="email">
 
             @error('email')

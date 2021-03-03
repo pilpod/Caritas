@@ -22,7 +22,7 @@
                 <legend>
                     Login
                 </legend>
-                <label for="email">Email</label>
+                <label for="email">Correo Electrònic</label>
                 <input id="email" type="email" class= "@error('email') is-invalid @enderror" name="email" required autocomplete="email">
 
                 @error('email')
@@ -31,7 +31,7 @@
                 </span>
                 @enderror
 
-                <label for="password">Password</label>
+                <label for="password">Contrasenya</label>
 
                 <input id="password" type="password" class="@error('password') is-invalid @enderror" name="password" required>
                 @error('password')
@@ -42,7 +42,7 @@
 
                 
                 <a href="{{ route('password.request') }}">
-                    {{ __('Forgot Your Password?') }}
+                    Restaurar contrasenya oblidada
                 </a>
                 
                 
@@ -50,11 +50,11 @@
                 <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
                 <label class="form-check-label" for="remember">
-                    {{ __('Remember Me') }}
+                    Recorda'm 
                 </label>
 
                 <button type="submit" class="btn">
-                    {{ __('Login') }}
+                    Connectar-se
                 </button>
 
             </fieldset>
