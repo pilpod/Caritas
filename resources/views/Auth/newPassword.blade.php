@@ -21,9 +21,14 @@
         <form method="POST" action="{{ route('password.update') }}">
             @csrf
             <input type="hidden" name="token" value="{{$request->route('token')}}">
+<<<<<<< HEAD
             <div class=" flex flex-col">
                 <label for="email">Email</label>
                 <input id="email" type="email" class=" border-gray-200 border-2 p-2 rounded mb-5 @error('email') is-invalid @enderror" name="email" required autocomplete="email" value="{{$request->email}}">
+=======
+            <label for="email">Correo Electrònic</label>
+                <input id="email" type="email" class= "@error('email') is-invalid @enderror" name="email" required autocomplete="email" value="{{$request->email}}">
+>>>>>>> develop
 
                 @error('email')
                 <span role="alert">

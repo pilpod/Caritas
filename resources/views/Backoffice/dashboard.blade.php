@@ -10,7 +10,7 @@
 
 <body>
     <header class="border-b-2 border-red-500 mb-20 pt-3 px-3">
-
+    <div>
         <h1 class="text-3xl mb-5">Caritas Dasboard</h1>
         <ul class="flex">
             <li class="mr-6">
