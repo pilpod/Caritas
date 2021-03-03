@@ -23,8 +23,9 @@
         </ul>
 
     </header>
-    <div class="container sm mx-auto mt-72 w-1/2 border-red-300 border-2 rounded-2xl p-10">
+    <div class="container sm mx-auto mt-20 w-1/2 border-red-300 border-2 rounded-2xl p-10">
         <h2 class="mb-10 text-lg text-center">{{__('create-profile-title')}}</h2>
+        <a class="absolute top-10 right-10 text-red-500" href="{{route('dashboard')}}">Enrere</a>
         <form method="POST" action="{{route('dashboard.store')}}">
             @csrf
 

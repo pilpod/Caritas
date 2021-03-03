@@ -16,18 +16,18 @@
             <li class="mr-6">
                 <form id="logout-form" action="{{ route('logout') }}" method="POST">
                     @csrf
-                    <button class="text-gray-600 hover:text-red-500" type="submit">Logout</button>
+                    <button class="text-gray-600 hover:text-red-500" type="submit">Desconnectar</button>
                 </form>
 
             </li>
         </ul>
 
     </header>
-    <main class="container m">
+    <main class="container m pl-5">
 
         <section class="w-mt-72 w-1/2 border-red-300 border-2 rounded-2xl p-5 mb-20">
             <div class="flex justify-between mb-10">
-                <h2 class="text-xl">Datos de Registro</h2>
+                <h2 class="text-xl">Dades de Connexió</h2>
                 <button class="block bg-red-500 hover:bg-red-300 text-white font-bold p-2 text-md rounded border-b-4 border-red-500 flex-end">{{ __('buttons.update') }}</button>
 
             </div>
@@ -44,33 +44,39 @@
 
         </section>
         @else
-        <section class="w-mt-72 w-1/2 border-red-300 border-2 rounded-2xl p-5 mb-20">
-            <a class="block bg-red-500 w-1/3 hover:bg-red-300 text-white font-bold p-2 text-md rounded border-b-4 border-red-500" href="{{route('dashboard.edit', $profile->id)}}" type="button">
+        <section class="w-mt-72 w-1/2 border-red-300 border-2 rounded-2xl p-5 mb-20 relative">
+            <h2 class="text-xl">Perfil de l&#039;organització </h2>
+            <a class="block bg-red-500 hover:bg-red-300 text-white font-bold p-2 text-md rounded border-b-4 border-red-500 absolute top-5 right-5 text-center" href="{{route('dashboard.edit', $profile->id)}}" type="button">
                 {{__('buttons.update')}}
             </a>
-            <div>
-                <h4 class="ml-1">Direcio:
-                    <span>
+            <div class="pt-10">
+                <h4 class="font-bold mb-3">Nom:
+                    <span class="font-normal">
+                        {{$profile->name}}
+                    </span>
+                </h4>
+                <h4 class="font-bold mb-3">Direcció:
+                    <span class="font-normal">
                         {{$profile->direction}}
                     </span>
                 </h4>
-                <h4>Poblacio:
-                    <span>
+                <h4 class="font-bold mb-3">Població:
+                    <span class="font-normal">
                         {{$profile->city}}
                     </span>
                 </h4>
-                <h4>Telefono:
-                    <span>
+                <h4 class="font-bold mb-3">Telèfono:
+                    <span class="font-normal">
                         {{$profile->phone}}
                     </span>
                 </h4>
-                <h4>Cuenta bancaria:
-                    <span>
+                <h4 class="font-bold mb-3">Compte Bancari:
+                    <span class="font-normal">
                         {{$profile->bankAccount}}
                     </span>
                 </h4>
-                <h4> Bizum:
-                    <span>
+                <h4 class="font-bold mb-3"> Bizum:
+                    <span class="font-normal">
                         {{$profile->bizum}}
                     </span>
                 </h4>
