@@ -15,51 +15,51 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-    <div>
-        <form method="POST" action="{{ route('login') }}">
-            @csrf
-            <fieldset >
-                <legend>
-                    Login
-                </legend>
-                <label for="email">Email</label>
-                <input id="email" type="email" class= "@error('email') is-invalid @enderror" name="email" required autocomplete="email">
+    <div class="container sm mx-auto mt-72 w-1/2 border-red-300 border-2 rounded-2xl p-10">
+        <div >
+            <form method="POST" action="{{ route('login') }}">
+                @csrf
+                <fieldset class=" flex flex-col" >
+                    <label for="email">Email</label>
+                    <input id="email" type="email" class= "@error('email') is-invalid @enderror border-gray-200 border-2 p-2 rounded mb-5" name="email" required autocomplete="email">
 
-                @error('email')
-                <span role="alert">
-                    <strong>{{ $message }}</strong>
-                </span>
-                @enderror
+                    @error('email')
+                    <span role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
 
-                <label for="password">Password</label>
+                    <label for="password">Password</label>
 
-                <input id="password" type="password" class="@error('password') is-invalid @enderror" name="password" required>
-                @error('password')
-                <span role="alert">
-                    <strong>{{ $message }}</strong>
-                </span>
-                @enderror
+                    <input id="password" type="password" class="@error('password') is-invalid @enderror border-gray-200 border-2 p-2 rounded mb-5" name="password" required>
+                    @error('password')
+                    <span role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
 
-                
-                <a href="{{ route('password.request') }}">
-                    {{ __('Forgot Your Password?') }}
-                </a>
-                
-                
+                    
+                    <a class="mb-10 hover:text-red-500" href="{{ route('password.request') }}">
+                        {{ __('Forgot Your Password?') }}
+                    </a>
+                    
+                    
+                    <div class="mb-10">
+                        <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
-                <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+                        <label class="form-check-label" for="remember">
+                            {{ __('Remember Me') }}
+                        </label>
+                    </div>
+                    <button type="submit" class="btn w-1/2 mx-auto bg-red-500 hover:bg-red-300 text-white font-bold py-2 px-4 rounded border-b-4 border-red-500">
+                        {{ __('Login') }}
+                    </button>
 
-                <label class="form-check-label" for="remember">
-                    {{ __('Remember Me') }}
-                </label>
 
-                <button type="submit" class="btn">
-                    {{ __('Login') }}
-                </button>
+                </fieldset>
 
-            </fieldset>
-
-        </form>
+            </form>
+        </div>
         
     </div>
     
