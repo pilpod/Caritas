@@ -15,6 +15,14 @@
         @method('PUT')
         @csrf
             <fieldset>
+
+                <label for="name">{{__('edit-profile-name')}}</label>
+                <input type="text" name="name" id="name" class=" @error('name') is-invalid @enderror" value="{{$profile->name}}">
+                @error('name')
+                <div class="alert alert-danger">{{ $message }}
+                </div>
+                @enderror
+
                 <label for="direction">{{__('edit-profile-direction')}}</label>
                 <input type="text" name="direction" id="direction"  class=" @error('direction') is-invalid @enderror" value="{{ $profile->direction }}">
                 @error('direction')
