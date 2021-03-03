@@ -22,7 +22,7 @@
             @csrf
             <input type="hidden" name="token" value="{{$request->route('token')}}">
             <div class=" flex flex-col">
-                <label for="email">Correo Electrònic</label>
+                <label for="email">Correo Electrónico</label>
                 <input id="email" type="email" class=" border-gray-200 border-2 p-2 rounded mb-5 @error('email') is-invalid @enderror" name="email" required autocomplete="email" value="{{$request->email}}">
 
                 @error('email')
@@ -34,8 +34,8 @@
             </div>
 
             <div class="flex flex-col">
-                <label for="password" class="">Contrasenya</label>
-                <input id="password" type="password" class="border-gray-200 border-2 p-2 rounded mb-5 @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" placeholder="Password">
+                <label for="password" class="">Nueva Contraseña</label>
+                <input id="password" type="password" class="border-gray-200 border-2 p-2 rounded mb-5 @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" placeholder="Nueva Contraseña">
                 @error('password')
                 <span class="" role="alert">
                     <strong>{{ $message }}</strong>
@@ -43,10 +43,10 @@
                 @enderror
             </div>
             <div class="flex flex-col">
-                <label for="password" class="">Confirmar Contrasenya</label>
-                <input id="password-confirm" type="password" class="border-gray-200 border-2 p-2 rounded mb-20" name="password_confirmation" required autocomplete="new-password" placeholder="Confirm password">
+                <label for="password" class="">Confirmar Nueva Contraseña</label>
+                <input id="password-confirm" type="password" class="border-gray-200 border-2 p-2 rounded mb-20" name="password_confirmation" required autocomplete="new-password" placeholder="Confirmar Nueva Contraseña">
             </div>
-            <input name="update" id="update" class="block btn w-1/2 mx-auto bg-red-500 hover:bg-red-300 text-white font-bold py-2 px-4 rounded border-b-4 border-red-500" type="submit" value="Update">
+            <input name="update" id="update" class="block btn w-1/2 mx-auto bg-red-500 hover:bg-red-300 text-white font-bold py-2 px-4 rounded border-b-4 border-red-500" type="submit" value="Actualizar">
         </form>
     </div>
 </body>

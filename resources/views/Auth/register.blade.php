@@ -23,8 +23,8 @@
         <form method="POST" action="{{ route('register') }}" >
             @csrf
             <div class="flex flex-col">
-                <label for="name" class="">Nom</label>
-                <input id="name" type="text" class=" border-gray-200 border-2 p-2 rounded mb-5 @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus placeholder="Name">
+                <label for="name" class="">Nombre</label>
+                <input id="name" type="text" class=" border-gray-200 border-2 p-2 rounded mb-5 @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus placeholder="Nombre">
                 @error('name')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
@@ -33,8 +33,8 @@
             </div>
 
             <div class="flex flex-col">
-                <label for="email" class="">Correo Electrònic</label>
-                <input id="email" type="email" class="border-gray-200 border-2 p-2 rounded mb-5 @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="Email address">
+                <label for="email" class="">Correo Electrónico</label>
+                <input id="email" type="email" class="border-gray-200 border-2 p-2 rounded mb-5 @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="Correo Electrónico">
                 @error('email')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
@@ -42,8 +42,8 @@
                 @enderror
             </div>
             <div class="flex flex-col">
-                <label for="password" class="">Confirmar Contrasenya</label>
-                <input id="password" type="password" class="border-gray-200 border-2 p-2 rounded mb-5 @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" placeholder="Password">
+                <label for="password" class="">Contraseña</label>
+                <input id="password" type="password" class="border-gray-200 border-2 p-2 rounded mb-5 @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" placeholder="Contraseña">
                 @error('password')
                 <span class="" role="alert">
                     <strong>{{ $message }}</strong>
@@ -51,10 +51,10 @@
                 @enderror
             </div>
             <div class="flex flex-col">
-                <label for="password" class="">Confirm Contrasenya</label>
-                <input id="password-confirm" type="password" class="border-gray-200 border-2 p-2 rounded mb-20" name="password_confirmation" required autocomplete="new-password" placeholder="Confirm password">
+                <label for="password" class="">Confirmar Contraseña</label>
+                <input id="password-confirm" type="password" class="border-gray-200 border-2 p-2 rounded mb-20" name="password_confirmation" required autocomplete="new-password" placeholder="Confirmar Contraseña">
             </div>
-            <input name="register" id="register" class=" block btn w-1/2 mx-auto bg-red-500 hover:bg-red-300 text-white font-bold py-2 px-4 rounded border-b-4 border-red-500" type="submit" value="Register">
+            <input name="register" id="register" class=" block btn w-1/2 mx-auto bg-red-500 hover:bg-red-300 text-white font-bold py-2 px-4 rounded border-b-4 border-red-500" type="submit" value="Registrarse">
         </form>
     </div>
 </body>

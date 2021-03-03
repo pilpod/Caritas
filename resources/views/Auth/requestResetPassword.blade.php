@@ -21,7 +21,7 @@
         <form method="POST" action="{{route('password.email')}}" class="flex flex-col">
             @csrf
             <div class="flex flex-col">
-                <label class="mb-2" for="email">Per restablir la contrasenya, si us plau introduïu el vostre Correo Electrònic</label>
+                <label class="mb-2" for="email">Para recuperar su contraseña, por favor,  introduzca su Correo Electrónico</label>
                 <input id="email" type="email" class=" border-gray-200 border-2 p-2 mb-10 rounded @error('email') is-invalid @enderror" name="email" placeholder="email" required autocomplete="email">
 
                 @error('email')
@@ -31,7 +31,7 @@
                 @enderror
 
             </div>
-            <button class="btn w-1/2 mx-auto bg-red-500 hover:bg-red-300 text-white font-bold py-2 px-4 rounded border-b-4 border-red-500" type="submit">Enviar</button>
+            <button class="btn w-1/2 mx-auto bg-red-500 hover:bg-red-300 text-white font-bold py-2 px-4 rounded border-b-4 border-red-500" type="submit">Solicitar</button>
         </form>
     </div>
 </body>

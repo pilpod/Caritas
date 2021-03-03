@@ -11,12 +11,12 @@
 <body>
     <header class="border-b-2 border-red-500 mb-20 pt-3 px-3">
     <div>
-        <h1 class="text-3xl mb-5">Caritas Dasboard</h1>
+        <h1 class="text-3xl mb-5">Caritas Escritorio</h1>
         <ul class="flex">
             <li class="mr-6">
                 <form id="logout-form" action="{{ route('logout') }}" method="POST">
                     @csrf
-                    <button class="text-gray-600 hover:text-red-500" type="submit">Desconnectar</button>
+                    <button class="text-gray-600 hover:text-red-500" type="submit">Desconectar</button>
                 </form>
 
             </li>
@@ -27,9 +27,8 @@
 
         <section class="w-mt-72 w-1/2 border-red-300 border-2 rounded-2xl p-5 mb-20">
             <div class="flex justify-between mb-10">
-                <h2 class="text-xl">Dades de Connexió</h2>
+                <h2 class="text-xl">Datos de conección</h2>
                 <button class="block bg-red-500 hover:bg-red-300 text-white font-bold p-2 text-md rounded border-b-4 border-red-500 flex-end">{{ __('buttons.update') }}</button>
-
             </div>
             <p class="text-md">{{$user->email}}</p>
 
@@ -37,7 +36,7 @@
 
         @if(!$profile)
         <section class="w-mt-72 w-1/2 border-red-300 border-2 rounded-2xl p-5 mb-20 flex justify-between ">
-            <h3>Crear perfil de l&#039;organització</h3>
+            <h3>Crear perfil de la organización</h3>
             <a class="block bg-red-500 hover:bg-red-300 text-white font-bold p-2 text-md rounded border-b-4 border-red-500" href="{{route('dashboard.create')}}" type="button">
                 {{__('buttons.create')}}
             </a>
@@ -45,32 +44,32 @@
         </section>
         @else
         <section class="w-mt-72 w-1/2 border-red-300 border-2 rounded-2xl p-5 mb-20 relative">
-            <h2 class="text-xl">Perfil de l&#039;organització </h2>
+            <h2 class="text-xl">Perfil de la organización</h2>
             <a class="block bg-red-500 hover:bg-red-300 text-white font-bold p-2 text-md rounded border-b-4 border-red-500 absolute top-5 right-5 text-center" href="{{route('dashboard.edit', $profile->id)}}" type="button">
                 {{__('buttons.update')}}
             </a>
             <div class="pt-10">
-                <h4 class="font-bold mb-3">Nom:
+                <h4 class="font-bold mb-3">Nombre:
                     <span class="font-normal">
                         {{$profile->name}}
                     </span>
                 </h4>
-                <h4 class="font-bold mb-3">Direcció:
+                <h4 class="font-bold mb-3">Dirección:
                     <span class="font-normal">
                         {{$profile->direction}}
                     </span>
                 </h4>
-                <h4 class="font-bold mb-3">Població:
+                <h4 class="font-bold mb-3">Población:
                     <span class="font-normal">
                         {{$profile->city}}
                     </span>
                 </h4>
-                <h4 class="font-bold mb-3">Telèfono:
+                <h4 class="font-bold mb-3">Teléfono:
                     <span class="font-normal">
                         {{$profile->phone}}
                     </span>
                 </h4>
-                <h4 class="font-bold mb-3">Compte Bancari:
+                <h4 class="font-bold mb-3">Cuenta Bancaria:
                     <span class="font-normal">
                         {{$profile->bankAccount}}
                     </span>
