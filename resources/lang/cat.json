@@ -1,6 +1,7 @@
 {
    
    "create-profile-title": "Crear perfil de l'organització",
+   "create-profile-name": "Nom de l'organització",
    "create-profile-direction": "Direcció",
    "create-profile-city": "Població",
    "create-profile-phone": "Telèfono",
@@ -8,6 +9,7 @@
    "create-profile-bizum": "Bizum",
 
    "edit-profile-title": "Editar perfil de l'organització",
+   "edit-profile-name": "Nom de l'organització",
    "edit-profile-direction": "Direcció",
    "edit-profile-city": "Població",
    "edit-profile-phone": "Telèfono",
