@@ -45,34 +45,37 @@
         </section>
         @else
         <section class="w-mt-72 w-1/2 border-red-300 border-2 rounded-2xl p-5 mb-20">
-            <a href="{{route('dashboard.edit', $profile->id)}}" type="button">
+            <a class="block bg-red-500 w-1/3 hover:bg-red-300 text-white font-bold p-2 text-md rounded border-b-4 border-red-500" href="{{route('dashboard.edit', $profile->id)}}" type="button">
                 {{__('buttons.update')}}
             </a>
-            <h4 class="ml-1">Direcio:
-                <span>
-                    {{$profile->direction}}
-                </span>
-            </h4>
-            <h4>Poblacio:
-                <span>
-                    {{$profile->city}}
-                </span>
-            </h4>
-            <h4>Telefono:
-                <span>
-                    {{$profile->phone}}
-                </span>
-            </h4>
-            <h4>Cuenta bancaria:
-                <span>
-                    {{$profile->bankAccount}}
-                </span>
-            </h4>
-            <h4> Bizum:
-                <span>
-                    {{$profile->bizum}}
-                </span>
-            </h4>
+            <div>
+                <h4 class="ml-1">Direcio:
+                    <span>
+                        {{$profile->direction}}
+                    </span>
+                </h4>
+                <h4>Poblacio:
+                    <span>
+                        {{$profile->city}}
+                    </span>
+                </h4>
+                <h4>Telefono:
+                    <span>
+                        {{$profile->phone}}
+                    </span>
+                </h4>
+                <h4>Cuenta bancaria:
+                    <span>
+                        {{$profile->bankAccount}}
+                    </span>
+                </h4>
+                <h4> Bizum:
+                    <span>
+                        {{$profile->bizum}}
+                    </span>
+                </h4>
+
+            </div>
         </section>
         @endif
     </main>
