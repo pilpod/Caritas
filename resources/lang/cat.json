@@ -1,11 +1,22 @@
 {
    
+   "create-profile-name": "Crear nom de l'organització",
    "create-profile-title": "Crear perfil de l'organització",
+   "create-profile-name": "Nom de l'organització",
    "create-profile-direction": "Direcció",
    "create-profile-city": "Població",
    "create-profile-phone": "Telèfono",
    "create-profile-bankAccount": "Compte Bancari",
-   "create-profile-bizum": "Bizum"
+   "create-profile-bizum": "Bizum",
+
+   "edit-profile-name": "Editar nom de l'organització",
+   "edit-profile-title": "Editar perfil de l'organització",
+   "edit-profile-name": "Nom de l'organització",
+   "edit-profile-direction": "Direcció",
+   "edit-profile-city": "Població",
+   "edit-profile-phone": "Telèfono",
+   "edit-profile-bankAccount": "Compte Bancari",
+   "edit-profile-bizum": "Bizum"
 
 
 }

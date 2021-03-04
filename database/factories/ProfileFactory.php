@@ -22,7 +22,13 @@ class ProfileFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'name' => 'Caritas Badalona',
+            'direction' => 'Carrer blablabla',
+            'city' => 'Badalona',
+            'phone' => $this->faker->phoneNumber,
+            'bankAccount' => $this->faker->bankAccountNumber, // password
+            'bizum' => 1122121212,
+            'user_id' => 1,
         ];
     }
 }

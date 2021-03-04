@@ -9,28 +9,81 @@
 </head>
 
 <body>
+    <header class="border-b-2 border-red-500 mb-20 pt-3 px-3">
     <div>
-        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-            @csrf
-            <button type="submit">logout</button>
-        </form>
+        <h1 class="text-3xl mb-5">Caritas Escritorio</h1>
+        <ul class="flex">
+            <li class="mr-6">
+                <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                    @csrf
+                    <button class="text-gray-600 hover:text-red-500" type="submit">Desconectar</button>
+                </form>
 
-    </div>
+            </li>
+        </ul>
 
-    <section>
-        <h2>Datos de Registro</h2>
-        <span>{{$user->email}}</span>
-        <button>{{ __('buttons.update') }}</button>
+    </header>
+    <main class="container m pl-5">
 
-    </section>
+        <section class="w-mt-72 w-1/2 border-red-300 border-2 rounded-2xl p-5 mb-20">
+            <div class="flex justify-between mb-10">
+                <h2 class="text-xl">Datos de conección</h2>
+                <a href="{{route('user-profile-information.edit')}}" class="block bg-red-500 hover:bg-red-300 text-white font-bold p-2 text-md rounded border-b-4 border-red-500 flex-end">Actualizar</a>
+            </div>
+            <p class="text-md">{{$user->email}}</p>
 
-    <section>
-        <h3>Crear perfil de l&#039;organització</h3>
-        <a href="{{route('dashboard.create')}}" type="button">
-        {{__('buttons.create')}}
-        </a>
+        </section>
 
-    </section>
+        @if(!$profile)
+        <section class="w-mt-72 w-1/2 border-red-300 border-2 rounded-2xl p-5 mb-20 flex justify-between ">
+            <h3>Crear perfil de la organización</h3>
+            <a class="block bg-red-500 hover:bg-red-300 text-white font-bold p-2 text-md rounded border-b-4 border-red-500" href="{{route('dashboard.create')}}" type="button">
+                Crear
+            </a>
+
+        </section>
+        @else
+        <section class="w-mt-72 w-1/2 border-red-300 border-2 rounded-2xl p-5 mb-20 relative">
+            <h2 class="text-xl">Perfil de la organización</h2>
+            <a class="block bg-red-500 hover:bg-red-300 text-white font-bold p-2 text-md rounded border-b-4 border-red-500 absolute top-5 right-5 text-center" href="{{route('dashboard.edit', $profile->id)}}" type="button">
+                Actualizar
+            </a>
+            <div class="pt-10">
+                <h4 class="font-bold mb-3">Nombre:
+                    <span class="font-normal">
+                        {{$profile->name}}
+                    </span>
+                </h4>
+                <h4 class="font-bold mb-3">Dirección:
+                    <span class="font-normal">
+                        {{$profile->direction}}
+                    </span>
+                </h4>
+                <h4 class="font-bold mb-3">Población:
+                    <span class="font-normal">
+                        {{$profile->city}}
+                    </span>
+                </h4>
+                <h4 class="font-bold mb-3">Teléfono:
+                    <span class="font-normal">
+                        {{$profile->phone}}
+                    </span>
+                </h4>
+                <h4 class="font-bold mb-3">Cuenta Bancaria:
+                    <span class="font-normal">
+                        {{$profile->bankAccount}}
+                    </span>
+                </h4>
+                <h4 class="font-bold mb-3"> Bizum:
+                    <span class="font-normal">
+                        {{$profile->bizum}}
+                    </span>
+                </h4>
+
+            </div>
+        </section>
+        @endif
+    </main>
 </body>
 
 </html>

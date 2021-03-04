@@ -11,6 +11,7 @@ class Profile extends Model
     use HasFactory;
 
     protected $fillable = [
+        'name',
         'direction',
         'city',
         'phone',
@@ -22,6 +23,6 @@ class Profile extends Model
 
     public function user() 
     {
-        $this->belongsTo(User::class);
+        $this->hasOne(User::class);
     }
 }
