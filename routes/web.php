@@ -4,6 +4,8 @@ use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\UserProfileController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,6 +27,7 @@ Route::middleware('admin')->group(function () {
     Route::post('/dashboard/profile/', [DashboardController::class, 'store'])->name('dashboard.store');
     Route::get('/dashboard/profile/{id}', [DashboardController::class, 'edit'])->name('dashboard.edit');
     Route::put('/dashboard/profile/{id}', [DashboardController::class, 'update'])->name('dashboard.update');
+    Route::get('/user/profile-information', [UserProfileController::class, 'edit'])->name('user-profile-information.edit');
 
 });
 
