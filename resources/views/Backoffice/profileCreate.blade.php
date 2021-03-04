@@ -27,39 +27,6 @@
         <h2 class="mb-10 text-lg text-center">Crear perfil de la organización</h2>
         <a class="absolute top-10 right-10 text-red-500" href="{{route('dashboard')}}">Atrás</a>
         <form method="POST" action="{{route('dashboard.store')}}">
-<<<<<<< HEAD
-        @csrf
-            <fieldset>
-                <label for="direction">{{__('create-profile-direction')}}</label>
-                <input type="text" name="direction" id="direction"  class=" @error('direction') is-invalid @enderror" required>
-                @error('direction')
-                    <div role="alert"> {{ $message }}</div>
-                @enderror
-               
-                <label for="city">{{__('create-profile-city')}}</label>
-                <input type="text" name="city" id="city"  class=" @error('city') is-invalid @enderror" required>
-                @error('city')
-                    <div role="alert"> {{ $message }}</div>
-                @enderror
-
-                <label for="phone">{{__('create-profile-phone')}}</label>
-                <input type="text" name="phone" id="phone"  class=" @error('phone') is-invalid @enderror" required>
-                @error('phone')
-                    <div role="alert"> {{ $message }}</div>
-                @enderror
-
-                <label for="bankAccount">{{__('create-profile-bankAccount')}}</label>
-                <input type="text" name="bankAccount" id="bankAccount"  class=" @error('bankAccount') is-invalid @enderror" required>
-                @error('bankAccount')
-                    <div role="alert"> {{ $message }}</div>
-                @enderror
-
-                <label for="bizum">{{__('create-profile-bizum')}}</label>
-                <input type="text" name="bizum" id="bizum"  class=" @error('bizum') is-invalid @enderror" required>
-                @error('bizum')
-                    <div role="alert"> {{ $message }}</div>
-                @enderror
-=======
             @csrf
 
                 <div class="flex flex-col">
@@ -118,7 +85,6 @@
                     @enderror
 
                 </div>
->>>>>>> feature/update-data-connection
 
                 <button class="block btn w-1/2 mx-auto bg-red-500 hover:bg-red-300 text-white font-bold py-2 px-4 rounded border-b-4 border-red-500">Crear</button>
         </form>

@@ -13,20 +13,11 @@ use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
 {
-<<<<<<< HEAD
-
-    /**
-     * @param  \App\Http\Requests\PostProfileRequest  $request
-     * @return Illuminate\Http\Response
-     */
-
-=======
     /**
      *
      * @param  \App\Http\Requests\StoreProfileRequest
      * @return Illuminate\Http\Response
      */
->>>>>>> feature/update-data-connection
     public function index()
     {
         $user = auth()->user();
@@ -48,12 +39,6 @@ class DashboardController extends Controller
         abort(404, 'page disabled');
     }
 
-<<<<<<< HEAD
-    public function store(PostProfileRequest $request)
-    {
-
-        $request->validated();
-=======
 
     public function store(StoreProfileRequest $request)
     {
@@ -78,7 +63,6 @@ class DashboardController extends Controller
         }
         return abort(404, 'Profile already created');
     }
->>>>>>> feature/update-data-connection
 
     public function edit($id)
     {
