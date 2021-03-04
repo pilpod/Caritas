@@ -34,4 +34,19 @@ class UpdateDataConnectionTest extends TestCase
         $response->assertStatus(200)
             ->assertViewIs('Auth.updateUserProfile');
     }
+    public function testAdminCanUpdateEmail()
+    {
+        $data = [
+            'name' => 'Giacomo',
+            'email' => 'gi@root.com'
+        ];
+        $response = $this->actingAs($this->user)->put(route('user-profile-information.update', $data));
+
+        $response->assertStatus(302);
+        
+        $this->assertDatabaseHas('users', [
+            'name' => 'Giacomo'
+            ]);
+           
+    }
 }
