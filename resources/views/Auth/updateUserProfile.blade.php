@@ -11,14 +11,15 @@
 <body>
     <div style="width: 50%; text-align:center;">
     
+    @if(session('status') == "profile-information-updated")
+        <div>
+            <span>Perfil actualizado con éxito</span>
+        </div>
+        <a href="{{ route('dashboard') }}">Volver</a>
+    @else
     <form method="POST" action="{{ route('user-profile-information.update') }}">
         @method("PUT")
         @csrf
-        @if(session('status') == "profile-information-updated")
-            <div>
-                <span>Perfil actualizado con éxito</span>
-            </div>
-        @endif
         <div class="flex flex-col">
             <label for="name" class="">Nombre</label>
             <input id="name" type="text" class=" border-gray-200 border-2 p-2 rounded mb-5 @error('name', 'updateProfileInformation') is-invalid @enderror" name="name" value="{{ old('name') ?? auth()->user()->name }}" required autocomplete="name" autofocus placeholder="Nombre">
@@ -42,7 +43,7 @@
         <button name="update" id="update" class=" block btn w-1/2 mx-auto bg-red-500 hover:bg-red-300 text-white font-bold py-2 px-4 rounded border-b-4 border-red-500" type="submit">Actualizar</button>
 
     </form>
-
+    @endif
 </div>
 </body>
 
