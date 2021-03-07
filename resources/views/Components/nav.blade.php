@@ -7,9 +7,9 @@
     {{-- desktop --}}
     <div class="hidden md:flex flex-row justify-evenly items-center">
         <div class="w-20%">
-            <button > CATALA </button> 
+            <button > CATALÀ </button> 
         </div>
-        <div class="w-20%">
+        <div class="w-20% relative left-4">
             <button href="qui-som">QUIENES SOMOS?</button> 
         </div>
         <x-logo class="flex self-center" href="https://www.santjosepbadalona.cat/" />

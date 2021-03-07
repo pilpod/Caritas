@@ -10,5 +10,5 @@
         que ellos mismos puedan comprarse
         los alimentos.</p>
     </div>
-    <button type="button" class="focus:outline-none text-white text-xs my-6 py-2.5 px-5 border-b-4 border-red-light rounded-md bg-red hover:bg-red-light hover:border-red-lighter hover:text-red w-5/12 ">HACER UNA DONACIÓN</button>
+    <button type="button" class="focus:outline-none text-white text-xs my-6 py-2.5 px-5 border-b-4 border-red-light rounded-md bg-red hover:bg-red-light hover:border-red-lighter hover:text-red w-5/12 md:w-2/12 object-center ">HACER UNA DONACIÓN</button>
 </section>
