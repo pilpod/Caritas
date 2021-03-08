@@ -59,8 +59,6 @@ class UpdateDataConnectionTest extends TestCase
             'password_confirmation' => '0123456789',
         ];
 
-        // 'user-password.update'
-
         $response = $this->actingAs($user)->put(route('user-password.update', $data));
 
         $response->assertStatus(302);
