@@ -4,6 +4,8 @@ use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\UserProfileController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,11 +21,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('admin');
-Route::get('/dashboard/profile/', [DashboardController::class, 'create'])->name('dashboard.create')->middleware('admin');
-Route::post('/dashboard/profile/', [DashboardController::class, 'store'])->name('dashboard.store')->middleware('admin');
-Route::get('/dashboard/profile/{id}', [DashboardController::class, 'edit'])->name('dashboard.edit')->middleware('admin');
-Route::put('/dashboard/profile/{id}', [DashboardController::class, 'update'])->name('dashboard.update')->middleware('admin');
+Route::middleware('admin')->group(function () {
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/dashboard/profile/', [DashboardController::class, 'create'])->name('dashboard.create');
+    Route::post('/dashboard/profile/', [DashboardController::class, 'store'])->name('dashboard.store');
+    Route::get('/dashboard/profile/{id}', [DashboardController::class, 'edit'])->name('dashboard.edit');
+    Route::put('/dashboard/profile/{id}', [DashboardController::class, 'update'])->name('dashboard.update');
+    Route::get('/user/profile-information', [UserProfileController::class, 'edit'])->name('user-profile-information.edit');
+
+});
 
 Route::get('/register', [RegisterController::class, 'index'])->name('register');
 Route::post('/register', [RegisterController::class, 'store']);

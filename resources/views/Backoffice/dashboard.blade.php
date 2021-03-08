@@ -28,9 +28,24 @@
         <section class="w-mt-72 w-1/2 border-red-300 border-2 rounded-2xl p-5 mb-20">
             <div class="flex justify-between mb-10">
                 <h2 class="text-xl">Datos de conección</h2>
-                <button class="block bg-red-500 hover:bg-red-300 text-white font-bold p-2 text-md rounded border-b-4 border-red-500 flex-end">Actualizar</button>
+                <a href="{{route('user-profile-information.edit')}}" class="block bg-red-500 hover:bg-red-300 text-white font-bold p-2 text-md rounded border-b-4 border-red-500 flex-end">Actualizar</a>
             </div>
-            <p class="text-md">{{$user->email}}</p>
+            <div>
+                <div class="">
+                    <h4 class="font-bold mb-3">Nombre:
+                        <span class="font-normal">
+                            {{$user->name}}
+                        </span>
+                    </h4>
+                </div>
+                <div class="pt-2">
+                    <h4 class="font-bold mb-3">E-mail:
+                        <span class="font-normal">
+                            {{$user->email}}
+                        </span>
+                    </h4>
+                </div>
+            </div>
 
         </section>
 
