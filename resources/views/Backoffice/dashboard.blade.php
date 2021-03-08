@@ -28,7 +28,7 @@
         <section class="w-mt-72 w-1/2 border-red-300 border-2 rounded-2xl p-5 mb-20">
             <div class="flex justify-between mb-10">
                 <h2 class="text-xl">Datos de conección</h2>
-                <button class="block bg-red-500 hover:bg-red-300 text-white font-bold p-2 text-md rounded border-b-4 border-red-500 flex-end">{{ __('buttons.update') }}</button>
+                <button class="block bg-red-500 hover:bg-red-300 text-white font-bold p-2 text-md rounded border-b-4 border-red-500 flex-end">Actualizar</button>
             </div>
             <p class="text-md">{{$user->email}}</p>
 
@@ -38,7 +38,7 @@
         <section class="w-mt-72 w-1/2 border-red-300 border-2 rounded-2xl p-5 mb-20 flex justify-between ">
             <h3>Crear perfil de la organización</h3>
             <a class="block bg-red-500 hover:bg-red-300 text-white font-bold p-2 text-md rounded border-b-4 border-red-500" href="{{route('dashboard.create')}}" type="button">
-                {{__('buttons.create')}}
+                Crear
             </a>
 
         </section>
@@ -46,7 +46,7 @@
         <section class="w-mt-72 w-1/2 border-red-300 border-2 rounded-2xl p-5 mb-20 relative">
             <h2 class="text-xl">Perfil de la organización</h2>
             <a class="block bg-red-500 hover:bg-red-300 text-white font-bold p-2 text-md rounded border-b-4 border-red-500 absolute top-5 right-5 text-center" href="{{route('dashboard.edit', $profile->id)}}" type="button">
-                {{__('buttons.update')}}
+                Actualizar
             </a>
             <div class="pt-10">
                 <h4 class="font-bold mb-3">Nombre:
