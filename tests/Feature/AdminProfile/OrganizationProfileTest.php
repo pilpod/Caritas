@@ -43,7 +43,7 @@ class OrganizationProfileTest extends TestCase
         $response = $this->actingAs($this->user)->get('/dashboard');
 
         $response->assertStatus(200)
-            ->assertSee("Crear perfil de l'organització");
+            ->assertSee("Crear perfil de la organización");
     }
 
     public function testAdminCanAccessToCreateProfileForm()
