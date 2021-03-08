@@ -1,5 +1,5 @@
 <x-layout>
-    <x-nav/>
+    <x-nav />
     <x-hero/>
     <x-youtubeiframe/>
     <x-footer />
