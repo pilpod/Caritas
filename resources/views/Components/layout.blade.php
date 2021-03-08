@@ -10,5 +10,6 @@
   </head>
   <body>
     {{ $slot }}
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.1/dist/alpine.min.js" defer></script>
   </body>
 </html>
