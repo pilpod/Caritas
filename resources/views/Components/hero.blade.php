@@ -1,6 +1,6 @@
 
 
-<section id="hero" class="text-white text-center bg-hero bg-cover bg-right flex flex-col p-4 place-items-center">
+<section id="hero" class="text-white text-center bg-hero bg-cover bg-center flex flex-col p-4 place-items-center mt-24">
     <div id="heroText" class="p-2">
         <h1 id="heroTitle" class="text-3xl px-4 py-2"> Tarjetas Monedero </h1>
         <p  id="heroParagraph" class=" text-base px-4 py-2">

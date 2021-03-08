@@ -1,6 +1,6 @@
 
 
 <x-layout>
-    <x-nav class="fixed" />
+    <x-nav />
     <x-hero/>
 </x-layout>

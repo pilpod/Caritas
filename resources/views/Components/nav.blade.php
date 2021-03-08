@@ -1,4 +1,4 @@
-<nav id="navBox" class="text-xs p-2">
+<nav id="navBox" class="top-0 fixed bg-white-dark w-full text-xs p-2">
     {{-- mobile --}}
     <div class="flex flex-row justify-between md:hidden">
         <x-logo class="flex self-start" href="https://www.santjosepbadalona.cat/" />
@@ -14,7 +14,7 @@
         </div>
         <x-logo class="flex self-center" href="https://www.santjosepbadalona.cat/" />
         <div class="w-20%">
-            <button href="qui-som">QUE PUEDES HACER TU?</button> 
+            <button href="qui-som">QUE PUEDES <br> HACER TU?</button> 
         </div>
         <div class="w-20%">    
             <button href="qui-som">CONTACTA</button> 
