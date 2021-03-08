@@ -8,7 +8,8 @@ use Illuminate\Contracts\Validation\Validator;
 use App\Http\Requests\StoreProfileRequest;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
-
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class DashboardController extends Controller
 {
@@ -17,6 +18,9 @@ class DashboardController extends Controller
      * @param  \App\Http\Requests\StoreProfileRequest
      * @return Illuminate\Http\Response
      */
+
+    private object $profile;
+    
     public function index()
     {
         $user = auth()->user();
@@ -87,5 +91,35 @@ class DashboardController extends Controller
             'user' => $user,
             'profile' => $profile
         ]);
+    }
+
+    public function editLogo()
+    {
+        $profile = auth()->user()->profile;
+        return view('Backoffice.logoEdit', ['profile' => $profile]);
+    }
+
+    public function updateLogo(Request $request, $id)
+    {
+        $profile = Profile::find($id);
+
+        $request->validate([
+            'logo' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+        ]);
+
+        
+        DB::beginTransaction();
+        
+        try {
+            $profile->logo = $request->logo->getClientOriginalName();
+            DB::table('profiles')->where('id', $profile->id)->update(['logo' => $request->logo->getClientOriginalName()]);
+            $request->logo->storeAs('public/logo', $request->logo->getClientOriginalName());
+            DB::commit();
+            return redirect(route('dashboard'));
+        }
+        catch (\Exception $ex) {
+            DB::rollback();
+        }
+        
     }
 }

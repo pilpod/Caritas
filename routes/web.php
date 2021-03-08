@@ -27,8 +27,9 @@ Route::middleware('admin')->group(function () {
     Route::post('/dashboard/profile/', [DashboardController::class, 'store'])->name('dashboard.store');
     Route::get('/dashboard/profile/{id}', [DashboardController::class, 'edit'])->name('dashboard.edit');
     Route::put('/dashboard/profile/{id}', [DashboardController::class, 'update'])->name('dashboard.update');
+    Route::get('/dashboard/profile/{id}/logo', [DashboardController::class, 'editLogo'])->name('logo.edit');
+    Route::post('/dashboard/profile/{id}/logo', [DashboardController::class, 'updateLogo'])->name('logo.update');
     Route::get('/user/profile-information', [UserProfileController::class, 'edit'])->name('user-profile-information.edit');
-
 });
 
 Route::get('/register', [RegisterController::class, 'index'])->name('register');
