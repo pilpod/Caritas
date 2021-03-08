@@ -8,7 +8,7 @@
         <link href="/css/app.css" rel="stylesheet">
         <title>{{ $title ?? 'CàritasSantJosepBadalona' }}</title>
       </head>
-    <body id="body">
+    <body id="body" {{ $attributes }}>
       {{ $slot }}
     </body>
 </html>
