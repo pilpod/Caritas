@@ -47,4 +47,21 @@ class LogoProfileTest extends TestCase
         Storage::disk('local');
         $this->assertFileExists(public_path('storage/logo'));
     }
+
+    public function test_AdminCanDeleteLogo()
+    {
+        Role::factory()->create();
+        $user = User::factory()->create();
+        Profile::factory()->create();
+        $profileId =  $user->profile->id;
+
+        Storage::fake('logo');
+        $file = UploadedFile::fake()->image('bla.jpg');
+
+        $this->actingAs($user)->delete(route('logo.delete', $profileId));
+
+        Storage::disk('local');
+        $this->assertFileDoesNotExist($file->name);
+    }
+    
 }

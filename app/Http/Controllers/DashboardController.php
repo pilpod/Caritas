@@ -122,4 +122,21 @@ class DashboardController extends Controller
         }
         
     }
+
+    public function deleteLogo($id)
+    {
+        $profile = Profile::find($id);
+
+        DB::beginTransaction();
+
+        try {
+            DB::table('profiles')->where('id', $profile->id)->update(['logo' => null]);
+            Storage::delete([ $profile->logo ]);
+            DB::commit();
+            return redirect(route('dashboard'));
+        }
+        catch (\Exception $ex) {
+            DB::rollback();
+        }
+    }
 }

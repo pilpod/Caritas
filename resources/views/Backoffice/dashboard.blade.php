@@ -52,15 +52,25 @@
         <section class="w-mt-72 w-1/2 border-red-300 border-2 rounded-2xl p-5 mb-20">
             <div class="flex justify-between mb-10">
                 <h2 class="text-xl">Logotipo</h2>
-                @if($profile->logo)
+                @if(!$profile->logo)
                     <a href="{{route('logo.edit', $profile->id)}}" class="block bg-red-500 hover:bg-red-300 text-white font-bold p-2 text-md rounded border-b-4 border-red-500 flex-end">Subir</a>                    
                 @else
-                    <a href="" class="block bg-red-500 hover:bg-red-300 text-white font-bold p-2 text-md rounded border-b-4 border-red-500 flex-end">Borrar</a>                    
+                <form action="{{ route('logo.delete', $profile->id) }}" method="post">
+                    @method('DELETE')
+                    @csrf
+                    <button class="block bg-red-500 hover:bg-red-300 text-white font-bold p-2 text-md rounded border-b-4 border-red-500 flex-end" type="submit">Borrar</button>                    
+                </form>
                 @endif
             </div>
             <div>
                 <div class="">
-                    <img src="{{ asset('storage/logo/' . $profile->logo) }}" alt="Logotipo" >
+                    <img src="
+                    @if($profile->logo)
+                        {{ asset('storage/logo/' . $profile->logo) }}
+                    @else
+                        {{ asset('storage/logo/placeholder-300x202.jpg') }}
+                    @endif
+                    " alt="Logotipo" >
                 </div>
             </div>
 
