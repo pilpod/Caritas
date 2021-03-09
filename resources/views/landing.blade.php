@@ -31,4 +31,5 @@
         </div>
         <button type="button" class="focus:outline-none text-white text-mobile-tiny md:text-mobile-main my-6 py-2.5 px-5 border-b-4 border-red-light rounded-md bg-red hover:bg-red-light hover:border-red-lighter hover:text-red w-5/12 md:w-2/12 object-center ">HACER UNA DONACIÓN</button>
     </section>
+    <x-back-to-top/>
 </x-layout>
