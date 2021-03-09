@@ -2,7 +2,6 @@
     <x-nav />
     <x-hero/>
     <x-youtubeiframe/>
-    <x-footer />
     <section class="flex flex-row items-center my-10">
         <img class="hidden md:flex flex-start rounded-r-full h-72" src="{{ asset('storage/img/SectionOneLeft.jpg') }}" alt="Caritas Logo"/>
         <div id="sectionOneText">
@@ -21,4 +20,5 @@
         </div>
         <img class="hidden md:flex flex-end rounded-l-full h-72" src="{{ asset('storage/img/SectionOneRight.jpg') }}" alt="Caritas Logo"/>
     </section>
+    <x-footer />
 </x-layout>
