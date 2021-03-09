@@ -19,15 +19,18 @@ use Illuminate\Support\Facades\Session;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->middleware('language');
 
-Route::get('/home/{language}', function ($language) {
-    Session::put('language', $language);
-    App::setlocale($language);
-    return redirect()->back();
-})->middleware('language')->name('language');
+Route::middleware('language')->group(function () {
+    Route::get('/', function () {
+        return view('welcome');
+    })->name('home');
+    Route::get('/home/{language}', function ($language) {
+        Session::put('language', $language);
+        App::setlocale($language);
+        return redirect()->back();
+    })->name('language');
+
+});
 
 Route::middleware('admin')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
