@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\RegisterController;
@@ -21,14 +22,8 @@ use Illuminate\Support\Facades\Session;
 
 
 Route::middleware('language')->group(function () {
-    Route::get('/', function () {
-        return view('welcome');
-    })->name('home');
-    Route::get('/home/{language}', function ($language) {
-        Session::put('language', $language);
-        App::setlocale($language);
-        return redirect()->back();
-    })->name('language');
+    Route::get('/', [HomeController::class, 'index'])->name('home');
+    Route::get('/home/{language}', [HomeController::class, 'setLanguage'])->name('language');
 
 });
 

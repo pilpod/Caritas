@@ -2,6 +2,9 @@
 
 namespace Tests\Feature\LanguageTest;
 
+use App\Models\Profile;
+use App\Models\Role;
+use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
@@ -32,11 +35,22 @@ class SetUpLanguageTest extends TestCase
     
     public function test_UserSeeContentInLanguageChosen()
     {
+        Role::factory()->create();
+        User::factory()->create();
+        $profile = Profile::factory()->create();
         $language = 'es';
         $locale = App::setLocale($language);
         $response = $this->get('/');
         $response->assertSee('quien somos');
+    }
 
-
+    public function test_LandingPageAcessToOrganizationDataProfile()
+    {
+        Role::factory()->create();
+        User::factory()->create();
+        $profile = Profile::factory()->create();
+        $response = $this->get(route('home'))
+        ->assertStatus(200)
+        ->assertViewHas(['profile' => $profile]);
     }
 }
