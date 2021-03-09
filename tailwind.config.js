@@ -15,6 +15,8 @@ module.exports = {
       'ui-main-r': '1.6rem',
       'ui-sub': '1.4rem',
       'ui-tiny': '1.2rem',
+      'mobile-main': '0.875rem',
+      'mobile-tiny': '0.75rem',
     },
     colors: {
       red: {
