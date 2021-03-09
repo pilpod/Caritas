@@ -50,6 +50,7 @@
         </section>
 
         <section class="w-mt-72 w-1/2 border-red-300 border-2 rounded-2xl p-5 mb-20">
+            @if($profile)
             <div class="flex justify-between mb-10">
                 <h2 class="text-xl">Logotipo</h2>
                 @if(!$profile->logo)
@@ -73,7 +74,11 @@
                     " alt="Logotipo" >
                 </div>
             </div>
-
+            @else 
+            <div class="flex justify-between mb-10">
+            <h2>Para poder subir el logotipo necesitais crear el perfil de la organización</h2>
+            </div>
+            @endif
         </section>
 
         @if(!$profile)

@@ -24,8 +24,8 @@ class DashboardController extends Controller
     public function index()
     {
         $user = auth()->user();
-        
         $profile = User::find($user->id)->profile;
+    
         return view('Backoffice.dashboard', [
             'user' => $user,
             'profile' => $profile
