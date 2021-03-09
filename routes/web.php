@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\UserProfileController;
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Session;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,7 +21,13 @@ use App\Http\Controllers\UserProfileController;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->middleware('language');
+
+Route::get('/home/{language}', function ($language) {
+    Session::put('language', $language);
+    App::setlocale($language);
+    return redirect()->back();
+})->middleware('language')->name('language');
 
 Route::middleware('admin')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');

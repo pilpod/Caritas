@@ -22,5 +22,12 @@
                 </div>
             @endif
         </div>
+        <div>
+            <a href="{{route('language', 'es')}}">Castellano</a>
+            <a href="{{route('language', 'cat')}}">Catalan</a>
+            <h2>
+                {{__('test')}}
+            </h2>
+        </div>
     </body>
 </html>

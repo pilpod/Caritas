@@ -20,4 +20,23 @@ class SetUpLanguageTest extends TestCase
         $response = App::getLocale();
         $this->assertEquals('es', $response);
     }
+
+    public function test_languageChangeWhenUserSelectsLanguage()
+    {
+        $language = 'cat';
+        $response = $this->get('/home/' . $language);
+        $locale = App::getLocale();
+        $this->assertEquals('cat', $locale);
+        $response->assertRedirect();
+    }
+    
+    public function test_UserSeeContentInLanguageChosen()
+    {
+        $language = 'es';
+        $locale = App::setLocale($language);
+        $response = $this->get('/');
+        $response->assertSee('quien somos');
+
+
+    }
 }
