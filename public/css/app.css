@@ -4417,6 +4417,14 @@ video {
   font-size: 1.2rem;
 }
 
+.text-mobile-main {
+  font-size: 0.875rem;
+}
+
+.text-mobile-tiny {
+  font-size: 0.75rem;
+}
+
 .leading-3 {
   line-height: .75rem;
 }
@@ -21696,6 +21704,14 @@ video {
     font-size: 1.2rem;
   }
 
+  .sm\:text-mobile-main {
+    font-size: 0.875rem;
+  }
+
+  .sm\:text-mobile-tiny {
+    font-size: 0.75rem;
+  }
+
   .sm\:leading-3 {
     line-height: .75rem;
   }
@@ -38891,6 +38907,14 @@ video {
 
   .md\:text-ui-tiny {
     font-size: 1.2rem;
+  }
+
+  .md\:text-mobile-main {
+    font-size: 0.875rem;
+  }
+
+  .md\:text-mobile-tiny {
+    font-size: 0.75rem;
   }
 
   .md\:leading-3 {
@@ -56090,6 +56114,14 @@ video {
     font-size: 1.2rem;
   }
 
+  .lg\:text-mobile-main {
+    font-size: 0.875rem;
+  }
+
+  .lg\:text-mobile-tiny {
+    font-size: 0.75rem;
+  }
+
   .lg\:leading-3 {
     line-height: .75rem;
   }
@@ -73287,6 +73319,14 @@ video {
     font-size: 1.2rem;
   }
 
+  .xl\:text-mobile-main {
+    font-size: 0.875rem;
+  }
+
+  .xl\:text-mobile-tiny {
+    font-size: 0.75rem;
+  }
+
   .xl\:leading-3 {
     line-height: .75rem;
   }
@@ -90482,6 +90522,14 @@ video {
 
   .\32xl\:text-ui-tiny {
     font-size: 1.2rem;
+  }
+
+  .\32xl\:text-mobile-main {
+    font-size: 0.875rem;
+  }
+
+  .\32xl\:text-mobile-tiny {
+    font-size: 0.75rem;
   }
 
   .\32xl\:leading-3 {

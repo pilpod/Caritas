@@ -1,0 +1,74 @@
+{
+
+"nav": {
+
+	"Quiénes": "QUIÉNES SOMOS",
+	"Qué Puedes Hacer Tu": "QUÉ PUEDES <br> HACER TU",
+	"Contacto": "CONTACTO"
+	
+	},
+	
+	"hero": {
+		"titulo": "Tarjetas Monedero",
+		"texto": "Tarjetas que permiten acceder a las necesidades básicas desde unos principios de organización colectiva y de apoderamiento a través de la participación de las personas que vienen a pedir ayuda a Cáritas, del apoyo mutuo y de la horizontalidad.",
+		"boton": "HACER UNA DONACIÓN"
+
+	},
+	
+	"necesidadesBasicas": {
+		"titulo": "Las necesidades básicas",
+		"paragrafo1": "Las necesidades humanas son universales. Son comunes a todos los individuos y lo que varía son las formas con las que se da respuesta. Ayudar a la subsistencia de las personas es importante, pero para el desarrollo del individuo lo son tanto o más la protección, el afecto, el entendimiento, la participación, el ocio, la creatividad, la identidad, la libertad. ..",
+		"paragrafo2": "Hay que repensar respuestas implicando las personas. Hay alternativas que permiten acceder a las mismas necesidades básicas pero desde unos principios de organización colectiva y de apoderamiento a través de la participación de las personas que vienen a pedir ayuda a Cáritas, del apoyo mutuo y de la horizontalidad.",
+		"paragrafo3": "La necesidad lleva al ingenio», dice el refrán popular. Y, efectivamente, la necesidad sentida como tal, nos motiva, nos moviliza, nos compromete, desarrolla las potencialidades y los recursos propios de la persona. Este enfoque promueve el protagonismo y la participación. Desde este enfoque las personas dejan de ser sólo receptoras de ayuda para pasar a ser protagonistas de su vida.",
+		"paragrafo4": "Nuestras acciones deben desarrollar las capacidades y potencialidades de la persona, así como también ofrecer escucha y acompañamiento personal y familiar. Es aquí donde se encuentra la potencia y el sentido de Cáritas. Debemos buscar siempre que nuestras acciones sean sinérgicas."
+	},
+	
+	"necesidadesFamilias": {
+		"titulo": "Las familias no pueden cubrir sus necesidades",
+		"seccion1": {
+			"trabajo": "Trabajo precario y paro:",
+			"punto1": "Salarios bajos",
+			"punto2": "Paro de larga duración",
+			"punto3": "Prestaciones públicas insuficientes."
+		},
+		"seccion2": {
+			"titulo": "Baja protección social:",
+			"punto1": "Recortes en educación, sanidad, servicios sociales", 
+			"punto2": "Prestaciones públicas en descenso."
+		},
+		"seccion3": {
+			"titulo": "Fragilidad humana:",
+			"punto1": "Sin red relacional",
+			"punto2": "Enfermedades",
+			"punto3": "Roturas familiares"
+		}
+	},
+	
+	"ModeloAntiguo": {
+		"titulo": "El actual modelo se basa en las ayudas en especie",
+		"punto1": "Las familias no pueden planificar la compra.",
+		"punto2": "Se corre el riesgo de perder hábitos de administración del presupuesto familiar y las rutinas de compra",
+		"punto3": "No pueden decidir según sus gustos personales, costumbres culturales, necesidades de salud",
+		"punto4": "Se favorece la pérdida de la autonomía personal."
+	},
+	
+	"NuestroModelo": {
+		"titulo": "¿Qué queremos para promover esta innovación?",
+		"punto1": "Dignificar al máximo la atención.",
+		"punto2": "Impulsar proyectos donde las personas participen.",
+		"punto3": "Promover el intercambio y la reciprocidad.",
+		"punto4": "Potenciar proyectos igualitarios, favorecer la discreción y evitar circuitos para pobres.",
+		"punto5": "Mantener los hábitos y las relaciones familiares (cocinar, comer, celebrar …).",
+		"punto6": "Elegir lo que se come, según gustos personales, culturales o de salud.",
+		"punto7": "Promover la autonomía y el empoderamiento de la persona (modelo no asistencialista).",
+		"punto8": "Evitar el desperdicio y fomentar la sostenibilidad.",
+		"punto9": "Mantener el comercio local y de proximidad.",
+		"punto10": "Promover la formación y la inserción laboral."
+	},
+	
+	"SeccionVideos": {
+		"subtitulo": "Ayúdanos a estar donde más nos necesitan.",
+		"titulo": "Si quieres apoyar este proyecto y otros de lucha contra la pobreza, dona ahora"
+	}
+
+}
