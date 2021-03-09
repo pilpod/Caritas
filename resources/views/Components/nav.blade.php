@@ -1,4 +1,4 @@
-<nav id="navBox" class="top-0 fixed bg-white-dark w-full text-xs p-2">
+<nav id="navBox" class="top-0 fixed bg-white-dark w-screen text-xs p-2">
     {{-- mobile --}}
     <div class="flex flex-row justify-between md:hidden">
         <x-logo class="flex self-start" href="https://www.santjosepbadalona.cat/" />
@@ -10,7 +10,7 @@
             <button > CATALÀ </button> 
         </div>
         <div class="w-20% relative left-4">
-            <button href="qui-som">QUIENES SOMOS?</button> 
+            <button href="qui-som"> {{ __('nav.Quiénes') }} </button> 
         </div>
         <x-logo class="flex self-center" href="https://www.santjosepbadalona.cat/" />
         <div class="w-20%">
