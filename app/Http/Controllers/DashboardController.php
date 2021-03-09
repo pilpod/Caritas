@@ -10,6 +10,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Http\File;
 
 class DashboardController extends Controller
 {
@@ -119,6 +120,7 @@ class DashboardController extends Controller
         }
         catch (\Exception $ex) {
             DB::rollback();
+            return back(302);
         }
         
     }
@@ -131,12 +133,13 @@ class DashboardController extends Controller
 
         try {
             DB::table('profiles')->where('id', $profile->id)->update(['logo' => null]);
-            Storage::delete([ $profile->logo ]);
+            Storage::delete($profile->logo);
             DB::commit();
             return redirect(route('dashboard'));
         }
         catch (\Exception $ex) {
             DB::rollback();
+            return back(302);
         }
     }
 }
