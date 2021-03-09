@@ -1,4 +1,4 @@
-<x-layout class="flex flex-col place-items-center mt-10">
+<x-layout >
 <x-nav />
 <x-hero/>
 <x-youtubeiframe/>
@@ -20,9 +20,10 @@
     </div>
     <img class="hidden md:flex flex-end rounded-l-full h-72" src="{{ asset('storage/img/SectionOneRight.jpg') }}" alt="Caritas Logo"/>
 </section>
+<section class="flex flex-col place-items-center mt-10">
     <x-separator />
     <x-mini-hero filename="family.svg" alt="">
-        <h1 class="text-h1">Las familias no pueden cubrir sus necesidades</h1>
+        <h1 class="text-h3">Las familias no pueden cubrir sus necesidades</h1>
     </x-mini-hero>
     <x-downtick-list title="Trabajo precario y paro">
         <li>Paro de larga duración</li>
@@ -60,5 +61,6 @@
             <li>Promover la formación y la inserción laboral.</li>
         </ul>
     </x-mini-hero>
+</section>
     <x-footer />
 </x-layout>
