@@ -62,5 +62,6 @@
         </ul>
     </x-mini-hero>
 </section>
-    <x-footer />
+<x-footer />
+<x-back-to-top />
 </x-layout>

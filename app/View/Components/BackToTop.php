@@ -24,9 +24,11 @@ class BackToTop extends Component
     public function render()
     {
         return <<<'blade'
-<div class="">
-    <button type="button" class="fixed bottom-3 left-1/2 border-white-2 rounded-md bg-red hover:bg-red-light object-center">
-    <img src="{{ asset('storage/img/backToTop.png') }}" alt="BackToTop"/></button>
+<div>
+    <a href="#"/>
+    <button type="button" class="fixed bottom-3 left-1/2 border-white w-10 h-10 rounded-md bg-red hover:bg-red-light ">
+    <img class="object-contain" src="{{ asset('storage/img/backToTop.png') }}" alt="BackToTop"/></button>
+    </a>    
 </div>
 blade;
     }

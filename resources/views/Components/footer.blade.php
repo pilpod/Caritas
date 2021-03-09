@@ -1,6 +1,6 @@
 <footer>
 <hr>
-  <section class="flex my-4">
+  <section class="flex my-4 md:my-3">
     <div class="flex-1 flex flex-col text-center text-mobile-tiny">
       <ul class="flex flex-1 flex-col justify-between">
         <li><x-anchor href="#" txt="POLÍTICA DE COOKIES"/></li>
@@ -24,7 +24,7 @@
 
   </section>
   <section class="text-mobile-tiny">
-    <div class="flex flex-col items-center">
+    <div class="flex flex-col items-center md:flex-row md:m-3 md:">
       <div>
         <img src="storage/img/message.svg" alt="" class="inline-flex">
         <x-anchor
@@ -35,14 +35,12 @@
         <img src="storage/img/location.svg" alt="" class="inline-flex justify-center">
         <x-anchor 
         href="#" 
-        txt="Església de Sant Josep C/ Enric Borràs, "/><br>
-        <span class="flex justify-center">
-          69-75 08912 Badalona (Barcelona)
-        </span>
-      </div>
+        txt="Església de Sant Josep C/ Enric Borràs, 69-75 08912 Badalona"/>
+        
         <x-anchor 
-        class="my-2 text-grey-light"
+        class="my-2 text-grey"
         href="#" txt="Copyright © 2021 • Cáritas Española"/>
+      </div>
     </div>
   </section>
 </footer>
