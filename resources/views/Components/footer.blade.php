@@ -1,4 +1,4 @@
-<footer>
+<footer class="bg-white-dark">
 <hr>
   <section class="flex my-4 md:my-3">
     <div class="flex-1 flex flex-col text-center text-mobile-tiny">
