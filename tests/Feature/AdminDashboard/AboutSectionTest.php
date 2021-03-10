@@ -35,4 +35,23 @@ class AboutSectionTest extends TestCase
         $response->assertStatus(200)
         ->assertViewIs('Backoffice.about');
     }
+
+    public function test_adminCanSetupAboutSectionEs()
+    {
+        $data = [ 
+                'content_title_es' => 'lorem spanish',
+                'content_title_cat' => 'lorem catalan',
+                'content_text_es' => 'Lorem ipsum dolor spanish.',
+                'content_text_cat' => 'Lorem ipsum dolor catalan.',              
+    ];
+
+        $response = $this->actingAs($this->user)->post(route('dashboard.about', $data));
+        $this->assertDatabaseHas( 'es_data', $data);
+        $this->assertDatabaseHas( 'cat_data', $data);
+
+        $response->assertStatus(201)
+        ->assertViewIs('Backoffice.about')
+        ->assertViewHasAll($data);
+
+    }
 }
