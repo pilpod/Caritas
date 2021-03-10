@@ -3,9 +3,6 @@
     background-image: radial-gradient(52% 52% at 50% 50%, rgba(0, 0, 0, 0.7) 55.69%, rgba(0, 0, 0, 0) 100%);
 }
 
-#heroTitle {
-    @apply text-h1 px-4 py-2;
-}
 
 #redButton{
     width: 100%;
