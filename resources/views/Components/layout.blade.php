@@ -10,5 +10,6 @@
       </head>
     <body id="body" {{ $attributes }}>
       {{ $slot }}
+      @stack('script-back-to-top')
     </body>
 </html>
