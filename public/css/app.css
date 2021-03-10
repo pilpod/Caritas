@@ -1982,6 +1982,10 @@ video {
   background-image: url(/storage/img/hero-background.jpg);
 }
 
+.bg-donar {
+  background-image: url(/storage/img/bgDonar.jpg);
+}
+
 .from-red-lighter {
   --tw-gradient-from: #FFB9BD;
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(255, 185, 189, 0));
@@ -19094,6 +19098,10 @@ video {
     background-image: url(/storage/img/hero-background.jpg);
   }
 
+  .sm\:bg-donar {
+    background-image: url(/storage/img/bgDonar.jpg);
+  }
+
   .sm\:from-red-lighter {
     --tw-gradient-from: #FFB9BD;
     --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(255, 185, 189, 0));
@@ -36122,6 +36130,10 @@ video {
 
   .md\:bg-hero {
     background-image: url(/storage/img/hero-background.jpg);
+  }
+
+  .md\:bg-donar {
+    background-image: url(/storage/img/bgDonar.jpg);
   }
 
   .md\:from-red-lighter {
@@ -53154,6 +53166,10 @@ video {
     background-image: url(/storage/img/hero-background.jpg);
   }
 
+  .lg\:bg-donar {
+    background-image: url(/storage/img/bgDonar.jpg);
+  }
+
   .lg\:from-red-lighter {
     --tw-gradient-from: #FFB9BD;
     --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(255, 185, 189, 0));
@@ -70184,6 +70200,10 @@ video {
     background-image: url(/storage/img/hero-background.jpg);
   }
 
+  .xl\:bg-donar {
+    background-image: url(/storage/img/bgDonar.jpg);
+  }
+
   .xl\:from-red-lighter {
     --tw-gradient-from: #FFB9BD;
     --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(255, 185, 189, 0));
@@ -87212,6 +87232,10 @@ video {
 
   .\32xl\:bg-hero {
     background-image: url(/storage/img/hero-background.jpg);
+  }
+
+  .\32xl\:bg-donar {
+    background-image: url(/storage/img/bgDonar.jpg);
   }
 
   .\32xl\:from-red-lighter {

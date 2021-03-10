@@ -42,6 +42,7 @@ module.exports = {
       }, 
       backgroundImage: theme => ({
         'hero': 'url(/storage/img/hero-background.jpg)',
+        'donar': 'url(/storage/img/bgDonar.jpg)',
       })
     },
     boxShadow: {
