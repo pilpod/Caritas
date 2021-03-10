@@ -18,6 +18,7 @@ class CreateProfilesTable extends Migration
             $table->string('name');
             $table->string('direction');
             $table->string('city');
+            $table->string('postcode');
             $table->string('phone');
             $table->string('bankAccount');
             $table->string('bizum')->nullable();

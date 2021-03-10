@@ -70,9 +70,10 @@ class OrganizationProfileTest extends TestCase
             'name' => 'Caritas Badalona',
             'direction' => 'carrer blablabla',
             'city' => 'Badalona',
+            'postcode' => '08500',
             'phone' => '123456789',
             'bankAccount' => 'ES1212341234123412341234',
-            'bizum' => '11234567890123',
+            'bizum' => '112345678901',
             'logo' => null
         ];
         $response = $this->actingAs($this->user)->post(route('dashboard.store'), $data)
@@ -99,9 +100,10 @@ class OrganizationProfileTest extends TestCase
             'name' => 'Caritas Badalona',
             'direction' => 'carrer blablabla',
             'city' => 'Badalona',
+            'postcode' => '08500',
             'phone' => '123456789',
             'bankAccount' => 'ES1212341234123412341234',
-            'bizum' => '11234567890123',
+            'bizum' => '1234567890123   ',
             'logo' => null
         ];
         $response = $this->actingAs($this->user)->put(route('dashboard.update', $profile->id), $data)

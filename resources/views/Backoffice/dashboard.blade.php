@@ -111,6 +111,11 @@
                         {{$profile->city}}
                     </span>
                 </h4>
+                <h4 class="font-bold mb-3">Código Postal:
+                    <span class="font-normal">
+                        {{$profile->postcode}}
+                    </span>
+                </h4>
                 <h4 class="font-bold mb-3">Teléfono:
                     <span class="font-normal">
                         {{$profile->phone}}

@@ -25,6 +25,7 @@ class ProfileFactory extends Factory
             'name' => 'Caritas Badalona',
             'direction' => 'Carrer blablabla',
             'city' => 'Badalona',
+            'postcode' => '08500',
             'phone' => $this->faker->phoneNumber,
             'bankAccount' => $this->faker->bankAccountNumber, // password
             'bizum' => 1122121212,

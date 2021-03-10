@@ -57,6 +57,15 @@
             </div>
 
             <div class="flex flex-col">
+                <label for="postcode">Código Postal</label>
+                <input type="text" name="postcode" id="postcode" class="border-gray-200 border-2 p-2 rounded mb-5 @error('postcode') is-invalid @enderror" required value="{{ $profile->postcode }}" placeholder="Código Postal">
+                @error('postcode')
+                <div class="alert alert-danger">{{ $message }}
+                </div>
+                @enderror
+            </div>
+
+            <div class="flex flex-col">
                 <label for="phone">Teléfono</label>
                 <input type="text" name="phone" id="phone" class="border-gray-200 border-2 p-2 rounded mb-5 @error('phone') is-invalid @enderror" required value="{{ $profile->phone }}" placeholder="Teléfono">
                 @error('phone')

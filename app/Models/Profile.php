@@ -14,6 +14,7 @@ class Profile extends Model
         'name',
         'direction',
         'city',
+        'postcode',
         'phone',
         'bankAccount',
         'bizum',
