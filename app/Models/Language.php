@@ -12,4 +12,14 @@ class Language extends Model
     protected $fillable = [
         'language_name'
     ];
+
+    public function spanishData()
+    {
+        $this->hasMany(SpanishData::class);
+    }
+
+    public function catalanData()
+    {
+        $this->hasMany(CatalanData::class);
+    }
 }

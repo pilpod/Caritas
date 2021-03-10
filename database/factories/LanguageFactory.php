@@ -5,6 +5,7 @@ namespace Database\Factories;
 use App\Models\Language;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
+
 class LanguageFactory extends Factory
 {
     /**
@@ -22,7 +23,7 @@ class LanguageFactory extends Factory
     public function definition()
     {
         return [
-            'language_name' => $this->faker()->languageCode,
+            'language_name' => 'es',
         ];
     }
 }

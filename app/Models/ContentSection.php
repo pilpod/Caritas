@@ -13,4 +13,13 @@ class ContentSection extends Model
         'section_name',
         'section_image'
     ];
+
+    public function spanishData()
+    {
+        $this->hasMany(SpanishData::class);
+    }
+    public function catalanData()
+    {
+        $this->hasMany(CatalanData::class);
+    }
 }

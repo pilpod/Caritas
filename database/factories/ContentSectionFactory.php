@@ -22,7 +22,8 @@ class ContentSectionFactory extends Factory
     public function definition()
     {
         return [
-            'section_name' => $this->faker()->word,
+            'section_name' => 'about',
+            'section_image' => null
             
         ];
     }
