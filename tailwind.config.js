@@ -30,6 +30,8 @@ module.exports = {
     },
     colors: {
       red: {
+        gd: 'rgba(205, 34, 45, 0.50)',
+        gd2: 'rgba(205, 34, 45, 0.75)',
         lighter: '#FFB9BD',
         light: '#DE7379',
         DEFAULT: '#CD222D',
@@ -47,19 +49,26 @@ module.exports = {
       },
     },
     extend: {
+      boxShadow: {
+        hr: '0px 4px 22px rgba(205, 34, 45, 0.1), 0px 0.893452px 4.91399px rgba(205, 34, 45, 0.0596), 0px 0.266004px 1.46302px rgba(205, 34, 45, 0.0404)'
+      },
       fontFamily: {
       sans: ['Montserrat', 'sans-serif'],
       }, 
       backgroundImage: theme => ({
         'hero': 'url(/storage/img/hero-background.jpg)',
-      })
+      }),
+      borderRadius: {
+        'dtl': '5.0rem'
+      },
+      width: {
+        '150px': '15rem'
+      },
+      height: {
+        '150px': '15rem'
+      },
     },
-    boxShadow: {
-      hr: '0px 4px 22px rgba(205, 34, 45, 0.1), 0px 0.893452px 4.91399px rgba(205, 34, 45, 0.0596), 0px 0.266004px 1.46302px rgba(205, 34, 45, 0.0404)'
-    },
-    variants: {
-      extend: {},
-    },
+    variants: {},
     plugins: [],
   }
 }
