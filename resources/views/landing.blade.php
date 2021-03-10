@@ -4,8 +4,8 @@
     <section class="flex flex-row items-center my-10">
         <img class="hidden md:flex flex-start rounded-r-full h-72" src="{{ asset('storage/img/SectionOneLeft.jpg') }}" alt="Caritas Logo"/>
         <div id="sectionOneText">
-            <h2 class="text-h3 text-center p-3 my-6">Las necesidades básicas</h2>
-            <p class="text-ui-tiny mx-6"><strong> Las necesidades humanas son universales.</strong> Son comunes a todos los individuos y lo que varía son las formas con las que se da respuesta. Ayudar a la subsistencia de las personas es importante, pero para el desarrollo del individuo lo son tanto o más la protección, el afecto, el entendimiento, la participación, el ocio, la creatividad, la identidad, la libertad...
+            <h2 class="text-h2 text-center p-3 my-6">Las necesidades básicas</h2>
+            <p class="text-ui-body mx-6"><strong> Las necesidades humanas son universales.</strong> Son comunes a todos los individuos y lo que varía son las formas con las que se da respuesta. Ayudar a la subsistencia de las personas es importante, pero para el desarrollo del individuo lo son tanto o más la protección, el afecto, el entendimiento, la participación, el ocio, la creatividad, la identidad, la libertad...
             <br> 
             <br>    
             Hay que repensar respuestas implicando las personas. Hay alternativas que permiten acceder a las mismas necesidades básicas pero desde unos principios de organización colectiva y de <strong>apoderamiento a través de la participación de las personas que vienen a pedir ayuda a Cáritas, del apoyo mutuo y de la horizontalidad.
@@ -20,25 +20,27 @@
         <img class="hidden md:flex flex-end rounded-l-full h-72" src="{{ asset('storage/img/SectionOneRight.jpg') }}" alt="Caritas Logo"/>
     </section>
 <x-separator />
-    <x-mini-hero filename="family.svg" alt="">
-        <h1 class="text-h1">Las familias no pueden cubrir sus necesidades</h1>
-    </x-mini-hero>
-    <x-downtick-list title="Trabajo precario y paro">
-        <li>Paro de larga duración</li>
-        <li>Prestaciones públicas insuficientes</li>
-        <li>Salarios bajos</li>
-    </x-downtick-list>
-    <x-downtick-list title="Baja protección social">
-        <li>Prestaciones públicas en descenso.</li>
-        <li>Recortes en educación, sanidad, servicios sociales.</li>
-    </x-downtick-list>
-    <x-downtick-list title="Fragilidad humana">
-        <li>Roturas familiares</li>
-        <li>Sin red relacional (familia, amistades, etc)</li>
-        <li>Enfermedades</li>
-    </x-downtick-list>
+    <section class="flex flex-col">
+        <x-mini-hero presentation="reverse" filename="family.svg" alt="" class="justify-center">
+            <h1 class="text-h2">Las familias no pueden cubrir sus necesidades</h1>
+        </x-mini-hero>
+        <x-downtick-list title="Trabajo precario y paro">
+            <li>Paro de larga duración</li>
+            <li>Prestaciones públicas insuficientes</li>
+            <li>Salarios bajos</li>
+        </x-downtick-list>
+        <x-downtick-list title="Baja protección social">
+            <li>Prestaciones públicas en descenso.</li>
+            <li>Recortes en educación, sanidad, servicios sociales.</li>
+        </x-downtick-list>
+        <x-downtick-list title="Fragilidad humana">
+            <li>Roturas familiares</li>
+            <li>Sin red relacional (familia, amistades, etc)</li>
+            <li>Enfermedades</li>
+        </x-downtick-list>
+    </section>
     <x-mini-hero filename="giving.svg" alt="">
-        <h1 class="">El actual modelo se basa en las ayudas en especie</h1>
+        <h1 class="text-h2">El actual modelo se basa en las ayudas en especie</h1>
     </x-mini-hero>
 <x-separator />
     <x-mini-hero filename="innovation.svg" alt="">
