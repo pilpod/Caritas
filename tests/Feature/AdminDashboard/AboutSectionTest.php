@@ -7,6 +7,8 @@ use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 use App\Models\Role;
 use App\Models\User;
+use Illuminate\Support\Facades\Lang;
+use App\Models\Language;
 
 class AboutSectionTest extends TestCase
 {
@@ -38,21 +40,11 @@ class AboutSectionTest extends TestCase
 
     public function test_adminCanSetupAboutSectionEs()
     {
-        $data = [ 
-            'content_title_es' => 'lorem spanish',
-            'content_title_cat' => 'lorem catalan',
-            'content_text_es' => 'Lorem ipsum dolor spanish.',
-            'content_text_cat' => 'Lorem ipsum dolor catalan.',              
-        ];
+        $language = Language::factory()->create([
+            'language_name' => 'es'
+        ]);
 
-        $response = $this->actingAs($this->user)->post(route('dashboard.about.store', $data));
-        
-        $this->assertDatabaseHas( 'spanish_data', $data);
-        $this->assertDatabaseHas( 'catalan_data', $data);
-
-        $response->assertStatus(201)
-        ->assertViewIs('Backoffice.about')
-        ->assertViewHasAll($data);
+        $this->assertEquals('es', $language->language_name);
 
     }
 }

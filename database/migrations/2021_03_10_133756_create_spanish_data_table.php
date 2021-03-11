@@ -16,7 +16,7 @@ class CreateSpanishDataTable extends Migration
         Schema::create('spanish_data', function (Blueprint $table) {
             $table->id();
             $table->string('title_content');
-            $table->string('text_content');
+            $table->longText('text_content');
             $table->unsignedBigInteger('lang_id');
             $table->unsignedBigInteger('section_id');
             $table->timestamps();

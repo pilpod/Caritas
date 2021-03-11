@@ -22,10 +22,10 @@ class SpanishDataFactory extends Factory
     public function definition()
     {
         return [
-            'title_content' => $this->faker()->word,
-            'text_content' => $this->faker()->paragraph,
-            'lang_id' => $this->faker()->numberBetween(1, 2),
-            'section_id'=> $this->faker()->numberBetween(1, 5),
+            'title_content' => $this->faker->word,
+            'text_content' => $this->faker->paragraph,
+            'lang_id' => $this->faker->numberBetween(1, 2),
+            'section_id'=> $this->faker->numberBetween(1, 5),
 
         ];
     }
