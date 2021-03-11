@@ -5,11 +5,11 @@
         <x-hero />
         <x-youtubeiframe />
     </section>
-    <section class="flex flex-row items-center my-10 mx-6">
+    <section class="flex flex-row items-center my-10 mx-6 max-w-screen-lg">
         <img class="hidden md:flex flex-start rounded-r-full h-72" src="{{ asset('storage/img/SectionOneLeft.jpg') }}" alt="Caritas Logo"/>
-        <div class="flex flex-col gap-12">
+        <div class="flex flex-col gap-12 mx-6">
             <h2 class="text-h2 p-3 text-center font-black">Necesidades básicas</h2>
-            <p class="inline-flex flex-col gap-8">
+            <p class="inline-flex flex-col gap-8 ">
                 <span>
                     <b>Las necesidades humanas son universales.</b> Son comunes a todos los individuos y lo que varía son las formas con las que se da respuesta. Ayudar a la subsistencia de las personas es importante, pero para el desarrollo del individuo lo son tanto o más la protección, el afecto, el entendimiento, la participación, el ocio, la creatividad, la identidad, la libertad...
                 </span>

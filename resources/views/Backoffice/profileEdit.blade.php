@@ -82,7 +82,8 @@
                 @enderror
             </div>
 
-            <button class="block w-1/2 mx-auto bg-red hover:bg-red-lighter text-white font-bold py-2 px-4 rounded border-b-4 border-red-light">Actualizar</button>
+            <x-backoffice-button 
+            txt="Actualizar"/>
         </form>
     </div>
 </x-layout>

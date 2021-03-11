@@ -38,7 +38,7 @@
 
         </section>
 
-        <section class=" w-1/3 border-red border-2 rounded-2xl p-5 h-64 flex-grow-0">
+        <section class="w-1/3 border-red border-2 rounded-2xl p-5 h-64 flex-grow-0">
             @if($profile)
             <div class="flex justify-between mb-10">
                 <h2 class="text-">Logotipo</h2>
@@ -48,7 +48,8 @@
                 <form action="{{ route('logo.delete', $profile->id) }}" method="post">
                     @method('DELETE')
                     @csrf
-                    <button class="block bg-red hover:bg-red-lighter text-white font-bold p-2 text-md rounded border-b-4 border-red-light flex-end" type="submit">Borrar</button>                    
+                    <x-backoffice-button 
+                    txt="Borrar"/>                    
                 </form>
                 @endif
             </div>
