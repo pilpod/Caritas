@@ -62,7 +62,8 @@ module.exports = {
         'dtl': '5.0rem'
       },
       width: {
-        '150px': '15rem'
+        '150px': '15rem',
+        '288px': '20.8rem'
       },
       height: {
         '150px': '15rem'

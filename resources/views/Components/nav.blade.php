@@ -1,4 +1,4 @@
-<nav id="navBox" class="top-0 fixed bg-white-dark w-screen text-xs p-2">
+<nav id="navBox" class="top-0 fixed bg-white-dark w-screen text-xs p-2 z-30">
     {{-- mobile --}}
     <div class="flex flex-row justify-between md:hidden">
         <x-logo class="flex self-start" href="https://www.santjosepbadalona.cat/" />

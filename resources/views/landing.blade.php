@@ -1,8 +1,10 @@
 <x-layout>
 <x-nav />
-<main class="flex flex-col items-center">
-    <x-hero />
-    <x-youtubeiframe />
+<main class="flex flex-col items-center gap-20">
+    <section>
+        <x-hero />
+        <x-youtubeiframe />
+    </section>
     <section class="flex flex-row items-center my-10 mx-6">
         <img class="hidden md:flex flex-start rounded-r-full h-72" src="{{ asset('storage/img/SectionOneLeft.jpg') }}" alt="Caritas Logo"/>
         <div class="flex flex-col gap-12">
@@ -25,7 +27,7 @@
         <img class="hidden md:flex flex-end rounded-l-full h-72" src="{{ asset('storage/img/SectionOneRight.jpg') }}" alt="Caritas Logo"/>
     </section>
 <x-separator />
-    <section class="flex flex-col items-center gap-20">
+    <section class="flex flex-col items-center gap-20 mx-6">
         <x-mini-hero presentation="reverse" filename="family.svg" alt="">
             <h2 class="text-h2 text-center font-black">Las familias no pueden cubrir sus necesidades</h2>
         </x-mini-hero>
@@ -45,21 +47,21 @@
                 <li>Enfermedades</li>
             </x-downtick-list>
         </div>
-        <x-mini-hero presentation="reverse" filename="giving.svg" alt="">
-            <h2 class="text-h2 p-3 text-center font-black">El actual modelo se basa en las ayudas en especie</h2>
-        </x-mini-hero>
-        <ul class="w-10/12 font-bold text-body gap-12">
+            <x-mini-hero presentation="reverse" filename="giving.svg" alt="">
+                <h2 class="text-h2 p-3 text-center font-black">El actual modelo se basa en las ayudas en especie</h2>
+            </x-mini-hero>
+        <ul class="font-bold text-body gap-12">
             <li>Las familias no pueden planificar la compra</li>
             <li>No pueden decidir según sus gustos personales, costumbres culturales, necesidades de salud</li>
             <li>Se favorece la pérdida de la autonomía personal</li>
             <li>Se corre el riesgo de perder hábitos de administración del presupuesto familiar y las rutinas de compra</li>
         </ul>
     </section>
-    <x-separator />
-    <section class="flex flex-col gap-40">
+<x-separator />
+    <section class="flex flex-col mx-6 gap-40">
     <h2 class="text-h2 text-center p-3 mb-20 font-black">¿Qué queremos para promover esta innovación?</h2>
         <x-mini-hero presentation="reverse" filename="innovation.svg" alt="">
-            <ul class="w-10/12 font-bold gap-12">
+            <ul class="font-bold gap-12">
                 <li>Potenciar proyectos igualitarios, favorecer la discreción y evitar circuitos para pobres.</li>
                 <li>Mantener los hábitos y las relaciones familiares (cocinar, comer, celebrar, etc).</li>
                 <li>Impulsar proyectos donde las personas participen.</li>
@@ -68,7 +70,7 @@
             </ul>
         </x-mini-hero>
         <x-mini-hero presentation="reverse" filename="bestof.svg" alt="">
-            <ul class="w-10/12 font-bold gap-12">
+            <ul class="font-bold gap-12">
                 <li>Promover la autonomía y el empoderamiento de la persona (modelo no asistencialista)</li>
                 <li>Elegir lo que se come, según gustos personales, culturales o de salud.</li>
                 <li>Evitar el desperdicio y fomentar la sostenibilidad.</li>
@@ -77,6 +79,7 @@
             </ul>
         </x-mini-hero>
     </section>
+<x-separator />
 </main>
     <x-footer />
 </x-layout>
