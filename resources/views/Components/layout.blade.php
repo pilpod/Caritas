@@ -6,7 +6,7 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link href="/css/app.css" rel="stylesheet">
-        <title>{{ $title ?? 'CàritasSantJosepBadalona' }}</title>
+        <title>{{ $title ?? 'Càritas @ Sant Josep Badalona' }}</title>
       </head>
     <body id="body" {{ $attributes }}>
       {{ $slot }}
