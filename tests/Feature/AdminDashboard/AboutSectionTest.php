@@ -51,6 +51,17 @@ class AboutSectionTest extends TestCase
         ->assertViewIs('Backoffice.about');
     }
 
+    public function test_adminCanCreateAboutSection()
+    {
+        $this->withoutExceptionHandling();
+        $data = [
+            'spanish_about_text' => 'Vanessa dice Lo siento confortable',
+            'catalan_about_text' => 'Vanessa no parla catalan',
+        ];
+        $response = $this->actingAs($this->user)->post(route('about.store', $data));
+        $response->assertStatus(201);
+    }
+
     public function test_AdminCanUpdateTextInSectionAboutCatalan()
     {
         $this->withoutExceptionHandling();

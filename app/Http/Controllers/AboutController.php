@@ -8,6 +8,7 @@ use App\Models\SpanishData;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Language;
+use phpDocumentor\Reflection\Types\This;
 
 class AboutController extends Controller
 {
@@ -19,6 +20,19 @@ class AboutController extends Controller
             'catdata' => $catData,
             'spanishData' => $spanishData,
         ]);
+    }
+
+    public function store(Request $request) 
+    {
+        $catText = $request->catalan_about_text;
+        $esText = $request->spanish_about_text;
+        
+        DB::transaction(function () use ($catText, $esText) {
+            $this->createAboutMainTextCat($catText);
+            $this->createAboutMainTextEs($esText);
+            
+        });
+
     }
 
     public function update(Request $request, $id)
@@ -56,6 +70,34 @@ class AboutController extends Controller
             'section_id' => $spanishData->section_id,
             'title_content' => $data->title_content,
             'text_content' => $data->text_content,
+        ]);
+    }
+
+    public function createAboutMainTextCat($text)
+    {
+        // $catCode = DB::table('languages')->where('language_code', 'cat')->get();
+        $catCode = Language::where('language_code', '=', 'cat')->get();
+        dd($catCode->id);
+        // $catCode[0]->id;
+        $section = ContentSection::where('section_name', '=', 'about')->get();
+        CatalanData::create([
+            'title_content' => 'about-main-text',
+            'text_content' => $text,
+            'lang_id' => $catCode->id,
+            'section_id' => $section->id
+            ]);
+
+    }
+
+    public function createAboutMainTextEs($text)
+    {
+        $esCode = Language::where('language_code', '=', 'es')->get();
+        $section = ContentSection::where('section_name', '=', 'about')->get();
+        SpanishData::create([
+            'title_content' => 'about-main-text',
+            'text_content' => $text,
+            'lang_id' => $esCode->id,
+            'section_id' => $section->id
         ]);
     }
 }

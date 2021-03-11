@@ -41,6 +41,7 @@ Route::middleware('admin')->group(function () {
     Route::get('/user/profile-information', [UserProfileController::class, 'edit'])->name('user-profile-information.edit');
 
     Route::get('/dashboard/about', [AboutController::class, 'index'])->name('about');
+    Route::post('/dashboard/about', [AboutController::class, 'store'])->name('about.store');
     Route::put('/dashboard/about/{id}', [AboutController::class, 'update'])->name('about.update');
 });
 
