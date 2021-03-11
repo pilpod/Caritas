@@ -1,0 +1,1 @@
+<hr class="w-2/4 border-red border-4 shadow-hr self-center">
