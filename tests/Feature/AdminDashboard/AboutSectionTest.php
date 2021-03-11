@@ -4,11 +4,15 @@ namespace Tests\Feature\AdminDashboard;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
+use Illuminate\Support\Facades\Lang;
 use Tests\TestCase;
+
 use App\Models\Role;
 use App\Models\User;
-use Illuminate\Support\Facades\Lang;
 use App\Models\Language;
+use App\Models\SpanishData;
+use App\Models\CatalanData;
+use App\Models\ContentSection;
 
 class AboutSectionTest extends TestCase
 {
@@ -27,24 +31,65 @@ class AboutSectionTest extends TestCase
         parent::setUp();
         $this->role = Role::factory()->create();
         $this->user = User::factory()->create();
+        $this->spanishLanguage = Language::factory()->create([
+            'language_code' => 'es'
+        ]);
+        $this->catalanLanguage = Language::factory()->create([
+            'language_code' => 'cat'
+        ]);
+        $this->section = ContentSection::factory()->create([
+            'section_name' => 'about'
+        ]);
     }
 
 
     public function test_adminCanAccessAboutSectionView()
     {
-        $response = $this->actingAs($this->user)->get(route('dashboard.about'));
+        $response = $this->actingAs($this->user)->get(route('about'));
 
         $response->assertStatus(200)
         ->assertViewIs('Backoffice.about');
     }
 
-    public function test_adminCanSetupAboutSectionEs()
+    public function test_AdminCanUpdateTextInSectionAboutCatalan()
     {
-        $language = Language::factory()->create([
-            'language_name' => 'es'
+        $this->withoutExceptionHandling();
+        $catalanData = CatalanData::factory()->create([
+            'lang_id' => $this->catalanLanguage->id,
+            'section_id' => $this->section->id
         ]);
+        $data = [
+            'title_content' => $catalanData->title_content,
+            'text_content' => 'fldsjflj fjsdlfkjsdf jljf sdlfkjsdlj lsjdfj',
+            'lang_id' => $this->catalanLanguage->id,
+            'section_id' => $this->section->id
+        ];
+       
+        $response = $this->actingAs($this->user)->put(route('about.update', $catalanData->id), $data)
+        ->assertStatus(200);
+        $this->assertDatabaseHas('catalan_data', [
+            'text_content' => 'fldsjflj fjsdlfkjsdf jljf sdlfkjsdlj lsjdfj'
+        ]);
+    }
 
-        $this->assertEquals('es', $language->language_name);
-
+    public function test_AdminCanUpdateTextInSectionAboutSpanish()
+    {
+        $this->withoutExceptionHandling();
+        $spanishData = SpanishData::factory()->create([
+            'lang_id' => $this->spanishLanguage->id,
+            'section_id' => $this->section->id
+        ]);
+        $data = [
+            'title_content' => $spanishData->title_content,
+            'text_content' => 'fldsjflj fjsdlfkjsdf jljf sdlfkjsdlj lsjdfj',
+            'lang_id' => $this->spanishLanguage->id,
+            'section_id' => $this->section->id
+        ];
+       
+        $response = $this->actingAs($this->user)->put(route('about.update', $spanishData->id), $data)
+        ->assertStatus(200);
+        $this->assertDatabaseHas('spanish_data', [
+            'text_content' => 'fldsjflj fjsdlfkjsdf jljf sdlfkjsdlj lsjdfj'
+        ]);
     }
 }

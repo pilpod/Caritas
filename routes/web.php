@@ -24,7 +24,6 @@ use App\Http\Controllers\AboutController;
 Route::middleware('language')->group(function () {
     Route::get('/', [HomeController::class, 'index'])->name('home');
     Route::get('/home/{language}', [HomeController::class, 'setLanguage'])->name('language');
-
 });
 
 Route::middleware('admin')->group(function () {
@@ -41,8 +40,8 @@ Route::middleware('admin')->group(function () {
 
     Route::get('/user/profile-information', [UserProfileController::class, 'edit'])->name('user-profile-information.edit');
 
-    Route::get('/dashboard/about', [AboutController::class, 'index'])->name('dashboard.about');
-    Route::post('/dashboard/about', [AboutController::class, 'store'])->name('dashboard.about.store');
+    Route::get('/dashboard/about', [AboutController::class, 'index'])->name('about');
+    Route::put('/dashboard/about/{id}', [AboutController::class, 'update'])->name('about.update');
 });
 
 Route::get('/register', [RegisterController::class, 'index'])->name('register');
