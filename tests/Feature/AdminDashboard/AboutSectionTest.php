@@ -59,7 +59,7 @@ class AboutSectionTest extends TestCase
             'catalan_about_text' => 'Vanessa no parla catalan',
         ];
         $response = $this->actingAs($this->user)->post(route('about.store', $data));
-        $response->assertStatus(201);
+        $response->assertStatus(200);
     }
 
     public function test_AdminCanUpdateTextInSectionAboutCatalan()

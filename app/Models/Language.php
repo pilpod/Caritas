@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class Language extends Model
 {
@@ -24,9 +25,9 @@ class Language extends Model
         $this->hasMany(CatalanData::class);
     }
 
-    public function getId($code) 
+    public static function getId($code) 
     {
-        $language = DB::table('languages')->where('language_code', $code)->get();
+        $language = DB::table('languages')->where('language_code', $code)->first();
         return $language->id;
 
     }

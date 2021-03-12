@@ -35,6 +35,31 @@ class AboutController extends Controller
 
     }
 
+    public function createAboutMainTextCat($text)
+    {
+        $catCode = Language::getId('cat');
+        $section = ContentSection::getId('about');
+        CatalanData::create([
+            'title_content' => 'about-main-text',
+            'text_content' => $text,
+            'lang_id' => $catCode,
+            'section_id' => $section
+            ]);
+
+    }
+
+    public function createAboutMainTextEs($text)
+    {
+        $esCode = Language::getId('cat');
+        $section = ContentSection::getId('about');
+        SpanishData::create([
+            'title_content' => 'about-main-text',
+            'text_content' => $text,
+            'lang_id' => $esCode,
+            'section_id' => $section
+        ]);
+    }
+
     public function update(Request $request, $id)
     {
         $language = Language::find($request->lang_id);
@@ -73,31 +98,5 @@ class AboutController extends Controller
         ]);
     }
 
-    public function createAboutMainTextCat($text)
-    {
-        // $catCode = DB::table('languages')->where('language_code', 'cat')->get();
-        $catCode = Language::where('language_code', '=', 'cat')->get();
-        dd($catCode->id);
-        // $catCode[0]->id;
-        $section = ContentSection::where('section_name', '=', 'about')->get();
-        CatalanData::create([
-            'title_content' => 'about-main-text',
-            'text_content' => $text,
-            'lang_id' => $catCode->id,
-            'section_id' => $section->id
-            ]);
-
-    }
-
-    public function createAboutMainTextEs($text)
-    {
-        $esCode = Language::where('language_code', '=', 'es')->get();
-        $section = ContentSection::where('section_name', '=', 'about')->get();
-        SpanishData::create([
-            'title_content' => 'about-main-text',
-            'text_content' => $text,
-            'lang_id' => $esCode->id,
-            'section_id' => $section->id
-        ]);
-    }
+  
 }

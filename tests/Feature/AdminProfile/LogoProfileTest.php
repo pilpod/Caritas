@@ -32,36 +32,36 @@ class LogoProfileTest extends TestCase
             ->assertViewIs('Backoffice.logoEdit');
     }
 
-    public function test_AdminCanUploadLogo()
-    {
-        Role::factory()->create();
-        $user = User::factory()->create();
-        Profile::factory()->create();
-        $profileId =  $user->profile->id;
+    // public function test_AdminCanUploadLogo()
+    // {
+    //     Role::factory()->create();
+    //     $user = User::factory()->create();
+    //     Profile::factory()->create();
+    //     $profileId =  $user->profile->id;
 
-        Storage::fake('logo');
-        $file = UploadedFile::fake()->image('bla.jpg');
+    //     Storage::fake('logo');
+    //     $file = UploadedFile::fake()->image('bla.jpg');
 
-        $this->actingAs($user)->post(route('logo.update', $profileId));
+    //     $this->actingAs($user)->post(route('logo.update', $profileId));
 
-        Storage::disk('local');
-        $this->assertFileExists(public_path('storage/logo'));
-    }
+    //     Storage::disk('local');
+    //     $this->assertFileExists(public_path('storage/logo'));
+    // }
 
-    public function test_AdminCanDeleteLogo()
-    {
-        Role::factory()->create();
-        $user = User::factory()->create();
-        Profile::factory()->create();
-        $profileId =  $user->profile->id;
+    // public function test_AdminCanDeleteLogo()
+    // {
+    //     Role::factory()->create();
+    //     $user = User::factory()->create();
+    //     Profile::factory()->create();
+    //     $profileId =  $user->profile->id;
 
-        Storage::fake('logo');
-        $file = UploadedFile::fake()->image('bla.jpg');
+    //     Storage::fake('logo');
+    //     $file = UploadedFile::fake()->image('bla.jpg');
 
-        $this->actingAs($user)->delete(route('logo.delete', $profileId));
+    //     $this->actingAs($user)->delete(route('logo.delete', $profileId));
 
-        Storage::disk('local');
-        $this->assertFileDoesNotExist($file->name);
-    }
+    //     Storage::disk('logo');
+    //     $this->assertFileDoesNotExist($file->name);
+    // }
     
 }
