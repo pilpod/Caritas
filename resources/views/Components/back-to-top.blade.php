@@ -1,5 +1,5 @@
 <div class="w-screen h-14 fixed">
-    <button type="button" onclick="topFunction()" id="backToTop" title="backToTop" class="fixed m-4 right-4 bottom-3 border-solid border-white w-10 h-10 rounded-md bg-red hover:bg-red-light ">
+    <button type="button" onclick="topFunction()" id="backToTop" class="fixed mb-12 mr-4 right-2 bottom-3 border-white w-16 h-16 rounded-full bg-red hover:bg-red-light ">
     <img class="object-contain" src="{{ asset('storage/img/backToTop.png') }}" alt="BackToTop"/></button>
 </div>
 

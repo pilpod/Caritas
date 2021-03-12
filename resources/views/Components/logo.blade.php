@@ -1,7 +1,5 @@
-@props(['href'])
+@props(['href', 'txt', 'container'])
 
-<div class="flex items-center w-24 h-24 rounded-md">
-  <a href="{{ $href ?? $href }}" target="_blank">
-    <img src="{{ asset('storage/img/logoSantJosep.jpeg') }}" alt="Caritas Logo"/>
-  </a>
-</div> 
+    <a href="{{ $href ?? $href }}" target="_blank" class="place-self-center {{ $container ?? '' }}">
+      <img src="{{ asset('storage/img/logoSantJosep.jpeg') }}" alt="Logo" {{ $attributes }} />
+    </a>

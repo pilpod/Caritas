@@ -1,46 +1,62 @@
-<footer class="bg-white-dark">
-<hr>
-  <section class="flex my-4 md:my-3">
-    <div class="flex-1 flex flex-col text-center text-mobile-tiny">
-      <ul class="flex flex-1 flex-col justify-between">
-        <li><x-anchor href="#" txt="POLÍTICA DE COOKIES"/></li>
-        <li><x-anchor href="#" txt="POLÍTICA DE PRIVACIDAD"/></li>
-        <li><x-anchor href="#" txt="AVISO LEGAL"/></li>
+<footer {{ $attributes->merge(['class' => 'flex flex-col gap-5 bg-white-dark text-grey']) }}>
+<x-separator skinny />
+  <section class="flex justify-between text-ui-tiny mx-6">
+      <ul class="gap-2 uppercase w-2/6">
+        <li class="list-none">
+          <x-anchor 
+          href="#" 
+          txt="Política de cookies" />
+        </li>
+        <li class="list-none">
+          <x-anchor 
+          href="#" 
+          txt="Política de privacidad" />
+        </li>
+        <li class="list-none">
+          <x-anchor 
+          href="#" 
+          txt="Aviso legal" />
+        </li>
       </ul>
-    </div>
-
-    <div class="flex-none">
-      <x-logo href="#" />
-    </div>
-
-    <div class="flex-1 flex flex-col text-center text-mobile-tiny">
-      <ul class="flex flex-1 flex-col justify-between">
-        <li><x-anchor href="#" txt="Cáritas Catalunya"/></li>
-        <li><x-anchor href="#" txt="Cáritas España"/></li>
-        <li><x-anchor href="#" txt="Cáritas Europa"/></li>
-        <li><x-anchor href="#" txt="Cáritas Internacional"/></li>
+  <x-logo href="#" container="w-2/6" class="w-24 h-24"/>
+      <ul class="gap-2 w-2/6">
+        <li class="list-none">
+          <x-anchor 
+          href="#" 
+          txt="Cáritas Catalunya" />
+        </li>
+        <li class="list-none">
+          <x-anchor 
+          href="#" 
+          txt="Cáritas España" />
+        </li>
+        <li class="list-none">
+          <x-anchor 
+          href="#" 
+          txt="Cáritas Europa" />
+        </li>
+        <li class="list-none">
+          <x-anchor 
+          href="#" 
+          txt="Cáritas Internacional" />
+        </li>
       </ul>
-    </div>
-
   </section>
-  <section class="text-mobile-tiny">
-    <div class="flex flex-col items-center md:flex-row md:m-3 md:">
-      <div>
-        <img src="storage/img/message.svg" alt="" class="inline-flex">
+<x-separator skinny traslucid/>
+  <section class="flex flex-col text-ui-tiny mx-6 gap-10 text-center mb-4">
+        <div class="flex flex-col gap-4 items-center">
+          <x-anchor
+          href="mailto:santjosepbdn@gmail.com"
+          filename="location.svg"
+          txt="santjosepbdn@mail.com" />
+          <x-anchor
+          href="#"
+          filename="message.svg"
+          txt="Església de Sant Josep C/ Enric Borràs, 69-75 08912 Badalona" />
+        </div>
         <x-anchor
-        href="mailto:santjosepbdn@gmail.com" 
-        txt="santjosepbdn@mail.com"/>
-      </div>
-      <div>
-        <img src="storage/img/location.svg" alt="" class="inline-flex justify-center">
-        <x-anchor 
-        href="#" 
-        txt="Església de Sant Josep C/ Enric Borràs, 69-75 08912 Badalona"/>
-        
-        <x-anchor 
-        class="my-2 text-grey"
-        href="#" txt="Copyright © 2021 • Cáritas Española"/>
-      </div>
-    </div>
+        href="#"
+        txt="Copyright © 2021 • Cáritas Española" 
+        class="opacity-50 self-center" />
   </section>
 </footer>

@@ -3,8 +3,9 @@
 <main class="flex flex-col items-center gap-20">
     <section>
         <x-hero />
-        <x-youtubeiframe />
+        <x-iframe src="https://www.youtube.com/embed/Rqt5B2Ko0Es"/>
     </section>
+<x-separator />
     <section class="flex flex-row items-center my-10 mx-6">
         <img class="hidden md:flex flex-start rounded-r-full h-72" src="{{ asset('storage/img/SectionOneLeft.jpg') }}" alt="Caritas Logo"/>
         <div class="flex flex-col gap-12">
@@ -28,7 +29,7 @@
     </section>
 <x-separator />
     <section class="flex flex-col items-center gap-20 mx-6">
-        <x-mini-hero presentation="reverse" filename="family.svg" alt="">
+        <x-mini-hero presentation="reverse" filename="family.svg" alt="" class="gap-4">
             <h2 class="text-h2 text-center font-black">Las familias no pueden cubrir sus necesidades</h2>
         </x-mini-hero>
         <div class="flex flex-col gap-24">
@@ -47,7 +48,7 @@
                 <li>Enfermedades</li>
             </x-downtick-list>
         </div>
-            <x-mini-hero presentation="reverse" filename="giving.svg" alt="">
+            <x-mini-hero presentation="reverse" filename="giving.svg" alt="" class="gap-4">
                 <h2 class="text-h2 p-3 text-center font-black">El actual modelo se basa en las ayudas en especie</h2>
             </x-mini-hero>
         <ul class="font-bold text-body gap-12">
@@ -59,8 +60,8 @@
     </section>
 <x-separator />
     <section class="flex flex-col mx-6 gap-40">
-    <h2 class="text-h2 text-center p-3 mb-20 font-black">¿Qué queremos para promover esta innovación?</h2>
-        <x-mini-hero presentation="reverse" filename="innovation.svg" alt="">
+    <h2 class="text-h2 text-center p-3 font-black">¿Qué queremos para promover esta innovación?</h2>
+        <x-mini-hero presentation="reverse" filename="innovation.svg" alt="" class="gap-20">
             <ul class="font-bold gap-12">
                 <li>Potenciar proyectos igualitarios, favorecer la discreción y evitar circuitos para pobres.</li>
                 <li>Mantener los hábitos y las relaciones familiares (cocinar, comer, celebrar, etc).</li>
@@ -69,7 +70,7 @@
                 <li>Dignificar al máximo la atención.</li>
             </ul>
         </x-mini-hero>
-        <x-mini-hero presentation="reverse" filename="bestof.svg" alt="">
+        <x-mini-hero presentation="reverse" filename="bestof.svg" alt="" class="gap-20">
             <ul class="font-bold gap-12">
                 <li>Promover la autonomía y el empoderamiento de la persona (modelo no asistencialista)</li>
                 <li>Elegir lo que se come, según gustos personales, culturales o de salud.</li>
@@ -80,7 +81,14 @@
         </x-mini-hero>
     </section>
 <x-separator />
+    <section class="text-center flex flex-col items-center mx-6 gap-20">
+        <div class="flex flex-col gap-8">
+            <p class="text-h5 font-black">Ayúdanos a estar donde más nos necesitan.</p>
+            <h2 class="text-h2 font-black">¿Quieres apoyar este y otros proyectos de lucha contra la pobreza?</h2>
+        </div>
+        <button class="btn">Hacer una donación</button>
+    </section>
 </main>
-    <x-footer />
+    <x-footer class="mt-20"/>
     <x-back-to-top />
 </x-layout>

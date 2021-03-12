@@ -64,13 +64,19 @@ module.exports = {
       },
       width: {
         '150px': '15rem',
-        '288px': '20.8rem'
+        '262px': '26.2rem',
+        '68px': '6.8rem',
+        '95px': '9.5rem',
       },
       height: {
         '150px': '15rem'
       },
     },
-    variants: {},
+    variants: {
+      extend: {
+        backgroundColor: ['active'],
+      }
+    },
     plugins: [],
   }
 }

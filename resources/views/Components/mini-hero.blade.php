@@ -1,6 +1,6 @@
 @props(['presentation' => 'normal', 'filename', 'alt'])
 
-<div class="flex flex-col items-center gap-4">
+<div {{ $attributes->merge(['class' => 'flex flex-col items-center']) }}>
   @switch($presentation)
     @case('normal')
     {{ $slot }}
