@@ -26,7 +26,7 @@
 }
 
 .nav__logo {
-    @apply w-24 h-24 lg:w-48 lg:h-full
+    @apply w-24 h-24 lg:w-48 lg:h-48
 }
 
 .nav__btn {

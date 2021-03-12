@@ -1,14 +1,14 @@
 <x-layout>
 <x-nav />
 <main class="flex flex-col items-center gap-20">
-    <section>
+    <section class="w-full" >
         <x-hero />
         <x-iframe src="https://www.youtube.com/embed/Rqt5B2Ko0Es"/>
     </section>
 <x-separator />
-    <section class="flex flex-row items-center my-10 mx-6">
+    <section class="flex flex-row items-center my-10 mx-6 ">
         <img class="hidden md:flex flex-start rounded-r-full h-72" src="{{ asset('storage/img/SectionOneLeft.jpg') }}" alt="Caritas Logo"/>
-        <div class="flex flex-col gap-12 mx-6">
+        <div class="flex flex-col gap-12 mx-6 max-w-5xl">
             <h2 class="text-h2 p-3 text-center font-black">Necesidades básicas</h2>
             <p class="inline-flex flex-col gap-8 ">
                 <span>
