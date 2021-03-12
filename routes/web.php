@@ -35,7 +35,7 @@ Route::middleware('admin')->group(function () {
     Route::put('/dashboard/profile/{id}', [DashboardController::class, 'update'])->name('dashboard.update');
 
     Route::get('/dashboard/profile/{id}/logo', [DashboardController::class, 'editLogo'])->name('logo.edit');
-    Route::post('/dashboard/profile/{id}/logo', [DashboardController::class, 'updateLogo'])->name('logo.update');
+    Route::put('/dashboard/profile/{id}/logo', [DashboardController::class, 'updateLogo'])->name('logo.update');
     Route::delete('/dashboard/profile/{id}/logo', [DashboardController::class, 'deleteLogo'])->name('logo.delete');
 
     Route::get('/user/profile-information', [UserProfileController::class, 'edit'])->name('user-profile-information.edit');
@@ -43,6 +43,8 @@ Route::middleware('admin')->group(function () {
     Route::get('/dashboard/about', [AboutController::class, 'index'])->name('about');
     Route::post('/dashboard/about', [AboutController::class, 'store'])->name('about.store');
     Route::put('/dashboard/about/{id}', [AboutController::class, 'update'])->name('about.update');
+    Route::put('/dashboard/about/{id}/image', [AboutController::class, 'updateImage'])->name('about.updateImage');
+
 });
 
 Route::get('/register', [RegisterController::class, 'index'])->name('register');

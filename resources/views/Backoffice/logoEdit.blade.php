@@ -28,6 +28,7 @@
         <a class="absolute top-10 right-10 text-red-500" href="{{route('dashboard')}}">Atrás</a>
         
         <form method="POST" action="{{ route('logo.update', $profile->id) }}"  enctype="multipart/form-data">
+            @method('PUT');
             @csrf
             <div class="flex flex-col">
                 <label for="name">Logotipo de la organización</label>

@@ -16,8 +16,11 @@ class DatabaseSeeder extends Seeder
         // \App\Models\User::factory()->create();
         // \App\Models\Role::factory()->create();
         // \App\Models\Profile::factory()->create();
-        \App\Models\ContentSection::factory(3)->create();
-        \App\Models\Language::factory(1)->create();
-        
+        // \App\Models\ContentSection::factory(3)->create();
+        // \App\Models\Language::factory(1)->create();
+
+        $this->call([
+            ContentSectionSeeder::class,
+        ]);
     }
 }

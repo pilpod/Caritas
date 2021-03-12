@@ -13,6 +13,9 @@ use App\Models\Language;
 use App\Models\SpanishData;
 use App\Models\CatalanData;
 use App\Models\ContentSection;
+use Illuminate\Http\Testing\File;
+use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Facades\Storage;
 
 class AboutSectionTest extends TestCase
 {
@@ -60,6 +63,19 @@ class AboutSectionTest extends TestCase
         ];
         $response = $this->actingAs($this->user)->post(route('about.store', $data));
         $response->assertStatus(200);
+    }
+
+
+    public function test_adminCanUploadABoutSectionImage()
+    {
+           
+        $data = [
+            'section_image' => 'about.jpg'
+        ];
+        $sectionId = $this->section->id;
+        $response = $this->actingAs($this->user)->put(route('about.updateImage', $sectionId), $data);
+        $response->assertStatus(200);
+
     }
 
     public function test_AdminCanUpdateTextInSectionAboutCatalan()

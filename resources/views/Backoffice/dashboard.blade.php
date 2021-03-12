@@ -135,6 +135,13 @@
             </div>
         </section>
         @endif
+
+        <section class="w-mt-72 w-1/2 border-red-300 border-2 rounded-2xl p-5 mb-20 flex justify-between ">
+            <a class="" href="{{route('about')}}" type="button">
+            Qui Som / Quien Somos
+            </a>
+
+        </section>
     </main>
 </body>
 
