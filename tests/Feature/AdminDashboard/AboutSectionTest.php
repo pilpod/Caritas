@@ -55,8 +55,8 @@ class AboutSectionTest extends TestCase
     {
         $this->withoutExceptionHandling();
         $data = [
-            'spanish_about_text' => 'Vanessa dice Lo siento confortable',
-            'catalan_about_text' => 'Vanessa no parla catalan',
+            'spanish_about_text' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto incidunt, iure harum repudiandae fugiat qui. Ex ad quo odio doloribus itaque? Soluta laborum culpa illo laboriosam odio sint minus ad, suscipit nesciunt. Pariatur vel velit quisquam ullam placeat dolorum omnis perferendis, sapiente, alias atque distinctio dicta sit dolorem, necessitatibus tenetur!',
+            'catalan_about_text' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto incidunt, iure harum repudiandae fugiat qui. Ex ad quo odio doloribus itaque? Soluta laborum culpa illo laboriosam odio sint minus ad, suscipit nesciunt. Pariatur vel velit quisquam ullam placeat dolorum omnis perferendis, sapiente, alias atque distinctio dicta sit dolorem, necessitatibus tenetur!',
         ];
         $response = $this->actingAs($this->user)->post(route('about.store', $data));
         $response->assertStatus(200);

@@ -8,10 +8,18 @@ use App\Models\SpanishData;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Language;
-use phpDocumentor\Reflection\Types\This;
+use App\Http\Requests\About\AboutStoreRequest;
+use App\Http\Requests\About\AboutUpdateRequest;
 
 class AboutController extends Controller
 {
+    
+    /**
+     *
+     * @param  \App\Http\Requests\About\AboutStoreRequest
+     * @param  \App\Http\Requests\About\AboutUpdateRequest
+     * @return Illuminate\Http\Response
+     */
     public function index()
     {
         $catData = CatalanData::where('title_content', '=', 'main_text');
@@ -22,8 +30,9 @@ class AboutController extends Controller
         ]);
     }
 
-    public function store(Request $request) 
+    public function store(AboutStoreRequest $request) 
     {
+        $request->validated();
         $catText = $request->catalan_about_text;
         $esText = $request->spanish_about_text;
         
@@ -45,7 +54,6 @@ class AboutController extends Controller
             'lang_id' => $catCode,
             'section_id' => $section
             ]);
-
     }
 
     public function createAboutMainTextEs($text)
@@ -60,8 +68,9 @@ class AboutController extends Controller
         ]);
     }
 
-    public function update(Request $request, $id)
+    public function update(AboutUpdateRequest $request, $id)
     {
+        $request->validated();
         $language = Language::find($request->lang_id);
         
         if($language->language_code === 'cat'){
