@@ -10,7 +10,7 @@
             <button > CATALÀ </button> 
         </div>
         <div class="w-20% relative left-4">
-            <button href="qui-som"> {{ __('nav.Quiénes') }} </button> 
+            <button href=""> {{ __('nav.Quiénes') }} </button> 
         </div>
         <x-logo class="flex self-center" href="https://www.santjosepbadalona.cat/" />
         <div class="w-20%">
