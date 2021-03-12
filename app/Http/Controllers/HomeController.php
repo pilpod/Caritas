@@ -15,7 +15,7 @@ class HomeController extends Controller
     {
         $user = User::where('role_id', '=', 1)->firstOrFail();
         $profile = $user->profile;
-        return view('welcome', ['profile' => $profile]);
+        return view('landing', ['profile' => $profile]);
     }
     public function setLanguage($language)
     {

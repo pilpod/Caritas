@@ -1,34 +1,23 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="/css/app.css" rel="stylesheet">
-    <title>Caritas Badalona</title>
-</head>
-
-<body>
-    <header class="border-b-2 border-red-500 mb-20 pt-3 px-3">
+<x-layout>
+    <header class="border-b-2 border-red mb-20 pt-3 px-3">
     <div>
-        <h1 class="text-3xl mb-5">Caritas Escritorio</h1>
+        <h1 class="text-h2 mb-5">Caritas Escritorio</h1>
         <ul class="flex">
             <li class="mr-6">
                 <form id="logout-form" action="{{ route('logout') }}" method="POST">
                     @csrf
-                    <button class="text-gray-600 hover:text-red-500" type="submit">Desconectar</button>
+                    <button class="text-grey hover:text-red text-ui-main" type="submit">Desconectar</button>
                 </form>
 
             </li>
         </ul>
-
+    </div>
     </header>
-    <main class="container m pl-5">
-
-        <section class="w-mt-72 w-1/2 border-red-300 border-2 rounded-2xl p-5 mb-20">
+    <main class="pl-5 flex gap-20 flex-wrap justify-center text-body mr-4">
+        <section class="w-1/3 border-red border-2 rounded-2xl p-5 h-64 flex-grow-0">
             <div class="flex justify-between mb-10">
-                <h2 class="text-xl">Datos de conección</h2>
-                <a href="{{route('user-profile-information.edit')}}" class="block bg-red-500 hover:bg-red-300 text-white font-bold p-2 text-md rounded border-b-4 border-red-500 flex-end">Actualizar</a>
+                <h2 class="text-xl">Datos de conexión</h2>
+                <a href="{{route('user-profile-information.edit')}}" class="block bg-red hover:bg-red-lighter text-white font-bold p-2 text-md rounded border-b-4 border-red-light flex-end">Actualizar</a>
             </div>
             <div>
                 <div class="">
@@ -49,17 +38,18 @@
 
         </section>
 
-        <section class="w-mt-72 w-1/2 border-red-300 border-2 rounded-2xl p-5 mb-20">
+        <section class="w-1/3 border-red border-2 rounded-2xl p-5 h-64 flex-grow-0">
             @if($profile)
             <div class="flex justify-between mb-10">
-                <h2 class="text-xl">Logotipo</h2>
+                <h2 class="text-">Logotipo</h2>
                 @if(!$profile->logo)
-                    <a href="{{route('logo.edit', $profile->id)}}" class="block bg-red-500 hover:bg-red-300 text-white font-bold p-2 text-md rounded border-b-4 border-red-500 flex-end">Subir</a>                    
+                    <a href="{{route('logo.edit', $profile->id)}}" class="block bg-red hover:bg-red-lighter text-white font-bold p-2 text-md rounded border-b-4 border-red-light flex-end">Subir</a>                    
                 @else
                 <form action="{{ route('logo.delete', $profile->id) }}" method="post">
                     @method('DELETE')
                     @csrf
-                    <button class="block bg-red-500 hover:bg-red-300 text-white font-bold p-2 text-md rounded border-b-4 border-red-500 flex-end" type="submit">Borrar</button>                    
+                    <x-backoffice-button 
+                    txt="Borrar"/>                    
                 </form>
                 @endif
             </div>
@@ -82,17 +72,17 @@
         </section>
 
         @if(!$profile)
-        <section class="w-mt-72 w-1/2 border-red-300 border-2 rounded-2xl p-5 mb-20 flex justify-between ">
+        <section class=" border-red border-2 rounded-2xl p-5 flex justify-between ">
             <h3>Crear perfil de la organización</h3>
-            <a class="block bg-red-500 hover:bg-red-300 text-white font-bold p-2 text-md rounded border-b-4 border-red-500" href="{{route('dashboard.create')}}" type="button">
+            <a class="block bg-red hover:bg-red-lighter text-white font-bold p-2 text-md rounded border-b-4 border-red-light" href="{{route('dashboard.create')}}" type="button">
                 Crear
             </a>
 
         </section>
         @else
-        <section class="w-mt-72 w-1/2 border-red-300 border-2 rounded-2xl p-5 mb-20 relative">
+        <section class=" border-red border-2 rounded-2xl p-5 relative flex-grow-1">
             <h2 class="text-xl">Perfil de la organización</h2>
-            <a class="block bg-red-500 hover:bg-red-300 text-white font-bold p-2 text-md rounded border-b-4 border-red-500 absolute top-5 right-5 text-center" href="{{route('dashboard.edit', $profile->id)}}" type="button">
+            <a class="block bg-red hover:bg-red-lighter text-white font-bold p-2 text-md rounded border-b-4 border-red-light absolute top-5 right-5 text-center" href="{{route('dashboard.edit', $profile->id)}}" type="button">
                 Actualizar
             </a>
             <div class="pt-10">
@@ -143,6 +133,5 @@
 
         </section>
     </main>
-</body>
+</x-layout>
 
-</html>
