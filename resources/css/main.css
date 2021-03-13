@@ -5,7 +5,7 @@
     }
 
     body {
-       @apply text-body leading-normal
+       @apply text-body leading-normal lg:text-d-body
     }
 
     ul {
@@ -18,7 +18,7 @@
 }
 
 .btn {
-    @apply text-ui-main font-bold uppercase text-white py-4 px-24 w-262px border-b-4 border-red-light rounded-md bg-red hover:bg-red-light hover:border-red-lighter
+    @apply text-ui-main font-bold uppercase text-white py-4 px-24 w-262px border-b-4 border-red-light rounded-md bg-red hover:bg-red-light hover:border-red-lighter lg:text-d-ui-main
 }
 
 .nav {

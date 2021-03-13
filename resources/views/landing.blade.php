@@ -1,16 +1,16 @@
 <x-layout>
 <x-nav />
-<main class="flex flex-col items-center gap-20">
+<main class="flex flex-col items-center gap-48">
     <section class="w-full" >
         <x-hero />
         <x-iframe src="https://www.youtube.com/embed/Rqt5B2Ko0Es"/>
     </section>
 <x-separator />
     <section class="flex flex-row items-center my-10 mx-6 ">
-        <img class="hidden md:flex flex-start rounded-r-full h-72" src="{{ asset('storage/img/SectionOneLeft.jpg') }}" alt="Caritas Logo"/>
-        <div class="flex flex-col gap-12 mx-6 max-w-5xl">
-            <h2 class="text-h2 p-3 text-center font-black">Necesidades básicas</h2>
-            <p class="inline-flex flex-col gap-8 ">
+        <img class="hidden md:flex rounded-r-imglateral h-365px" src="{{ asset('storage/img/SectionOneLeft.jpg') }}" alt="Caritas Logo"/>
+        <div class="flex flex-col gap-12 mx-6 w-660px">
+            <h2 class="text-h2 p-3 text-center font-black md:text-d-h3 md:p-0">Necesidades básicas</h2>
+            <p class="inline-flex flex-col gap-8">
                 <span>
                     <b>Las necesidades humanas son universales.</b> Son comunes a todos los individuos y lo que varía son las formas con las que se da respuesta. Ayudar a la subsistencia de las personas es importante, pero para el desarrollo del individuo lo son tanto o más la protección, el afecto, el entendimiento, la participación, el ocio, la creatividad, la identidad, la libertad...
                 </span>
@@ -25,12 +25,12 @@
                 </span>
             </p>
         </div>
-        <img class="hidden md:flex flex-end rounded-l-full h-72" src="{{ asset('storage/img/SectionOneRight.jpg') }}" alt="Caritas Logo"/>
+        <img class="hidden md:flex rounded-l-imglateral h-365px" src="{{ asset('storage/img/SectionOneRight.jpg') }}" alt="Caritas Logo" />
     </section>
 <x-separator />
     <section class="flex flex-col items-center gap-20 mx-6">
-        <x-mini-hero presentation="reverse" filename="family.svg" alt="" class="gap-4">
-            <h2 class="text-h2 text-center font-black">Las familias no pueden cubrir sus necesidades</h2>
+        <x-mini-hero filename="family.svg" alt="" class="gap-4">
+            <h2 class="text-h2 text-center font-bold md:text-d-h3 md:p-0">Las familias no pueden cubrir sus necesidades</h2>
         </x-mini-hero>
         <div class="flex flex-col gap-24">
             <x-downtick-list title="Trabajo precario y paro">
@@ -48,8 +48,8 @@
                 <li>Enfermedades</li>
             </x-downtick-list>
         </div>
-            <x-mini-hero presentation="reverse" filename="giving.svg" alt="" class="gap-4">
-                <h2 class="text-h2 p-3 text-center font-black">El actual modelo se basa en las ayudas en especie</h2>
+            <x-mini-hero filename="giving.svg" alt="" class="gap-4" class="lg:flex-row-reverse">
+                <h2 class="text-h2 p-3 text-center font-bold md:text-d-h3">El actual modelo se basa en las ayudas en especie</h2>
             </x-mini-hero>
         <ul class="font-bold text-body gap-12">
             <li>Las familias no pueden planificar la compra</li>
@@ -60,8 +60,8 @@
     </section>
 <x-separator />
     <section class="flex flex-col mx-6 gap-40">
-    <h2 class="text-h2 text-center p-3 font-black">¿Qué queremos para promover esta innovación?</h2>
-        <x-mini-hero presentation="reverse" filename="innovation.svg" alt="" class="gap-20">
+    <h2 class="text-h2 text-center p-3 font-bold lg:text-d-h3">¿Qué queremos para promover esta innovación?</h2>
+        <x-mini-hero filename="innovation.svg" alt="" class="gap-20" class="lg:flex-row-reverse">
             <ul class="font-bold gap-12">
                 <li>Potenciar proyectos igualitarios, favorecer la discreción y evitar circuitos para pobres.</li>
                 <li>Mantener los hábitos y las relaciones familiares (cocinar, comer, celebrar, etc).</li>
@@ -70,7 +70,7 @@
                 <li>Dignificar al máximo la atención.</li>
             </ul>
         </x-mini-hero>
-        <x-mini-hero presentation="reverse" filename="bestof.svg" alt="" class="gap-20">
+        <x-mini-hero filename="bestof.svg" alt="" class="gap-20">
             <ul class="font-bold gap-12">
                 <li>Promover la autonomía y el empoderamiento de la persona (modelo no asistencialista)</li>
                 <li>Elegir lo que se come, según gustos personales, culturales o de salud.</li>

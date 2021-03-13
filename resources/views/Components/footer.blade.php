@@ -18,7 +18,7 @@
           txt="Aviso legal" />
         </li>
       </ul>
-  <x-logo href="#" container="w-2/6" class="w-24 h-24"/>
+  <x-logo href="https://www.santjosepbadalona.cat/" container="w-2/6" class="w-24 h-24"/>
       <ul class="gap-2 w-2/6">
         <li class="list-none">
           <x-anchor 
