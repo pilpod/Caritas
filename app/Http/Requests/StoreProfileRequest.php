@@ -31,7 +31,7 @@ class StoreProfileRequest extends FormRequest
             'postcode' => 'required | regex:/^[0-9]{5}/',
             'phone' => 'required | regex:/^[0-9]{9}/',
             'bankAccount' => 'required | regex:/^[a-zA-Z]{2}[0-9]{22}/',
-            'bizum' => 'required | min: 5 | max: 13 |regex:/^\d/',
+            'bizum' => 'required | min: 5 | max: 13 |regex:/^[0-9]/',
         ];
     }
 }
