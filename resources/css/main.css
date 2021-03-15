@@ -22,11 +22,11 @@
 }
 
 .nav {
-    @apply w-screen h-24 flex justify-between fixed top-0 z-10 bg-white lg:h-48 lg:grid lg:grid-cols-5 lg:grid-rows-1
+    @apply w-screen h-24 flex justify-between fixed top-0 z-10 bg-white lg:h-36 lg:grid lg:grid-cols-5 lg:grid-rows-1
 }
 
 .nav__logo {
-    @apply w-24 h-24 lg:w-48 lg:h-48
+    @apply w-24 h-24 lg:w-36 lg:h-36
 }
 
 .nav__btn {

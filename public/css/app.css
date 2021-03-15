@@ -80,7 +80,7 @@ li {
 @media (min-width: 1024px) {
   .nav {
     display: grid;
-    height: 12rem;
+    height: 9rem;
     grid-template-columns: repeat(5, minmax(0, 1fr));
     grid-template-rows: repeat(1, minmax(0, 1fr))
   }
@@ -93,8 +93,8 @@ li {
 
 @media (min-width: 1024px) {
   .nav__logo {
-    height: 12rem;
-    width: 12rem
+    height: 9rem;
+    width: 9rem
   }
 }
 
