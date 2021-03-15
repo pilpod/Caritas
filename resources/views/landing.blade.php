@@ -22,5 +22,6 @@
     </section>
     <x-footer />
     <x-quisommodal/>
-    
+    <x-quepotsfertu/>
+  
 </x-layout>
