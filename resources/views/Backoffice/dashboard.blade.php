@@ -126,11 +126,20 @@
         </section>
         @endif
 
-        <section class="w-mt-72 w-1/2 border-red-300 border-2 rounded-2xl p-5 mb-20 flex justify-between ">
+        <section class="w-1/2 border-red border-2 rounded-2xl p-5 mb-20 flex justify-between ">
             <a class="" href="{{route('about')}}" type="button">
             Qui Som / Quien Somos
             </a>
 
+        </section>
+        <section class="w-1/2 border-red border-2 rounded-2xl p-5 mb-20 justify-between ">
+            <h3 class="text-h3" >
+            Que Pots Fer Tu / Que Puedes Hacer Tu
+            </h3>
+
+            <a class="" href="{{route('donate')}}" type="button">
+            Donar / Donar
+            </a>
         </section>
     </main>
 </x-layout>
