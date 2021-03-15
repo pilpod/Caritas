@@ -26,6 +26,7 @@ class ContentSection extends Model
 
     public static function getId($nameSection) 
     {
+        // dd($nameSection);
         $section = DB::table('content_sections')->where('section_name', '=', $nameSection)->first();
         return $section->id;
     }

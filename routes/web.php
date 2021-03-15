@@ -1,15 +1,18 @@
 <?php
 
-use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\HomeController;
-use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Auth;
-use App\Http\Controllers\RegisterController;
-use App\Http\Controllers\UserProfileController;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
+
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\UserProfileController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\WhatCanYouDo\DonateController;
+use App\Http\Controllers\WhatCanYouDo\VolunteerController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -51,6 +54,9 @@ Route::middleware('admin')->group(function () {
     Route::post('/dashboard/donate', [DonateController::class, 'store'])->name('donate.store');
     Route::put('/dashboard/donate/{id}', [DonateController::class, 'update'])->name('donate.update');
     Route::put('/dashboard/donate/{id}/image', [DonateController::class, 'updateImage'])->name('donate.updateImage');
+
+    Route::get('/dashboard/volunteer', [VolunteerController::class, 'index'])->name('volunteer');
+
 
 });
 

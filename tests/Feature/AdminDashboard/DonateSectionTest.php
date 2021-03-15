@@ -55,7 +55,8 @@ class DonateSectionTest extends TestCase
         $this->withoutExceptionHandling();
         
         $response = $this->actingAs($this->user)->get(route('donate'));
-        $response->assertStatus(200);
+        $response->assertStatus(200)
+        ->assertViewIs('Backoffice.donate');
     }
 
     public function testAdminCanCreateDonateSection()
