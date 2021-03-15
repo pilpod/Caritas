@@ -18,8 +18,10 @@
     "test": "quien somos",
 
 
+	"nav-idioma-catalan": "Catalán",
+	"nav-idioma-castellano": "Castellano",
 	"nav-quienes-somos": "QUIÉNES SOMOS",
-	"nav-que-puedes-hacer-tu": "QUÉ PUEDES <br> HACER TU",
+	"nav-que-puedes-hacer-tu": "QUÉ PUEDES HACER TU",
 	"nav-contacto": "CONTACTO",
 	
 	
@@ -29,56 +31,70 @@
 
 		
 		"necesidades-basicas-titulo": "Las necesidades básicas",
-		"necesidades-basicas-paragrafo1": "Las necesidades humanas son universales. Son comunes a todos los individuos y lo que varía son las formas con las que se da respuesta. Ayudar a la subsistencia de las personas es importante, pero para el desarrollo del individuo lo son tanto o más la protección, el afecto, el entendimiento, la participación, el ocio, la creatividad, la identidad, la libertad. ..",
-		"necesidades-basicas-paragrafo2": "Hay que repensar respuestas implicando las personas. Hay alternativas que permiten acceder a las mismas necesidades básicas pero desde unos principios de organización colectiva y de apoderamiento a través de la participación de las personas que vienen a pedir ayuda a Cáritas, del apoyo mutuo y de la horizontalidad.",
-		"necesidades-basicas-paragrafo3": "La necesidad lleva al ingenio», dice el refrán popular. Y, efectivamente, la necesidad sentida como tal, nos motiva, nos moviliza, nos compromete, desarrolla las potencialidades y los recursos propios de la persona. Este enfoque promueve el protagonismo y la participación. Desde este enfoque las personas dejan de ser sólo receptoras de ayuda para pasar a ser protagonistas de su vida.",
-		"necesidades-basicas-paragrafo4": "Nuestras acciones deben desarrollar las capacidades y potencialidades de la persona, así como también ofrecer escucha y acompañamiento personal y familiar. Es aquí donde se encuentra la potencia y el sentido de Cáritas. Debemos buscar siempre que nuestras acciones sean sinérgicas.",
+		
+		"necesidades-basicas-paragrafo1-destacado1": "Las necesidades humanas son universales. ",
+		"necesidades-basicas-paragrafo1": "Son comunes a todos los individuos y lo que varía son las formas con las que se da respuesta. Ayudar a la subsistencia de las personas es importante, pero para el desarrollo del individuo lo son tanto o más la protección, el afecto, el entendimiento, la participación, el ocio, la creatividad, la identidad, la libertad. ..",
+		
+		"necesidades-basicas-paragrafo2": "Hay que repensar respuestas implicando las personas. Hay alternativas que permiten acceder a las mismas necesidades básicas pero desde unos principios de organización colectiva y de ",
+		"necesidades-basicas-paragrafo2-destacado1": "apoderamiento a través de la participación de las personas que vienen a pedir ayuda a Cáritas, del apoyo mutuo y de la horizontalidad.",
+		
+		"necesidades-basicas-paragrafo3-parte1": "La necesidad lleva al ingenio», dice el refrán popular. Y, efectivamente, la necesidad sentida como tal, ",
+		"necesidades-basicas-paragrafo3-destacado1": "nos motiva, nos moviliza, nos compromete",
+		"necesidades-basicas-paragrafo3-parte2": " desarrolla las potencialidades y los recursos propios de la persona. Este enfoque promueve ",
+		"necesidades-basicas-paragrafo3-destacado2": "el protagonismo y la participación",
+		"necesidades-basicas-paragrafo3-parte3": " Desde este enfoque las personas dejan de ser sólo receptoras de ayuda para pasar a ser protagonistas de su vida.",
+
+		"necesidades-basicas-paragrafo4-destacado1": "Nuestras acciones deben desarrollar las capacidades y potencialidades de la persona",
+		"necesidades-basicas-paragrafo4": "así como también ofrecer escucha y acompañamiento personal y familiar. Es aquí donde se encuentra la potencia y el sentido de Cáritas. Debemos buscar siempre que nuestras acciones sean sinérgicas.",
 
 		
 		"necesidades-familias-titulo": "Las familias no pueden cubrir sus necesidades",
 			"necesidades-familias-seccion1-trabajo": "Trabajo precario y paro:",
-			"necesidades-familias-seccion1-punto1": "Salarios bajos",
-			"necesidades-familias-seccion1-punto2": "Paro de larga duración",
-			"necesidades-familias-seccion1-punto3": "Prestaciones públicas insuficientes.",
+			"necesidades-familias-seccion1-punto1": "Paro de larga duración",
+			"necesidades-familias-seccion1-punto2": "Prestaciones públicas insuficientes.",
+			"necesidades-familias-seccion1-punto3": "Salarios bajos",
 
 			"necesidades-familias-seccion2-titulo": "Baja protección social:",
-			"necesidades-familias-seccion2-punto1": "Recortes en educación, sanidad, servicios sociales", 
-			"necesidades-familias-seccion2-punto2": "Prestaciones públicas en descenso.",
+			"necesidades-familias-seccion2-punto1": "Prestaciones públicas en descenso.",
+			"necesidades-familias-seccion2-punto2": "Recortes en educación, sanidad, servicios sociales", 
 
 			"necesidades-familias-seccion3-titulo": "Fragilidad humana:",
-			"necesidades-familias-seccion3-punto1": "Sin red relacional",
-			"necesidades-familias-seccion3-punto2": "Enfermedades",
-			"necesidades-familias-seccion3-punto3": "Roturas familiares",
+			"necesidades-familias-seccion3-punto1": "Roturas familiares",
+			"necesidades-familias-seccion3-punto2": "Sin red relacional (familia, amistades, etc)",
+			"necesidades-familias-seccion3-punto3": "Enfermedades",
 
-			
+
 		"modelo-antiguo-titulo": "El actual modelo se basa en las ayudas en especie",
 		"modelo-antiguo-punto1": "Las familias no pueden planificar la compra.",
-		"modelo-antiguo-punto2": "Se corre el riesgo de perder hábitos de administración del presupuesto familiar y las rutinas de compra",
-		"modelo-antiguo-punto3": "No pueden decidir según sus gustos personales, costumbres culturales, necesidades de salud",
-		"modelo-antiguo-punto4": "Se favorece la pérdida de la autonomía personal.",
+		"modelo-antiguo-punto2": "No pueden decidir según sus gustos personales, costumbres culturales, necesidades de salud",
+		"modelo-antiguo-punto3": "Se favorece la pérdida de la autonomía personal.",
+		"modelo-antiguo-punto4": "Se corre el riesgo de perder hábitos de administración del presupuesto familiar y las rutinas de compra",
 
 		
 		"nuestro-modelo-titulo": "¿Qué queremos para promover esta innovación?",
-		"nuestro-modelo-punto1": "Dignificar al máximo la atención.",
-		"nuestro-modelo-punto2": "Impulsar proyectos donde las personas participen.",
-		"nuestro-modelo-punto3": "Promover el intercambio y la reciprocidad.",
-		"nuestro-modelo-punto4": "Potenciar proyectos igualitarios, favorecer la discreción y evitar circuitos para pobres.",
-		"nuestro-modelo-punto5": "Mantener los hábitos y las relaciones familiares (cocinar, comer, celebrar …).",
-		"nuestro-modelo-punto6": "Elegir lo que se come, según gustos personales, culturales o de salud.",
-		"nuestro-modelo-punto7": "Promover la autonomía y el empoderamiento de la persona (modelo no asistencialista).",
+		"nuestro-modelo-punto1": "Potenciar proyectos igualitarios, favorecer la discreción y evitar circuitos para pobres.",
+		"nuestro-modelo-punto2": "Mantener los hábitos y las relaciones familiares (cocinar, comer, celebrar …).",
+		"nuestro-modelo-punto3": "Impulsar proyectos donde las personas participen.",
+		"nuestro-modelo-punto4": "Promover el intercambio y la reciprocidad.",
+		"nuestro-modelo-punto5": "Dignificar al máximo la atención.",
+		"nuestro-modelo-punto6": "Promover la autonomía y el empoderamiento de la persona (modelo no asistencialista).",
+		"nuestro-modelo-punto7": "Elegir lo que se come, según gustos personales, culturales o de salud.",
 		"nuestro-modelo-punto8": "Evitar el desperdicio y fomentar la sostenibilidad.",
 		"nuestro-modelo-punto9": "Mantener el comercio local y de proximidad.",
 		"nuestro-modelo-punto10": "Promover la formación y la inserción laboral.",
 
 
 		"seccion-videos-subtitulo": "Ayúdanos a estar donde más nos necesitan.",
-		"seccion-videos-titulo": "Si quieres apoyar este proyecto y otros de lucha contra la pobreza, dona ahora"
+		"seccion-videos-titulo": "Si quieres apoyar este proyecto y otros de lucha contra la pobreza, dona ahora",
 	
-		
-	
-		
-	
-		
-	
+		"footer-politica-cookies": "Política de cookies",
+		"footer-politica-privacidad": "Política de privacidad",
+		"footer-aviso-legal": "Aviso Legal",
+		"footer-caritas-cataluna": "Càritas Cataluña",
+		"footer-caritas-espana": "Càritas España",
+		"footer-caritas-europa": "Càritas Europa",
+		"footer-caritas-internacional": "Càritas Internacional",
+
+		"footer-direccion": "Iglésia"
 
 }
