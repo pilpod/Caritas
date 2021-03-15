@@ -1,7 +1,7 @@
 {
    "create-profile-name": "Crear nom de l'organització",
    "create-profile-title": "Crear perfil de l'organització",
-   "create-profile-name": "Nom de l'organització",
+   "create-profile-name-organization": "Nom de l'organització",
    "create-profile-direction": "Direcció",
    "create-profile-city": "Població",
    "create-profile-phone": "Telèfono",
@@ -10,7 +10,7 @@
 
    "edit-profile-name": "Editar nom de l'organització",
    "edit-profile-title": "Editar perfil de l'organització",
-   "edit-profile-name": "Nom de l'organització",
+   "edit-profile-name-organization": "Nom de l'organització",
    "edit-profile-direction": "Direcció",
    "edit-profile-city": "Població",
    "edit-profile-phone": "Telèfono",
@@ -18,75 +18,55 @@
    "edit-profile-bizum": "Bizum",
    "test": "qui som",
 
-	"nav": {
-
-		"Quiénes Somos": "Qui Som",
-		"Qué Puedes Hacer Tu": "Què Pots Fer Tu",
-		"Contacto": "Contacte"
+	"nav-quienes-somos": "Qui Som",
+	"nav-que-puedes-hacer-tu": "Què Pots Fer Tu",
+	"nav-contacto": "Contacte",
 		
-	},
+	"hero-titulo": "Targetes Moneder",
+	"hero-texto": "targetes que permeten accedir a les mateixes necessitats bàsiques però des d’uns principis d’organització col·lectiva i d’apoderament a través de la participació de les persones que venen a demanar ajuda a Càritas, del suport mutu i de l’horitzontalitat.",
 	
-	"hero": {
-		"titulo": "Targetes Moneder",
-		"texto": "targetes que permeten accedir a les mateixes necessitats bàsiques però des d’uns principis d’organització col·lectiva i d’apoderament a través de la participació de les persones que venen a demanar ajuda a Càritas, del suport mutu i de l’horitzontalitat."
-	},
+	"necesidades-basicas-titulo": "Les necessitats bàsiques",
+	"necesidades-basicas-paragrafo1": "Les necessitats humanes són universals. Són comunes a tots els individus i el que varia són les formes amb les quals es dóna resposta. Ajudar a la subsistència de les persones és important, però per al desenvolupament de l’individu ho són tant o més la protecció, l’afecte, l’enteniment, la participació, l’oci, la creativitat, la identitat, la llibertat…",
+	"necesidades-basicas-paragrafo2": "Cal repensar respostes implicant les persones. Hi ha alternatives que permeten accedir a les mateixes necessitats bàsiques però des d’uns principis d’organització col·lectiva i d’apoderament a través de la participació de les persones que venen a demanar ajuda a Càritas, del suport mutu i de l’horitzontalitat.",
+	"necesidades-basicas-paragrafo3": "La necessitat porta a l’enginy”, diu el refrany popular. I, efectivament, la necessitat sentida com a tal, ens motiva, ens mobilitza, ens compromet, desenvolupa les potencialitats i els recursos propis de la persona. Aquest enfocament promou el protagonisme i la participació. Des d’aquest enfocament les persones deixen de ser només receptores d’ajuda per pasar a ser protagonistes de la seva vida.",
+	"necesidades-basicas-paragrafo4": "Les nostres accions han de desenvolupar les capacitats i potencialitats de la persona, així com també oferir escolta i acompanyament personal i familiar. És aquí on es troba la potència i el sentit de Càritas. Hem de buscar sempre que les nostres accions siguin sinèrgiques.",
 	
-	"necesidadesBasicas": {
-		"titulo": "Les necessitats bàsiques",
-		"paragrafo1": "Les necessitats humanes són universals. Són comunes a tots els individus i el que varia són les formes amb les quals es dóna resposta. Ajudar a la subsistència de les persones és important, però per al desenvolupament de l’individu ho són tant o més la protecció, l’afecte, l’enteniment, la participació, l’oci, la creativitat, la identitat, la llibertat…",
-		"paragrafo2": "Cal repensar respostes implicant les persones. Hi ha alternatives que permeten accedir a les mateixes necessitats bàsiques però des d’uns principis d’organització col·lectiva i d’apoderament a través de la participació de les persones que venen a demanar ajuda a Càritas, del suport mutu i de l’horitzontalitat.",
-		"paragrafo3": "La necessitat porta a l’enginy”, diu el refrany popular. I, efectivament, la necessitat sentida com a tal, ens motiva, ens mobilitza, ens compromet, desenvolupa les potencialitats i els recursos propis de la persona. Aquest enfocament promou el protagonisme i la participació. Des d’aquest enfocament les persones deixen de ser només receptores d’ajuda per pasar a ser protagonistes de la seva vida.",
-		"paragrafo4": "Les nostres accions han de desenvolupar les capacitats i potencialitats de la persona, així com també oferir escolta i acompanyament personal i familiar. És aquí on es troba la potència i el sentit de Càritas. Hem de buscar sempre que les nostres accions siguin sinèrgiques."
-	},
 	
-	"necesidadesFamilias": {
-		"titulo": "Les famílies no poden cobrir les seves necessitats",
-		"seccion1": {
-			"trabajo": "Treball precari i atur:",
-			"punto1": "Salaris baixos.",
-			"punto2": "Atur de llarga durada.",
-			"punto3": "Prestacions públiques insuficients."
-		},
-		"seccion2": {
-			"titulo": "Baixa protecció social:",
-			"punto1": "Retallades en educació, sanitat, serveis socials", 
-			 "punto2": "Prestacions públiques en descens."
-		},
-		"seccion3": {
-			"titulo": "Fragilitat humana:",
-			"punto1": "Sense xarxa relacional" ,
-			"punto2": "Malalties.",
-			"punto3": "Trencaments familiars"
-		}
-	},
-	
-	"ModeloAntiguo": {
-		"titulo": "L’actual model es basa en les ajudes en espècie",
-		"punto1": "Les famílies no poden planificar la compra.",
-		"punto2": "Es corre el risc de perdre hàbits d’administració del pressupost familiar i les rutines de compra.",
-		"punto3": "No poden decidir segons els seus gustos personals, costums culturals, necessitats de salut",
-		"punto4": "S’afavoreix la pèrdua de l’autonomia personal."
-	},
-	
-	"NuestroModelo": {
-		"titulo": "Per promoure aquesta innovació, què volem?",
-		"punto1": "Dignificar al màxim l’atenció.",
-		"punto2": "Impulsar projectes on les persones participin.",
-		"punto3": "Promoure l’intercanvi i la reciprocitat.",
-		"punto4": "Potenciar projectes igualitaris, afavorir la discreció i evitar circuits per a pobres.",
-		"punto5": "Mantenir els hàbits i les relacions familiars (cuinar, menjar, celebrar…).",
-		"punto6": "Triar allò que es menja, segons gustos personals, culturals o de salut.",
-		"punto7": "Promoure l’autonomia i l’apoderament de la persona (model no assistencialista)",
-		"punto8": "Evitar el malbaratament i fomentar la sostenibilitat.",
-		"punto9": "Mantenir el comerç local i de proximitat.",
-		"punto10": "Promoure la formació i la inserció laboral."
-	},
-	
-	"SeccionVideos": {
-		"subtitulo": "Ajuda’ns a estar on més ens necessiten.",
-		"titulo": "Si vols recolzar aquest projecte i d’altres de lluita contra la pobresa, dona ara."
-	}
+		"necesidades-familias-titulo": "Les famílies no poden cobrir les seves necessitats",
 
+			"necesidades-familias-seccion1-trabajo": "Treball precari i atur:",
+			"necesidades-familias-seccion1-punto1": "Salaris baixos.",
+			"necesidades-familias-seccion1-punto2": "Atur de llarga durada.",
+			"necesidades-familias-seccion1-punto3": "Prestacions públiques insuficients.",
+
+			"necesidades-familias-seccion2-titulo": "Baixa protecció social:",
+			"necesidades-familias-seccion2-punto1": "Retallades en educació, sanitat, serveis socials", 
+			"necesidades-familias-seccion2-punto2": "Prestacions públiques en descens.",
+		
+			"necesidades-familias-seccion3-titulo": "Fragilitat humana:",
+			"necesidades-familias-seccion3-punto1": "Sense xarxa relacional" ,
+			"necesidades-familias-seccion3-punto2": "Malalties.",
+			"necesidades-familias-seccion3-punto3": "Trencaments familiars",
 	
+		"modelo-antiguo-titulo": "L’actual model es basa en les ajudes en espècie",
+		"modelo-antiguo-punto1": "Les famílies no poden planificar la compra.",
+		"modelo-antiguo-punto2": "Es corre el risc de perdre hàbits d’administració del pressupost familiar i les rutines de compra.",
+		"modelo-antiguo-punto3": "No poden decidir segons els seus gustos personals, costums culturals, necessitats de salut",
+		"modelo-antiguo-punto4": "S’afavoreix la pèrdua de l’autonomia personal.",
+	
+		"nuestro-modelo-titulo": "Per promoure aquesta innovació, què volem?",
+		"nuestro-modelo-punto1": "Dignificar al màxim l’atenció.",
+		"nuestro-modelo-punto2": "Impulsar projectes on les persones participin.",
+		"nuestro-modelo-punto3": "Promoure l’intercanvi i la reciprocitat.",
+		"nuestro-modelo-punto4": "Potenciar projectes igualitaris, afavorir la discreció i evitar circuits per a pobres.",
+		"nuestro-modelo-punto5": "Mantenir els hàbits i les relacions familiars (cuinar, menjar, celebrar…).",
+		"nuestro-modelo-punto6": "Triar allò que es menja, segons gustos personals, culturals o de salut.",
+		"nuestro-modelo-punto7": "Promoure l’autonomia i l’apoderament de la persona (model no assistencialista)",
+		"nuestro-modelo-punto8": "Evitar el malbaratament i fomentar la sostenibilitat.",
+		"nuestro-modelo-punto9": "Mantenir el comerç local i de proximitat.",
+		"nuestro-modelo-punto10": "Promoure la formació i la inserció laboral.",
+	
+		"seccion-videos-subtitulo": "Ajuda’ns a estar on més ens necessiten.",
+		"seccion-videos-titulo": "Si vols recolzar aquest projecte i d’altres de lluita contra la pobresa, dona ara."
 
 }
