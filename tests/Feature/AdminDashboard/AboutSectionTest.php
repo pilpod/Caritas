@@ -68,13 +68,18 @@ class AboutSectionTest extends TestCase
 
     public function test_adminCanUploadABoutSectionImage()
     {
-           
+        $this->withoutExceptionHandling();
+        Storage::fake('section');
+        
+        $file = UploadedFile::fake()->image('bla.jpg');
         $data = [
-            'section_image' => 'about.jpg'
+            'section_image' => $file
         ];
+       
         $sectionId = $this->section->id;
         $response = $this->actingAs($this->user)->put(route('about.updateImage', $sectionId), $data);
-        $response->assertStatus(200);
+        Storage::disk('local');
+        $this->assertFileExists(public_path('storage/section'));
 
     }
 
