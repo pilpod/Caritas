@@ -48,6 +48,7 @@ Route::middleware('admin')->group(function () {
     Route::put('/dashboard/about/{id}/image', [AboutController::class, 'updateImage'])->name('about.updateImage');
 
     Route::get('/dashboard/donate', [DonateController::class, 'index'])->name('donate');
+    Route::post('/dashboard/donate', [DonateController::class, 'store'])->name('donate.store');
     
 
 });
