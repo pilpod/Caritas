@@ -20,7 +20,19 @@ class ContentSectionSeeder extends Seeder
                 'section_image' => null
             ],
             [
-                'section_name' => 'how_to_help',
+                'section_name' => 'donate',
+                'section_image' => null
+            ],
+            [
+                'section_name' => 'volunteer',
+                'section_image' => null
+            ],
+            [
+                'section_name' => 'spread_word',
+                'section_image' => null
+            ],
+            [
+                'section_name' => 'sponsor',
                 'section_image' => null
             ],
         ]);
