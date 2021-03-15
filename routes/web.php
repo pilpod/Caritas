@@ -49,6 +49,8 @@ Route::middleware('admin')->group(function () {
 
     Route::get('/dashboard/donate', [DonateController::class, 'index'])->name('donate');
     Route::post('/dashboard/donate', [DonateController::class, 'store'])->name('donate.store');
+    Route::put('/dashboard/donate/{id}', [DonateController::class, 'update'])->name('donate.update');
+
     
 
 });

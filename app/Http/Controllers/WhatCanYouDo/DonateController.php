@@ -11,13 +11,14 @@ use App\Http\Requests\Donate\DonateStoreRequest;
 use App\Models\Language;
 use Illuminate\Auth\Events\Validated;
 use Illuminate\Support\Facades\DB;
+use App\Http\Requests\Donate\DonateUpdateRequest;
 
 class DonateController extends Controller
 {
     /**
      *
      * @param  \App\Http\Requests\Donate\DonateStoreRequest
-     * @param  \App\Http\Requests\About\AboutUpdateRequest
+     * @param  \App\Http\Requests\About\DonateUpdateRequest
      * @param  \App\Http\Requests\Image\ImageRequest
      * @return Illuminate\Http\Response
      */
@@ -70,6 +71,46 @@ class DonateController extends Controller
             'lang_id' => $esCode,
             'section_id' => $section,
 
+        ]);
+    }
+
+
+    public function update(DonateUpdateRequest $request, $id)
+    {
+        $request->validated();
+        $language = Language::find($request->lang_id);
+        
+        if($language->language_code === 'cat'){
+            $this->updateCat($request, $id);
+            
+        }
+        if($language->language_code === 'es'){
+            $this->updateSpanish($request, $id);
+        }
+    }
+
+    public function updateCat($data, $id) 
+    {
+       
+        $catData = CatalanData::find($id);
+
+        $catData->update([
+            'language_id' => $catData->language_id,
+            'section_id' => $catData->section_id,
+            'title_content' => $data->title_content,
+            'text_content' => $data->text_content,
+        ]);
+    }
+
+    public function updateSpanish($data, $id) 
+    {
+       
+        $spanishData = SpanishData::find($id);
+        $spanishData->update([
+            'language_id' => $spanishData->language_id,
+            'section_id' => $spanishData->section_id,
+            'title_content' => $data->title_content,
+            'text_content' => $data->text_content,
         ]);
     }
 }

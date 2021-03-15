@@ -9,6 +9,10 @@ use App\Models\User;
 use App\Models\Role;
 use App\Models\ContentSection;
 use App\Models\Language;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Http\UploadedFile;
+use App\Models\CatalanData;
+use App\Models\SpanishData;
 
 
 class DonateSectionTest extends TestCase
@@ -64,5 +68,43 @@ class DonateSectionTest extends TestCase
 
         $response = $this->actingAs($this->user)->post(route('donate.store', $data));
         $response->assertStatus(200);
+    }
+
+    public function testAdminCanUploadDonateSectionImage()
+    {
+        $this->withoutExceptionHandling();
+        Storage::fake('section');
+        
+        $file = UploadedFile::fake()->image('bla.jpg');
+        $data = [
+            'section_image' => $file
+        ];
+       
+        $sectionId = $this->section->id;
+        $response = $this->actingAs($this->user)->put(route('about.updateImage', $sectionId), $data);
+        Storage::disk('local');
+        $this->assertFileExists(public_path('storage/section'));
+
+    }
+
+    public function testAdminCanUpdateTextInSectionDonateCatalan()
+    {
+        $this->withoutExceptionHandling();
+        $catalanData = CatalanData::factory()->create([
+            'lang_id' => $this->catalanLanguage->id,
+            'section_id' => $this->section->id
+        ]);
+        $data = [
+            'title_content' => $catalanData->title_content,
+            'text_content' => 'This is catalan donate text',
+            'lang_id' => $this->catalanLanguage->id,
+            'section_id' => $this->section->id
+        ];
+       
+        $response = $this->actingAs($this->user)->put(route('donate.update', $catalanData->id), $data)
+        ->assertStatus(200);
+        $this->assertDatabaseHas('catalan_data', [
+            'text_content' => 'This is catalan donate text'
+        ]);
     }
 }
