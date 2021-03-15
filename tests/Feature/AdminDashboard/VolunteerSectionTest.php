@@ -34,7 +34,7 @@ class VolunteerSectionTest extends TestCase
             'language_code' => 'cat'
         ]);
         $this->section = ContentSection::factory()->create([
-            'section_name' => 'about'
+            'section_name' => 'volunteer'
         ]);
     }
 
