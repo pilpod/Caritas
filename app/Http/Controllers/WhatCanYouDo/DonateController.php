@@ -12,6 +12,7 @@ use App\Models\Language;
 use Illuminate\Auth\Events\Validated;
 use Illuminate\Support\Facades\DB;
 use App\Http\Requests\Donate\DonateUpdateRequest;
+use App\Http\Requests\Image\ImageRequest;
 
 class DonateController extends Controller
 {
@@ -74,6 +75,24 @@ class DonateController extends Controller
         ]);
     }
 
+    public function UpdateImage(ImageRequest $request, $id)
+    {
+        
+        $request->validated();
+        $section = ContentSection::find($id);
+        DB::beginTransaction();
+        try {
+            $section->update([
+                'section_image' => $request->section_image->getClientOriginalName()
+            ]);
+            $request->section_image->storeAs('public/section',  $request->section_image->getClientOriginalName());
+            DB::commit();
+            return back();
+        }
+        catch (\Exception $ex){
+            DB::rollBack();
+        }
+    }
 
     public function update(DonateUpdateRequest $request, $id)
     {

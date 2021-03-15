@@ -81,7 +81,7 @@ class DonateSectionTest extends TestCase
         ];
        
         $sectionId = $this->section->id;
-        $response = $this->actingAs($this->user)->put(route('about.updateImage', $sectionId), $data);
+        $response = $this->actingAs($this->user)->put(route('donate.updateImage', $sectionId), $data);
         Storage::disk('local');
         $this->assertFileExists(public_path('storage/section'));
 
