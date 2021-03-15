@@ -1,8 +1,8 @@
 <nav class="nav">
-    @if(app()->getLocale() == 'cat')
-    <button class="nav__btn">{{ __('nav-idioma-catalan') }}</button>
+    @if(app()->getLocale() == 'es')
+    <a href="{{ route('language', 'cat') }}" class="nav__btn">{{ __('nav-idioma-catalan') }}</a>
     @else
-    <button class="nav__btn">{{ __('nav-idioma-castellano') }}</button>
+    <a href="{{ route('language', 'es') }}" class="nav__btn">{{ __('nav-idioma-castellano') }}</a>
     @endif
     <button class="nav__btn">{{ __('nav-quienes-somos') }}</button>
     <x-logo href="https://www.santjosepbadalona.cat/" class="nav__logo"/>
