@@ -1,6 +1,6 @@
-<x-layout>
+<x-backoffice-layout>
     <div>
-        <form method="POST" action="{{route('about.updateImage', $sectionId)}}" enctype="multipart/form-data">
+        <form method="POST" action="" enctype="multipart/form-data">
         @method('PUT')
         @csrf
             <label for="section_image">Imagen de Sección</label>
