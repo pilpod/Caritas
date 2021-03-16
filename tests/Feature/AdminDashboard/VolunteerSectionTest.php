@@ -83,4 +83,25 @@ class VolunteerSectionTest extends TestCase
             'text_content' => 'Lorem ipsum dolor sit amet consectetur.'
         ]);
     }
+
+    public function test_AdminCanUpdateTextInSectionVolunteerSpanish()
+    {
+        $this->withoutExceptionHandling();
+        $spanishData = SpanishData::factory()->create([
+            'lang_id' => $this->spanishLanguage->id,
+            'section_id' => $this->section->id
+        ]);
+        $data = [
+            'title_content' => $spanishData->title_content,
+            'text_content' => 'fldsjflj fjsdlfkjsdf jljf sdlfkjsdlj lsjdfj',
+            'lang_id' => $this->spanishLanguage->id,
+            'section_id' => $this->section->id
+        ];
+       
+        $response = $this->actingAs($this->user)->put(route('volunteer.update', $spanishData->id), $data)
+        ->assertStatus(200);
+        $this->assertDatabaseHas('spanish_data', [
+            'text_content' => 'fldsjflj fjsdlfkjsdf jljf sdlfkjsdlj lsjdfj'
+        ]);
+    }
 }
