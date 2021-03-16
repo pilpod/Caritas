@@ -142,6 +142,8 @@
             </a>
             <a class="" href="{{route('explainTheProject')}}" type="button">
             Difusió / Difusión
+            <a class="" href="{{route('volunteer')}}" type="button">
+            Voluntari/ Voluntario
             </a>
         </section>
     </main>

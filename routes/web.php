@@ -1,16 +1,20 @@
 <?php
 
-use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\HomeController;
-use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Auth;
-use App\Http\Controllers\RegisterController;
-use App\Http\Controllers\UserProfileController;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
+
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\UserProfileController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\WhatCanYouDo\DonateController;
 use App\Http\Controllers\WhatCanYouDo\ExplainTheProjectController;
+use App\Http\Controllers\WhatCanYouDo\VolunteerController;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -57,6 +61,10 @@ Route::middleware('admin')->group(function () {
     Route::put('/dashboard/explain-the-project/{id}', [ExplainTheProjectController::class, 'update'])->name('explainTheProject.update');
     Route::put('/dashboard/explain-the-project/{id}/image', [ExplainTheProjectController::class, 'updateImage'])->name('explainTheProject.updateImage');
 
+    Route::get('/dashboard/volunteer', [VolunteerController::class, 'index'])->name('volunteer');
+    Route::post('/dashboard/volunteer', [VolunteerController::class, 'store'])->name('volunteer.store');
+    Route::put('/dashboard/volunteer/{id}', [VolunteerController::class, 'update'])->name('volunteer.update');
+    Route::put('/dashboard/volunteer/{id}/image', [VolunteerController::class, 'updateImage'])->name('volunteer.updateImage');
 
 });
 
