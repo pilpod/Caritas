@@ -55,4 +55,16 @@ class ExplainTheProjectTest extends TestCase
         $response = $this->actingAs($this->user)->get(route('explainTheProject'));
         $response->assertStatus(200);
     }
+
+    public function testAdminCanCreateExplainTheProjectSection()
+    {
+        $this->withoutExceptionHandling();
+        $data = [
+            'spanish_explainTheProject_text' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem, ab!',
+            'catalan_explainTheProject_text' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem, ab!',
+        ];
+
+        $response = $this->actingAs($this->user)->post(route('explainTheProject.store', $data));
+        $response->assertStatus(200);
+    }
 }

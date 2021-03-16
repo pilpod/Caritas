@@ -66,7 +66,7 @@ class DonateController extends Controller
         $esCode = Language::getId('es');
         $section = ContentSection::getId('donate');
 
-        CatalanData::create([
+        SpanishData::create([
             'title_content' => 'donate_main_text',
             'text_content' => $text,
             'lang_id' => $esCode,
