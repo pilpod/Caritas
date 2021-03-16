@@ -21,8 +21,9 @@
         <img class="hidden md:flex flex-end rounded-l-full h-72" src="{{ asset('storage/img/SectionOneRight.jpg') }}" alt="Caritas Logo"/>
     </section>
     <x-footer />
-    
+
     <x-quisommodal/>
     <x-quepotsfertu/>
+    <x-contactamodal/>
   
 </x-layout>
