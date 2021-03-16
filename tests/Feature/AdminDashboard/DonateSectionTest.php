@@ -108,4 +108,25 @@ class DonateSectionTest extends TestCase
             'text_content' => 'This is catalan donate text'
         ]);
     }
+
+    public function testAdminCanUpdateTextInSectionDonateSpanish()
+    {
+        $this->withoutExceptionHandling();
+        $spanishData = SpanishData::factory()->create([
+            'lang_id' => $this->spanishLanguage->id,
+            'section_id' => $this->section->id
+        ]);
+        $data = [
+            'title_content' => $spanishData->title_content,
+            'text_content' => 'This is spanish donate text',
+            'lang_id' => $this->spanishLanguage->id,
+            'section_id' => $this->section->id
+        ];
+       
+        $response = $this->actingAs($this->user)->put(route('donate.update', $spanishData->id), $data)
+        ->assertStatus(200);
+        $this->assertDatabaseHas('spanish_data', [
+            'text_content' => 'This is spanish donate text'
+        ]);
+    }
 }
