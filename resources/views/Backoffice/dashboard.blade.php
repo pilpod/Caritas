@@ -156,7 +156,7 @@
                     <a class="block bg-red hover:bg-red-lighter text-white font-bold p-2 text-md rounded border-b-4 border-red-light text-center w-2/3" href="{{route('volunteer')}}" type="button">
                         Voluntari/ Voluntario
                     </a>
-                    <a class="block bg-red hover:bg-red-lighter text-white font-bold p-2 text-md rounded border-b-4 border-red-light text-center w-2/3" href="{{route('volunteer')}}" type="button">
+                    <a class="block bg-red hover:bg-red-lighter text-white font-bold p-2 text-md rounded border-b-4 border-red-light text-center w-2/3" href="{{route('partner')}}" type="button">
                         Col·laborador / Colaborador
                     </a>
             </section>
