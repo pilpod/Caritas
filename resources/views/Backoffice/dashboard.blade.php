@@ -140,6 +140,9 @@
             <a class="" href="{{route('donate')}}" type="button">
             Donar / Donar
             </a>
+            <a class="" href="{{route('volunteer')}}" type="button">
+            Voluntari/ Voluntario
+            </a>
         </section>
     </main>
 </x-layout>
