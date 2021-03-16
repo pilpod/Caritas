@@ -5,40 +5,40 @@
         <li class="list-none">
           <x-anchor 
           href="#" 
-          txt="Política de cookies" />
+          txt="{{ __('footer-politica-cookies') }}" />
         </li>
         <li class="list-none">
           <x-anchor 
           href="#" 
-          txt="Política de privacidad" />
+          txt="{{ __('footer-politica-privacidad') }}" />
         </li>
         <li class="list-none">
           <x-anchor 
           href="#" 
-          txt="Aviso legal" />
+          txt="{{ __('footer-aviso-legal') }}" />
         </li>
       </ul>
   <x-logo href="#" container="w-2/6" class="w-24 h-24"/>
       <ul class="gap-2 w-2/6">
         <li class="list-none">
           <x-anchor 
-          href="#" 
-          txt="Cáritas Catalunya" />
+          href="https://www.caritascatalunya.cat/" target="_blank"
+          txt="{{ __('footer-caritas-cataluna') }}" />
         </li>
         <li class="list-none">
           <x-anchor 
-          href="#" 
-          txt="Cáritas España" />
+          href="https://www.caritas.es/" target="_blank"
+          txt="{{ __('footer-caritas-espana') }}" />
         </li>
         <li class="list-none">
           <x-anchor 
-          href="#" 
-          txt="Cáritas Europa" />
+          href="https://www.caritas.eu/" target="_blank"
+          txt="{{ __('footer-caritas-europa') }}" />
         </li>
         <li class="list-none">
           <x-anchor 
-          href="#" 
-          txt="Cáritas Internacional" />
+          href="https://www.caritas.org/" target="_blank"
+          txt="{{ __('footer-caritas-internacional') }}" />
         </li>
       </ul>
   </section>
@@ -52,7 +52,7 @@
           <x-anchor
           href="#"
           filename="message.svg"
-          txt="Església de Sant Josep C/ Enric Borràs, 69-75 08912 Badalona" />
+          txt="{{ __('footer-direccion') }} de Sant Josep C/ Enric Borràs, 69-75 08912 Badalona" />
         </div>
         <x-anchor
         href="#"
