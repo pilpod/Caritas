@@ -55,6 +55,7 @@ Route::middleware('admin')->group(function () {
     Route::get('/dashboard/explain-the-project', [ExplainTheProjectController::class, 'index'])->name('explainTheProject');
     Route::post('/dashboard/explain-the-project', [ExplainTheProjectController::class, 'store'])->name('explainTheProject.store');
     Route::put('/dashboard/explain-the-project/{id}', [ExplainTheProjectController::class, 'update'])->name('explainTheProject.update');
+    Route::put('/dashboard/explain-the-project/{id}/image', [ExplainTheProjectController::class, 'updateImage'])->name('explainTheProject.updateImage');
 
 
 });

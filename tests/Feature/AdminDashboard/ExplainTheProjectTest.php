@@ -4,6 +4,8 @@ namespace Tests\Feature\AdminDashboard;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Http\UploadedFile;
 
 use Tests\TestCase;
 
@@ -89,5 +91,21 @@ class ExplainTheProjectTest extends TestCase
         $this->assertDatabaseHas('catalan_data', [
             'text_content' => 'This is catalan explain the project text'
         ]);
+    }
+
+    public function testAdminCanUploadExplainTheProjectSectionImage()
+    {
+        $this->withoutExceptionHandling();
+        Storage::fake('section');
+        
+        $file = UploadedFile::fake()->image('explainTheProject.jpg');
+        $data = [
+            'section_image' => $file
+        ];
+       
+        $sectionId = $this->section->id;
+        $response = $this->actingAs($this->user)->put(route('explainTheProject.updateImage', $sectionId), $data);
+        Storage::disk('local');
+        $this->assertFileExists(public_path('storage/section'));
     }
 }

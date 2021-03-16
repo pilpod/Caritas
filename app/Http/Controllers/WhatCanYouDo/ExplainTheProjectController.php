@@ -10,6 +10,7 @@ use App\Models\CatalanData;
 use App\Models\SpanishData;
 use App\Http\Requests\ExplainTheProject\ExplainTheProjectStoreRequest;
 use App\Http\Requests\ExplainTheProject\ExplainTheProjectUpdateRequest;
+use App\Http\Requests\Image\ImageRequest;
 use Illuminate\Support\Facades\DB;
 use App\Models\Language;
 
@@ -111,5 +112,24 @@ class ExplainTheProjectController extends Controller
             'title_content' => $data->title_content,
             'text_content' => $data->text_content,
         ]);
+    }
+
+    public function UpdateImage(ImageRequest $request, $id)
+    {
+        
+        $request->validated();
+        $section = ContentSection::find($id);
+        DB::beginTransaction();
+        try {
+            $section->update([
+                'section_image' => $request->section_image->getClientOriginalName()
+            ]);
+            $request->section_image->storeAs('public/section',  $request->section_image->getClientOriginalName());
+            DB::commit();
+            return back();
+        }
+        catch (\Exception $ex){
+            DB::rollBack();
+        }
     }
 }
