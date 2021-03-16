@@ -14,11 +14,8 @@
     <button type="button" class="text-white text-mobile-tiny 
     bg-gradient-to-b from-red-lighter via-red-light to-red border-red object-center my-6 p-2.5
     rounded 
-">
-        DONAR
-    </button>
+">DONAR</button>
 
-    <button type="button" class="focus:outline-none rounded text-red text-mobile-tiny md:text-mobile-main my-6 py-2.5 px-5 border-b-4 border-red-light round bg-gradient-to-b from-red via-red-light to-red-lighter hover:border-red hover:text-white w-5/12 md:w-2/12 object-center ">HACER UNA DONACIÓN</button>
 
 
 </section>
