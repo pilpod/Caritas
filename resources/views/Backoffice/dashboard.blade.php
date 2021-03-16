@@ -145,6 +145,9 @@
             <a class="" href="{{route('volunteer')}}" type="button">
             Voluntari/ Voluntario
             </a>
+            <a class="" href="{{route('volunteer')}}" type="button">
+            Col·laborador / Colaborador
+            </a>
         </section>
     </main>
 </x-layout>
