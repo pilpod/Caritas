@@ -9,6 +9,7 @@ use App\Models\ContentSection;
 use App\Models\CatalanData;
 use App\Models\SpanishData;
 use App\Http\Requests\ExplainTheProject\ExplainTheProjectStoreRequest;
+use App\Http\Requests\ExplainTheProject\ExplainTheProjectUpdateRequest;
 use Illuminate\Support\Facades\DB;
 use App\Models\Language;
 
@@ -70,7 +71,45 @@ class ExplainTheProjectController extends Controller
             'text_content' => $text,
             'lang_id' => $esCode,
             'section_id' => $section,
+        ]);
+    }
 
+    public function update(ExplainTheProjectUpdateRequest $request, $id)
+    {
+        $request->validated();
+        $language = Language::find($request->lang_id);
+        
+        if($language->language_code === 'cat'){
+            $this->updateCat($request, $id);
+            
+        }
+        if($language->language_code === 'es'){
+            $this->updateSpanish($request, $id);
+        }
+    }
+
+    public function updateCat($data, $id) 
+    {
+       
+        $catData = CatalanData::find($id);
+
+        $catData->update([
+            'language_id' => $catData->language_id,
+            'section_id' => $catData->section_id,
+            'title_content' => $data->title_content,
+            'text_content' => $data->text_content,
+        ]);
+    }
+
+    public function updateSpanish($data, $id) 
+    {
+       
+        $spanishData = SpanishData::find($id);
+        $spanishData->update([
+            'language_id' => $spanishData->language_id,
+            'section_id' => $spanishData->section_id,
+            'title_content' => $data->title_content,
+            'text_content' => $data->text_content,
         ]);
     }
 }
