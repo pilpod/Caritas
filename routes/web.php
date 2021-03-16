@@ -67,6 +67,7 @@ Route::middleware('admin')->group(function () {
     Route::put('/dashboard/volunteer/{id}/image', [VolunteerController::class, 'updateImage'])->name('volunteer.updateImage');
 
     Route::get('/dashboard/partner', [PartnerController::class, 'index'])->name('partner');
+    Route::post('/dashboard/partner', [PartnerController::class, 'store'])->name('partner.store');
 
 });
 

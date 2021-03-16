@@ -11,7 +11,6 @@ use App\Models\Role;
 use App\Models\Language;
 use App\Models\ContentSection;
 
-
 class PartnerSectionTest extends TestCase
 {
     use RefreshDatabase;
@@ -52,4 +51,17 @@ class PartnerSectionTest extends TestCase
         $response->assertStatus(200)
         ->assertViewIs('Backoffice.partner');
     }
+
+    public function testAdminCanCreatePartnerSection()
+    {
+        $this->withoutExceptionHandling();
+        $data = [
+            'spanish_partner_text' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem, ab!',
+            'catalan_partner_text' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem, ab!',
+        ];
+
+        $response = $this->actingAs($this->user)->post(route('partner.store', $data));
+        $response->assertStatus(200);
+    }
+
 }
