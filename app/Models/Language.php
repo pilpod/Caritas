@@ -27,7 +27,7 @@ class Language extends Model
 
     public static function getId($code) 
     {
-        $language = DB::table('languages')->where('language_code', $code)->first();
+        $language = DB::table('languages')->where('language_code', '=', $code)->first();
         return $language->id;
 
     }
