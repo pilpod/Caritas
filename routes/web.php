@@ -68,6 +68,8 @@ Route::middleware('admin')->group(function () {
 
     Route::get('/dashboard/partner', [PartnerController::class, 'index'])->name('partner');
     Route::post('/dashboard/partner', [PartnerController::class, 'store'])->name('partner.store');
+    Route::put('/dashboard/partner/{id}', [PartnerController::class, 'update'])->name('partner.update');
+
 
 });
 

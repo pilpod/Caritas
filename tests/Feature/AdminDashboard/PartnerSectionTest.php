@@ -10,6 +10,9 @@ use App\Models\User;
 use App\Models\Role;
 use App\Models\Language;
 use App\Models\ContentSection;
+use App\Models\CatalanData;
+use App\Models\SpanishData;
+
 
 class PartnerSectionTest extends TestCase
 {
@@ -62,6 +65,48 @@ class PartnerSectionTest extends TestCase
 
         $response = $this->actingAs($this->user)->post(route('partner.store', $data));
         $response->assertStatus(200);
+    }
+
+    public function testAdminCanUpdateTextInSectionPartnerCatalan()
+    {
+        $this->withoutExceptionHandling();
+        $catalanData = CatalanData::factory()->create([
+            'lang_id' => $this->catalanLanguage->id,
+            'section_id' => $this->section->id
+        ]);
+        $data = [
+            'title_content' => $catalanData->title_content,
+            'text_content' => 'This is catalan partner text',
+            'lang_id' => $this->catalanLanguage->id,
+            'section_id' => $this->section->id
+        ];
+       
+        $response = $this->actingAs($this->user)->put(route('partner.update', $catalanData->id), $data)
+        ->assertStatus(200);
+        $this->assertDatabaseHas('catalan_data', [
+            'text_content' => 'This is catalan partner text'
+        ]);
+    }
+
+    public function testAdminCanUpdateTextInSectionPartnerSpanish()
+    {
+        $this->withoutExceptionHandling();
+        $spanishData = SpanishData::factory()->create([
+            'lang_id' => $this->spanishLanguage->id,
+            'section_id' => $this->section->id
+        ]);
+        $data = [
+            'title_content' => $spanishData->title_content,
+            'text_content' => 'This is spanish partner text',
+            'lang_id' => $this->spanishLanguage->id,
+            'section_id' => $this->section->id
+        ];
+       
+        $response = $this->actingAs($this->user)->put(route('partner.update', $spanishData->id), $data)
+        ->assertStatus(200);
+        $this->assertDatabaseHas('spanish_data', [
+            'text_content' => 'This is spanish partner text'
+        ]);
     }
 
 }

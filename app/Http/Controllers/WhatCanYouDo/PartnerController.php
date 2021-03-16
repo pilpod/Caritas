@@ -11,6 +11,7 @@ use App\Models\CatalanData;
 use App\Models\SpanishData;
 use App\Models\Language;
 use App\Http\Requests\Partner\PartnerStoreRequest;
+use App\Http\Requests\Partner\PartnerUpdateRequest;
 
 
 
@@ -74,6 +75,46 @@ class PartnerController extends Controller
             'lang_id' => $esCode,
             'section_id' => $section,
 
+        ]);
+    }
+
+
+    public function update(PartnerUpdateRequest $request, $id)
+    {
+        $request->validated();
+        $language = Language::find($request->lang_id);
+        
+        if($language->language_code === 'cat'){
+            $this->updateCat($request, $id);
+            
+        }
+        if($language->language_code === 'es'){
+            $this->updateSpanish($request, $id);
+        }
+    }
+
+    public function updateCat($data, $id) 
+    {
+       
+        $catData = CatalanData::find($id);
+
+        $catData->update([
+            'language_id' => $catData->language_id,
+            'section_id' => $catData->section_id,
+            'title_content' => $data->title_content,
+            'text_content' => $data->text_content,
+        ]);
+    }
+
+    public function updateSpanish($data, $id) 
+    {
+       
+        $spanishData = SpanishData::find($id);
+        $spanishData->update([
+            'language_id' => $spanishData->language_id,
+            'section_id' => $spanishData->section_id,
+            'title_content' => $data->title_content,
+            'text_content' => $data->text_content,
         ]);
     }
 }
