@@ -5,6 +5,9 @@ namespace Tests\Feature\AdminDashboard;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Http\UploadedFile;
+
 use App\Models\User;
 use App\Models\Role;
 use App\Models\Language;
@@ -103,5 +106,22 @@ class VolunteerSectionTest extends TestCase
         $this->assertDatabaseHas('spanish_data', [
             'text_content' => 'fldsjflj fjsdlfkjsdf jljf sdlfkjsdlj lsjdfj'
         ]);
+    }
+
+    public function test_adminCanUploadVolunteerSectionImage()
+    {
+        $this->withoutExceptionHandling();
+        Storage::fake('section');
+        
+        $file = UploadedFile::fake()->image('volunteer.jpg');
+        $data = [
+            'section_image' => $file
+        ];
+       
+        $sectionId = $this->section->id;
+        $response = $this->actingAs($this->user)->put(route('volunteer.updateImage', $sectionId), $data);
+        Storage::disk('local');
+        $this->assertFileExists(public_path('storage/section'));
+
     }
 }

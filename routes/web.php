@@ -58,7 +58,7 @@ Route::middleware('admin')->group(function () {
     Route::get('/dashboard/volunteer', [VolunteerController::class, 'index'])->name('volunteer');
     Route::post('/dashboard/volunteer', [VolunteerController::class, 'store'])->name('volunteer.store');
     Route::put('/dashboard/volunteer/{id}', [VolunteerController::class, 'update'])->name('volunteer.update');
-
+    Route::put('/dashboard/volunteer/{id}/image', [VolunteerController::class, 'updateImage'])->name('volunteer.updateImage');
 
 });
 
