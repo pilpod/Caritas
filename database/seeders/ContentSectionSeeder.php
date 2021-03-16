@@ -28,7 +28,7 @@ class ContentSectionSeeder extends Seeder
                 'section_image' => null
             ],
             [
-                'section_name' => 'spread_word',
+                'section_name' => 'explain-the-project',
                 'section_image' => null
             ],
             [

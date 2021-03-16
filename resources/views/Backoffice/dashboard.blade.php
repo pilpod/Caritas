@@ -140,6 +140,9 @@
             <a class="" href="{{route('donate')}}" type="button">
             Donar / Donar
             </a>
+            <a class="" href="{{route('explainTheProject')}}" type="button">
+            Difusió / Difusión
+            </a>
         </section>
     </main>
 </x-layout>
