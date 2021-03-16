@@ -22,5 +22,9 @@ class DatabaseSeeder extends Seeder
         $this->call([
             ContentSectionSeeder::class,
         ]);
+
+        $this->call([
+            LanguageSeeder::class,
+        ]);
     }
 }

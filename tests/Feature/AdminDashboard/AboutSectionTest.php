@@ -62,7 +62,7 @@ class AboutSectionTest extends TestCase
             'catalan_about_text' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto incidunt, iure harum repudiandae fugiat qui. Ex ad quo odio doloribus itaque? Soluta laborum culpa illo laboriosam odio sint minus ad, suscipit nesciunt. Pariatur vel velit quisquam ullam placeat dolorum omnis perferendis, sapiente, alias atque distinctio dicta sit dolorem, necessitatibus tenetur!',
         ];
         $response = $this->actingAs($this->user)->post(route('about.store', $data));
-        $response->assertStatus(200);
+        $response->assertStatus(302);
     }
 
 
@@ -98,7 +98,7 @@ class AboutSectionTest extends TestCase
         ];
        
         $response = $this->actingAs($this->user)->put(route('about.update', $catalanData->id), $data)
-        ->assertStatus(200);
+        ->assertStatus(302);
         $this->assertDatabaseHas('catalan_data', [
             'text_content' => 'fldsjflj fjsdlfkjsdf jljf sdlfkjsdlj lsjdfj'
         ]);
@@ -119,7 +119,7 @@ class AboutSectionTest extends TestCase
         ];
        
         $response = $this->actingAs($this->user)->put(route('about.update', $spanishData->id), $data)
-        ->assertStatus(200);
+        ->assertStatus(302);
         $this->assertDatabaseHas('spanish_data', [
             'text_content' => 'fldsjflj fjsdlfkjsdf jljf sdlfkjsdlj lsjdfj'
         ]);

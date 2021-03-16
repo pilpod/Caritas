@@ -7,6 +7,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link href="/css/app.css" rel="stylesheet">
         <title>{{ $title ?? 'Càritas @ Sant Josep Badalona' }}</title>
+
+        <script src="https://cdn.ckeditor.com/ckeditor5/26.0.0/classic/ckeditor.js"></script>
       </head>
     <body id="body" {{ $attributes }}>
       {{ $slot }}
