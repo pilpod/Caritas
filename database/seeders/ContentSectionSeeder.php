@@ -32,7 +32,7 @@ class ContentSectionSeeder extends Seeder
                 'section_image' => null
             ],
             [
-                'section_name' => 'sponsor',
+                'section_name' => 'partner',
                 'section_image' => null
             ],
         ]);
