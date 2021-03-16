@@ -69,6 +69,7 @@ module.exports = {
         '150px': '15rem',
         '262px': '26.2rem',
         '350px': '35rem',
+        '375px': '37.4rem',
         '660px': '66rem',
         '850px': '85rem'
       },
@@ -83,6 +84,7 @@ module.exports = {
     variants: {
       extend: {
         backgroundColor: ['active'],
+        borderWidth: ['hover'],
       }
     },
     plugins: [],

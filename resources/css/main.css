@@ -4,6 +4,10 @@
         @apply font-sans
     }
 
+    ::selection {
+    @apply bg-red text-white
+}
+
     body {
        @apply text-body leading-normal lg:text-d-body
     }
@@ -26,9 +30,9 @@
 }
 
 .nav__logo {
-    @apply w-24 h-24 lg:w-36 lg:h-36
+    @apply w-24 h-24 lg:w-32 lg:h-32
 }
 
 .nav__btn {
-    @apply hidden lg:block text-d-ui-sub font-medium uppercase hover:bg-red hover:text-white
+    @apply hidden text-d-ui-sub font-medium uppercase rounded-b-sm border-b-4 border-white-dark hover:border-red lg:block transition-colors duration-150 ease-out
 }

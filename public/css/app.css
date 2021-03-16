@@ -3,6 +3,20 @@ html {
   font-family: Montserrat, sans-serif
 }
 
+::-moz-selection {
+  --tw-bg-opacity: 1;
+  background-color: rgba(205, 34, 45, var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgba(255, 255, 255, var(--tw-text-opacity))
+}
+
+::selection {
+  --tw-bg-opacity: 1;
+  background-color: rgba(205, 34, 45, var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgba(255, 255, 255, var(--tw-text-opacity))
+}
+
 body {
   font-size: 1.6rem;
   line-height: 1.5
@@ -93,29 +107,34 @@ li {
 
 @media (min-width: 1024px) {
   .nav__logo {
-    height: 9rem;
-    width: 9rem
+    height: 8rem;
+    width: 8rem
   }
 }
 
+.nav__btn {
+  --tw-border-opacity: 1;
+  border-color: rgba(250, 250, 250, var(--tw-border-opacity))
+}
+
 .nav__btn:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgba(205, 34, 45, var(--tw-bg-opacity))
+  --tw-border-opacity: 1;
+  border-color: rgba(205, 34, 45, var(--tw-border-opacity))
 }
 
 .nav__btn {
+  border-bottom-right-radius: 0.125rem;
+  border-bottom-left-radius: 0.125rem;
+  border-bottom-width: 4px;
   display: none;
   font-weight: 500;
-  font-size: 1.6rem
-}
-
-.nav__btn:hover {
-  --tw-text-opacity: 1;
-  color: rgba(255, 255, 255, var(--tw-text-opacity))
-}
-
-.nav__btn {
-  text-transform: uppercase
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  transition-duration: 150ms
 }
 
 @media (min-width: 1024px) {
@@ -14373,6 +14392,10 @@ video {
 
 .w-350px {
   width: 35rem;
+}
+
+.w-375px {
+  width: 37.4rem;
 }
 
 .w-660px {
@@ -32140,6 +32163,10 @@ video {
     width: 35rem;
   }
 
+  .sm\:w-375px {
+    width: 37.4rem;
+  }
+
   .sm\:w-660px {
     width: 66rem;
   }
@@ -49838,6 +49865,10 @@ video {
 
   .md\:w-350px {
     width: 35rem;
+  }
+
+  .md\:w-375px {
+    width: 37.4rem;
   }
 
   .md\:w-660px {
@@ -67540,6 +67571,10 @@ video {
     width: 35rem;
   }
 
+  .lg\:w-375px {
+    width: 37.4rem;
+  }
+
   .lg\:w-660px {
     width: 66rem;
   }
@@ -85240,6 +85275,10 @@ video {
     width: 35rem;
   }
 
+  .xl\:w-375px {
+    width: 37.4rem;
+  }
+
   .xl\:w-660px {
     width: 66rem;
   }
@@ -102938,6 +102977,10 @@ video {
 
   .\32xl\:w-350px {
     width: 35rem;
+  }
+
+  .\32xl\:w-375px {
+    width: 37.4rem;
   }
 
   .\32xl\:w-660px {
