@@ -9,6 +9,8 @@ use App\Models\User;
 use App\Models\Role;
 use App\Models\Language;
 use App\Models\ContentSection;
+use App\Models\CatalanData;
+use App\Models\SpanishData;
 
 
 class VolunteerSectionTest extends TestCase
@@ -59,5 +61,26 @@ class VolunteerSectionTest extends TestCase
         $response = $this->actingAs($this->user)->post(route('volunteer.store', $data));
         $response->assertStatus(200);
         $this->assertDatabaseHas('catalan_data', ['text_content' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem, ab!']);
+    }
+
+    public function test_AdminCanUpdateTextInSectionVolunteerCatalan()
+    {
+        $this->withoutExceptionHandling();
+        $catalanData = CatalanData::factory()->create([
+            'lang_id' => $this->catalanLanguage->id,
+            'section_id' => $this->section->id
+        ]);
+        $data = [
+            'title_content' => $catalanData->title_content,
+            'text_content' => 'Lorem ipsum dolor sit amet consectetur.',
+            'lang_id' => $this->catalanLanguage->id,
+            'section_id' => $this->section->id
+        ];
+       
+        $response = $this->actingAs($this->user)->put(route('volunteer.update', $catalanData->id), $data)
+        ->assertStatus(200);
+        $this->assertDatabaseHas('catalan_data', [
+            'text_content' => 'Lorem ipsum dolor sit amet consectetur.'
+        ]);
     }
 }

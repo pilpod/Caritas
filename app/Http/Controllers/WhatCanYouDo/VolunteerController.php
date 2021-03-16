@@ -9,6 +9,7 @@ use App\Models\ContentSection;
 use App\Models\CatalanData;
 use App\Models\SpanishData;
 use App\Http\Requests\Volunteer\VolunteerStoreRequest;
+use App\Http\Requests\Volunteer\VolunteerUpdateRequest;
 use App\Models\Language;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Lang;
@@ -19,7 +20,7 @@ class VolunteerController extends Controller
      /**
      *
      * @param  \App\Http\Requests\Donate\VolunteerStoreRequest
-     * @param  \App\Http\Requests\About\DonateUpdateRequest
+     * @param  \App\Http\Requests\Volunteer\VolunterUpdateRequest
      * @param  \App\Http\Requests\Image\ImageRequest
      * @return Illuminate\Http\Response
      */
@@ -75,5 +76,43 @@ class VolunteerController extends Controller
         ]);
     }
 
+    public function update(VolunteerUpdateRequest $request, $id)
+    {
+        $request->validated();
+        $language = Language::find($request->lang_id);
+        
+        if($language->language_code === 'cat'){
+            $this->updateCat($request, $id);
+            
+        }
+        if($language->language_code === 'es'){
+            $this->updateSpanish($request, $id);
+        }
+    }
+
+    public function updateCat($data, $id) 
+    {
+       
+        $catData = CatalanData::find($id);
+
+        $catData->update([
+            'language_id' => $catData->language_id,
+            'section_id' => $catData->section_id,
+            'title_content' => $data->title_content,
+            'text_content' => $data->text_content,
+        ]);
+    }
+
+    public function updateSpanish($data, $id) 
+    {
+       
+        $spanishData = SpanishData::find($id);
+        $spanishData->update([
+            'language_id' => $spanishData->language_id,
+            'section_id' => $spanishData->section_id,
+            'title_content' => $data->title_content,
+            'text_content' => $data->text_content,
+        ]);
+    }
 
 }
