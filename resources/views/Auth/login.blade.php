@@ -35,7 +35,7 @@
                             Recuerdame
                         </label>
                     </div>
-                    <button type="submit" class="block w-1/4 mx-auto bg-red hover:bg-red-lighter text-white font-bold py-2 px-4 rounded border-b-4 border-red-light">
+                    <button type="submit" class="block w-1/3 object-contain mx-auto bg-red hover:bg-red-lighter text-white font-bold py-2 px-4 rounded border-b-4 border-red-light">
                         Conectarse
                     </button>
 
