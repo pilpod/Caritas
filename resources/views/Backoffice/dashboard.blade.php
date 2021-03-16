@@ -2,15 +2,15 @@
     <header class="border-b-2 border-red mb-20 pt-3 px-3">
         <div>
             <h1 class="text-h2 mb-5">Caritas Escritorio</h1>
-            <ul class="flex">
-                <li class="mr-6">
+            
+                <div class="mr-6 flex">
                     <form id="logout-form" action="{{ route('logout') }}" method="POST">
                         @csrf
                         <button class="text-grey hover:text-red text-ui-main" type="submit">Desconectar</button>
                     </form>
 
-                </li>
-            </ul>
+                </div>
+          
         </div>
     </header>
     <main class="pl-5 flex gap-20 flex-wrap justify-center text-body m-4">
