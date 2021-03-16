@@ -20,7 +20,7 @@ class DonateController extends Controller
     /**
      *
      * @param  \App\Http\Requests\Donate\DonateStoreRequest
-     * @param  \App\Http\Requests\About\DonateUpdateRequest
+     * @param  \App\Http\Requests\Donate\DonateUpdateRequest
      * @param  \App\Http\Requests\Image\ImageRequest
      * @return Illuminate\Http\Response
      */
