@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\WhatCanYouDo\DonateController;
-
+use App\Http\Controllers\WhatCanYouDo\ExplainTheProjectController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -51,6 +51,9 @@ Route::middleware('admin')->group(function () {
     Route::post('/dashboard/donate', [DonateController::class, 'store'])->name('donate.store');
     Route::put('/dashboard/donate/{id}', [DonateController::class, 'update'])->name('donate.update');
     Route::put('/dashboard/donate/{id}/image', [DonateController::class, 'updateImage'])->name('donate.updateImage');
+
+    Route::get('/dashboard/explain-the-project', [ExplainTheProjectController::class, 'index'])->name('explainTheProject');
+
 
 });
 
