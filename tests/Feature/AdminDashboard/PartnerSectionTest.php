@@ -5,6 +5,8 @@ namespace Tests\Feature\AdminDashboard;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Http\UploadedFile;
 
 use App\Models\User;
 use App\Models\Role;
@@ -107,6 +109,23 @@ class PartnerSectionTest extends TestCase
         $this->assertDatabaseHas('spanish_data', [
             'text_content' => 'This is spanish partner text'
         ]);
+    }
+
+    public function testAdminCanUploadPartnerSectionImage()
+    {
+        $this->withoutExceptionHandling();
+        Storage::fake('section');
+        
+        $file = UploadedFile::fake()->image('partner.jpg');
+        $data = [
+            'section_image' => $file
+        ];
+       
+        $sectionId = $this->section->id;
+        $response = $this->actingAs($this->user)->put(route('partner.updateImage', $sectionId), $data);
+        Storage::disk('local');
+        $this->assertFileExists(public_path('storage/section'));
+
     }
 
 }
