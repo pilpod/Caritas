@@ -10,6 +10,7 @@
       </head>
     <body id="body" {{ $attributes }}>
       {{ $slot }}
+      <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.1/dist/alpine.min.js" defer></script>
       @stack('script-back-to-top')
     </body>
 </html>

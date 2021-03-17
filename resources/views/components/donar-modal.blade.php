@@ -1,6 +1,3 @@
-
-
-
 <article>
     <div class="bg-red-light">
         <a href="#"><h1 class="text-h1 text-right mr-6">x</h1></a>
