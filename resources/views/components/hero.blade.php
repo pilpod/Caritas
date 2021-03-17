@@ -3,5 +3,5 @@
         <h1 class="text-h1 font-black lg:text-d-h1">{{ __('hero-titulo')  }}</h1>
         <p class="lg:text-d-body">{{ __('hero-texto') }}</p>
     </div>
-    <button class="btn">{{ __('hero-boton') }}</button>
+    <x-button txt="{{ __('hero-boton') }}" normal-modal><x-modals.donation /></x-button>
 </div>

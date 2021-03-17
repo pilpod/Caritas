@@ -17,7 +17,8 @@
 @endif
 
 @if ($normalModal)
-    <button @click="open = true" class="btn">{{ $txt }}</button>
+<div x-data="{ open: false }" class="btn">
+    <button @click="open = true" class="w-full h-full">{{ $txt }}</button>
     <div class="modal__overlay" x-show="open">
       <button @click="open = false" class="modal__close">
           <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="modal__close-svg">
@@ -27,6 +28,7 @@
       <div class="modal__dialog" @click.away="open = false">
         {{ $slot }}
       </div>
+    </div>
 </div>
 @endif
 
@@ -42,6 +44,6 @@
       <div class="modal__dialog" @click.away="open = false">
         {{ $slot }}
       </div>
-  </div>
+    </div>
 </div>
 @endif

@@ -42,7 +42,7 @@
 }
 
 .modal__overlay {
-    @apply absolute top-0 left-0 flex flex-col-reverse md:flex-col items-center md:justify-center w-full h-screen bg-black bg-opacity-50
+    @apply fixed z-20 top-0 left-0 flex flex-col-reverse md:flex-col items-center md:justify-center w-full h-screen bg-black bg-opacity-50
 }
 
 .modal__dialog {
