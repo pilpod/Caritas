@@ -50,7 +50,7 @@
             </x-downtick-list>
         </div>
             <x-mini-hero filename="giving.svg" alt="" class="gap-4" class="lg:flex-row-reverse">
-                <h2 class="text-h2 p-3 text-center items-center font-bold max-w-7xl md:text-d-h3">El actual modelo se basa en las ayudas en especie</h2>
+                <h2 class="text-h2 p-3 text-center items-center font-bold max-w-7xl md:text-d-h3">{{ __('modelo-antiguo-titulo') }}</h2>
             </x-mini-hero>
         <ul class="font-bold text-body gap-12 md:grid md:grid-cols-2 md:grid-rows-2 md:text-d-body md:w-full md:place-items-center">
                 <li class="md:w-350px">{{ __('modelo-antiguo-punto1') }}</li>
