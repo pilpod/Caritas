@@ -2,7 +2,7 @@
 ​
 ​
 <div class="flex flex-row w-11/12 my-5 border-grey-light border p-2 rounded">
-    <img class="w-1/6 p-2" src="{{ asset('storage/img/' . $filename) }}" alt="">
+    <img class="w-1/6 p-2" src="{{ asset('storage/section/' . $filename) }}" alt="">
     <div class="flex flex-col">
       <p class="font-bold">{{ $titleCard }}</p>
       {{ $slot }}
