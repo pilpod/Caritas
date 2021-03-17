@@ -69,7 +69,7 @@ class ExplainTheProjectTest extends TestCase
         ];
 
         $response = $this->actingAs($this->user)->post(route('explainTheProject.store', $data));
-        $response->assertStatus(200);
+        $response->assertStatus(302);
     }
 
     public function testAdminCanUpdateTextInSectionExplainTheProjectCatalan()
@@ -87,7 +87,7 @@ class ExplainTheProjectTest extends TestCase
         ];
        
         $response = $this->actingAs($this->user)->put(route('explainTheProject.update', $catalanData->id), $data)
-        ->assertStatus(200);
+        ->assertStatus(302);
         $this->assertDatabaseHas('catalan_data', [
             'text_content' => 'This is catalan explain the project text'
         ]);

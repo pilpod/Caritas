@@ -60,21 +60,37 @@ module.exports = {
         'donar': 'url(/storage/img/bgDonar.jpg)'
       }),
       borderRadius: {
-        'dtl': '5.0rem'
+        'dtl': '5.0rem',
+        'imglateral': '12.5rem'
       },
       width: {
-        '150px': '15rem',
-        '262px': '26.2rem',
         '68px': '6.8rem',
         '95px': '9.5rem',
+        '150px': '15rem',
+        '262px': '26.2rem',
+        '350px': '35rem',
+        '375px': '37.4rem',
+        '660px': '66rem',
+        '850px': '85rem'
       },
       height: {
-        '150px': '15rem'
+        '150px': '15rem',
+        '350px': '35rem',
+        '365px': '36.5rem',
+        '450px': '45rem',
+        '540px': '54rem',
       },
+      maxHeight: {
+        '80%': '80%',
+      },
+      minHeight: {
+        '50%': '50%',
+      }
     },
     variants: {
       extend: {
         backgroundColor: ['active'],
+        borderWidth: ['hover'],
       }
     },
     plugins: [],

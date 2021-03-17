@@ -4,8 +4,12 @@
         @apply font-sans
     }
 
+    ::selection {
+    @apply bg-red text-white-dark
+}
+
     body {
-       @apply text-body leading-normal
+       @apply text-body leading-normal lg:text-d-body
     }
 
     ul {
@@ -18,17 +22,37 @@
 }
 
 .btn {
-    @apply text-ui-main font-bold uppercase text-white py-4 px-24 w-262px border-b-4 border-red-light rounded-md bg-red hover:bg-red-light hover:border-red-lighter
+    @apply text-ui-main font-bold uppercase text-white py-4 px-24 w-262px border-b-4 border-red-light rounded-md bg-red hover:bg-red-light hover:border-red-lighter lg:text-d-ui-main
 }
 
 .nav {
-    @apply w-screen h-24 flex justify-between fixed top-0 z-10 bg-white lg:h-48 lg:grid lg:grid-cols-5 lg:grid-rows-1
+    @apply w-screen h-24 flex justify-between fixed top-0 z-10 bg-white lg:h-36 lg:grid lg:grid-cols-5 lg:grid-rows-1
 }
 
 .nav__logo {
-    @apply w-24 h-24 lg:w-48 lg:h-full
+    @apply w-24 h-24 lg:w-32 lg:h-32
 }
 
 .nav__btn {
-    @apply hidden lg:block text-d-ui-sub font-medium uppercase hover:bg-red hover:text-white
+    @apply hidden font-medium uppercase rounded-b-sm border-b-4 border-white-dark hover:border-red lg:block transition-colors duration-150 ease-out
+}
+
+.nav__btn button {
+    @apply uppercase
+}
+
+.modal__overlay {
+    @apply absolute top-0 left-0 flex flex-col-reverse md:flex-col items-center md:justify-center w-full h-screen bg-black bg-opacity-50
+}
+
+.modal__dialog {
+    @apply h-4/5 mb-8 md:mb-0 overflow-y-auto w-11/12 p-4 bg-white-dark rounded shadow-xl md:p-6 lg:w-4/5
+}
+
+.modal__close {
+    @apply relative mb-2 md:mb-0 md:bottom-8 rounded-full flex justify-center items-center w-24 h-24 bg-white-dark border-b-4 border-white hover:shadow-hr hover:border-red transition-colors duration-150 ease-out
+}
+
+.modal__close-svg {
+    @apply w-14 h-14
 }

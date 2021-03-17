@@ -10,10 +10,10 @@
       </ul>
   <x-logo href="#" container="w-2/6" class="w-24 h-24"/>
       <ul class="gap-2 w-2/6">
-        <li class="list-none"><x-anchor href="https://www.caritascatalunya.cat/" target="_blank"txt="{{ __('footer-caritas-cataluna') }}" /></li>
-        <li class="list-none"><x-anchor href="https://www.caritas.es/" target="_blank"txt="{{ __('footer-caritas-espana') }}" /></li>
-        <li class="list-none"><x-anchor href="https://www.caritas.eu/" target="_blank"txt="{{ __('footer-caritas-europa') }}" /></li>
-        <li class="list-none"><x-anchor href="https://www.caritas.org/" target="_blank"txt="{{ __('footer-caritas-internacional') }}" /></li>
+        <li class="list-none"><x-anchor href="https://www.caritascatalunya.cat/" target="_blank" txt="{{ __('footer-caritas-cataluna') }}" /></li>
+        <li class="list-none"><x-anchor href="https://www.caritas.es/" target="_blank" txt="{{ __('footer-caritas-espana') }}" /></li>
+        <li class="list-none"><x-anchor href="https://www.caritas.eu/" target="_blank" txt="{{ __('footer-caritas-europa') }}" /></li>
+        <li class="list-none"><x-anchor href="https://www.caritas.org/" target="_blank" txt="{{ __('footer-caritas-internacional') }}" /></li>
       </ul>
   </section>
 <x-separator skinny traslucid/>

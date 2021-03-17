@@ -24,7 +24,6 @@ class ExplainTheProjectUpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            'title_content' => 'required | string | max:255',
             'text_content' => 'required | string',
         ];
     }

@@ -26,13 +26,13 @@ class DonateController extends Controller
      */
     public function index()
     {
-        $sectionId = ContentSection::getId('donate');
-        $catData = CatalanData::where('title_content', '=', 'main_text');
-        $spanishData = SpanishData::where('title_content', '=', 'main_text');
+        $section = ContentSection::where('section_name', '=', 'donate')->first();
+        $catData = CatalanData::where('title_content', '=', 'donate-main-text')->first();
+        $spanishData = SpanishData::where('title_content', '=', 'donate-main-text')->first();
         return view('Backoffice.donate', [
-            'catdata' => $catData,
+            'catData' => $catData,
             'spanishData' => $spanishData,
-            'sectionId' => $sectionId,
+            'section' => $section,
         ]);
     }
 
@@ -47,7 +47,7 @@ class DonateController extends Controller
             $this->createDonateMainTextCat($catText);
             $this->createDonateMainTextEs($esText);
         });
-
+        return redirect( route('donate'), 302);
     }
 
     public function createDonateMainTextCat($text) {
@@ -55,7 +55,7 @@ class DonateController extends Controller
         $section = ContentSection::getId('donate');
 
         CatalanData::create([
-            'title_content' => 'donate_main_text',
+            'title_content' => 'donate-main-text',
             'text_content' => $text,
             'lang_id' => $catCode,
             'section_id' => $section,
@@ -68,7 +68,7 @@ class DonateController extends Controller
         $section = ContentSection::getId('donate');
 
         SpanishData::create([
-            'title_content' => 'donate_main_text',
+            'title_content' => 'donate-main-text',
             'text_content' => $text,
             'lang_id' => $esCode,
             'section_id' => $section,
@@ -97,6 +97,7 @@ class DonateController extends Controller
 
     public function update(DonateUpdateRequest $request, $id)
     {
+        
         $request->validated();
         $language = Language::find($request->lang_id);
         
@@ -107,17 +108,19 @@ class DonateController extends Controller
         if($language->language_code === 'es'){
             $this->updateSpanish($request, $id);
         }
+
+        return redirect( route('donate'), 302 );
     }
 
     public function updateCat($data, $id) 
     {
        
-        $catData = CatalanData::find($id);
+        $catData = CatalanData::where('section_id', '=', $id)->first();;
 
         $catData->update([
-            'language_id' => $catData->language_id,
+            'lang_id' => $catData->lang_id,
             'section_id' => $catData->section_id,
-            'title_content' => $data->title_content,
+            'title_content' => $catData->title_content,
             'text_content' => $data->text_content,
         ]);
     }
@@ -125,11 +128,12 @@ class DonateController extends Controller
     public function updateSpanish($data, $id) 
     {
        
-        $spanishData = SpanishData::find($id);
+        $spanishData = SpanishData::where('section_id', '=', $id)->first();
+
         $spanishData->update([
-            'language_id' => $spanishData->language_id,
+            'lang_id' => $spanishData->lang_id,
             'section_id' => $spanishData->section_id,
-            'title_content' => $data->title_content,
+            'title_content' => $spanishData->title_content,
             'text_content' => $data->text_content,
         ]);
     }

@@ -29,13 +29,13 @@ class PartnerController extends Controller
 
     public function index()
     {
-        $sectionId = ContentSection::getId('partner');
-        $catData = CatalanData::where('title_content', '=', 'main_text');
-        $spanishData = SpanishData::where('title_content', '=', 'main_text');
+        $section = ContentSection::where('section_name', '=', 'partner')->first();
+        $catData = CatalanData::where('title_content', '=', 'partner-main-text')->first();
+        $spanishData = SpanishData::where('title_content', '=', 'partner-main-text')->first();
         return view('Backoffice.partner', [
-            'catdata' => $catData,
+            'catData' => $catData,
             'spanishData' => $spanishData,
-            'sectionId' => $sectionId,
+            'section' => $section,
         ]);
     }
 
@@ -50,7 +50,7 @@ class PartnerController extends Controller
             $this->createPartnerMainTextCat($catText);
             $this->createPartnerMainTextEs($esText);
         });
-
+        return redirect( route('partner'), 302);
     }
 
     public function createPartnerMainTextCat($text) {
@@ -58,7 +58,7 @@ class PartnerController extends Controller
         $section = ContentSection::getId('partner');
 
         CatalanData::create([
-            'title_content' => 'partner_main_text',
+            'title_content' => 'partner-main-text',
             'text_content' => $text,
             'lang_id' => $catCode,
             'section_id' => $section,
@@ -71,7 +71,7 @@ class PartnerController extends Controller
         $section = ContentSection::getId('partner');
 
         SpanishData::create([
-            'title_content' => 'partner_main_text',
+            'title_content' => 'partner-main-text',
             'text_content' => $text,
             'lang_id' => $esCode,
             'section_id' => $section,
@@ -92,17 +92,19 @@ class PartnerController extends Controller
         if($language->language_code === 'es'){
             $this->updateSpanish($request, $id);
         }
+
+        return redirect( route('partner'), 302 );
     }
 
     public function updateCat($data, $id) 
     {
        
-        $catData = CatalanData::find($id);
+        $catData = CatalanData::where('section_id', '=', $id)->first();
 
         $catData->update([
-            'language_id' => $catData->language_id,
+            'lang_id' => $catData->lang_id,
             'section_id' => $catData->section_id,
-            'title_content' => $data->title_content,
+            'title_content' => $catData->title_content,
             'text_content' => $data->text_content,
         ]);
     }
@@ -110,11 +112,11 @@ class PartnerController extends Controller
     public function updateSpanish($data, $id) 
     {
        
-        $spanishData = SpanishData::find($id);
+        $spanishData = SpanishData::where('section_id', '=', $id)->first();
         $spanishData->update([
-            'language_id' => $spanishData->language_id,
+            'lang_id' => $spanishData->lang_id,
             'section_id' => $spanishData->section_id,
-            'title_content' => $data->title_content,
+            'title_content' => $spanishData->title_content,
             'text_content' => $data->text_content,
         ]);
     }

@@ -1,12 +1,13 @@
-<nav class="nav">
-    @if(app()->getLocale() == 'es')
-    <a href="{{ route('language', 'cat') }}" class="nav__btn">{{ __('nav-idioma-catalan') }}</a>
-    @else
-    <a href="{{ route('language', 'es') }}" class="nav__btn">{{ __('nav-idioma-castellano') }}</a>
-    @endif
-    <button class="nav__btn">{{ __('nav-quienes-somos') }}</button>
-    <x-logo href="https://www.santjosepbadalona.cat/" class="nav__logo"/>
-    <button class="nav__btn">{{ __('nav-que-puedes-hacer-tu') }}</button>
-    <button class="nav__btn">{{ __('nav-contacto') }}</button>
-    <x-burguer-menu class="md:hidden"/>
+<nav id="navBox" class="nav">
+@if(app()->getLocale() == 'es')
+    <x-button txt="{{ __('nav-idioma-catalan') }}" url="{{ route('language', 'cat') }}" nav-url/>
+@else
+    <x-button txt="{{ __('nav-idioma-castellano') }}" url="{{ route('language', 'es') }}" nav-url/>
+@endif
+    <x-button txt="{{ __('nav-quienes-somos') }}" nav-modal><x-modals.who-we-are /></x-button>
+    <x-logo href="https://www.santjosepbadalona.cat/" class="nav__logo" />
+    <x-button txt="{{ __('nav-que-puedes-hacer-tu') }}" nav-modal>Content</x-button>
+    <x-button txt="{{ __('nav-contacto') }}" nav-modal>Content</x-button>
+    <x-burguer-menu class="lg:hidden"/>
 </nav>
+
