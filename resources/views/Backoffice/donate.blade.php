@@ -1,9 +1,12 @@
 <x-backoffice-layout>
-    <div class="flex flex-col text-body text-center gap-20 border-2 border-red mt-40 w-3/4 mx-auto p-8 rounded-2xl">
+    <div class="flex flex-col relative  text-body text-center gap-20 border-2 border-red mt-40 w-3/4 mx-auto p-8 rounded-2xl">
         <h2 class="text-h2">Donar / Donar</h2>
+        <a class="absolute top-10 right-10 hover:text-red" href="{{route('dashboard')}}">Atrás</a>
         <section class="flex flex-col gap-10">
             <h3 class="text-h3">Actualizar Imagen</h3>
-            <img src="{{ asset('storage/section/' . $section->section_image) }}" alt="Qui Som">
+            <div class="w-2/3 self-center">
+                <img src="{{ asset('storage/section/' . $section->section_image) }}" alt="Donar Imagen">
+            </div>
             <form method="POST" action="{{route('donate.updateImage', $section->id)}}" enctype="multipart/form-data">
                 @method('PUT')
                 @csrf
@@ -19,57 +22,65 @@
 
         @if ($catData == null && $spanishData == null)
         <section class="flex flex-col gap-10">
-            <h3 class="text-h3">Crear Donar Contenido</h3>
+            <h3 class="text-h3">Crear Texto Donar </h3>
             <form method="POST" action="{{ route('donate.store') }}">
-                    @csrf
-                    <label class="block" for="text_content">Texto en Castellano</label>
-                    <textarea id="editor1" name="spanish_donate_text" id="" cols="30" rows="25"  @error('spanish_donate_text') is-invalid {{ old('spanish_donate_text') }}@enderror></textarea>
+                @csrf
+                <label class="block" for="text_content">Texto en Castellano</label>
+                <textarea id="editor1" name="spanish_donate_text" id="" cols="30" rows="25" @error('spanish_donate_text') is-invalid {{ old('spanish_donate_text') }}@enderror></textarea>
 
-                    <label class="block" for="text_content">Texto en Catalan</label>
-                    <textarea id="editor2" name="catalan_donate_text" id="" cols="30" rows="25"  @error('catalan_donate_text') is-invalid {{ old('catalan_donate_text') }} @enderror></textarea>
-                    <button type="submit" class="">Cargar</button>
-                </form>
+                <label class="block" for="text_content">Texto en Catalan</label>
+                <textarea id="editor2" name="catalan_donate_text" id="" cols="30" rows="25" @error('catalan_donate_text') is-invalid {{ old('catalan_donate_text') }} @enderror></textarea>
+                <x-backoffice-button txt="Guardar" />
+            </form>
         </section>
         @else
-                <section class="flex flex-col gap-10">
-                    <h3 class="text-h3">Actualizar Donar Contenido</h3>
-                    <form method="POST" action="{{ route('donate.update', $section->id) }}">
-                        @method('PUT')
-                        @csrf
-                        <label class="block" for="text_content">Texto en Castellano</label>
-                        <textarea id="editor1" name="text_content"  cols="30" rows="25"  @error('text_content') is-invalid {{ old('text_content') }}@enderror>{{ $spanishData->text_content }}</textarea>
-                        <input type="hidden" name="lang_id" value="{{ $spanishData->lang_id }}">
-                        <button type="submit" class="">Cargar</button>
-                    </form>
-                </section>
-        
-                <section class="flex flex-col gap-10">
-                    <h3 class="text-h3">Actualizar Donar Contenido</h3>
-                    <form method="POST" action="{{ route('donate.update', $section->id) }}">
-                        @method('PUT')
-                        @csrf
-                        <label class="block" for="text_content">Texto en Catalan</label>
-                        <textarea id="editor2" name="text_content" cols="30" rows="25"  @error('text_content') is-invalid {{ old('text_content') }} @enderror>{{ $catData->text_content }}</textarea>
-                        <input type="hidden" name="lang_id" value="{{ $catData->lang_id }}">
-                        <button type="submit" class="">Cargar</button>
-                    </form>
-                </section>
-            @endif
+        <section class="flex flex-col gap-10 mb-10">
+            <h3 class="text-h3">ActualizarTexto Donar</h3>
+            <form class="flex flex-col gap-10" method="POST" action="{{ route('donate.update', $section->id) }}">
+                @method('PUT')
+                @csrf
+                <label class="block" for="text_content">Texto en Castellano</label>
+                <textarea id="editor1" name="text_content" cols="30" rows="25" @error('text_content') is-invalid {{ old('text_content') }}@enderror>{{ $spanishData->text_content }}</textarea>
+                <input type="hidden" name="lang_id" value="{{ $spanishData->lang_id }}">
+                <x-backoffice-button txt="Guardar" />
+            </form>
+        </section>
+
+        <section class="flex flex-col gap-10">
+            <h3 class="text-h3">Actualizar Texto Donar</h3>
+            <form class="flex flex-col gap-10" method="POST" action="{{ route('donate.update', $section->id) }}">
+                @method('PUT')
+                @csrf
+                <label class="block" for="text_content">Texto en Catalan</label>
+                <textarea id="editor2" name="text_content" cols="30" rows="25" @error('text_content') is-invalid {{ old('text_content') }} @enderror>{{ $catData->text_content }}</textarea>
+                <input type="hidden" name="lang_id" value="{{ $catData->lang_id }}">
+                <x-backoffice-button txt="Guardar" />
+            </form>
+        </section>
+        @endif
     </div>
 
     <script>
         ClassicEditor
-            .create( document.querySelector( '#editor1' ), {
-                toolbar: [ 'bold', 'italic', 'link', 'bulletedList' ],
-            } )
-            .then( editor => { console.log( editor ); } )
-            .catch( error => { console.error( error ); } );
+            .create(document.querySelector('#editor1'), {
+                toolbar: ['bold', 'italic', 'link', 'bulletedList'],
+            })
+            .then(editor => {
+                console.log(editor);
+            })
+            .catch(error => {
+                console.error(error);
+            });
 
-            ClassicEditor
-            .create( document.querySelector( '#editor2' ), {
-                toolbar: [ 'bold', 'italic', 'link', 'bulletedList' ],
-            } )
-            .then( editor => { console.log( editor ); } )
-            .catch( error => { console.error( error ); } );
+        ClassicEditor
+            .create(document.querySelector('#editor2'), {
+                toolbar: ['bold', 'italic', 'link', 'bulletedList'],
+            })
+            .then(editor => {
+                console.log(editor);
+            })
+            .catch(error => {
+                console.error(error);
+            });
     </script>
 </x-backoffice-layout>
