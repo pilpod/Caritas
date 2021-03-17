@@ -27,13 +27,13 @@ class ExplainTheProjectController extends Controller
      */
     public function index()
     {
-        $sectionId = ContentSection::getId('explain-the-project');
-        $catData = CatalanData::where('title_content', '=', 'main_text');
-        $spanishData = SpanishData::where('title_content', '=', 'main_text');
+        $section = ContentSection::where('section_name', '=', 'explain-the-project')->first();
+        $catData = CatalanData::where('title_content', '=', 'explainTheProject-main-text')->first();
+        $spanishData = SpanishData::where('title_content', '=', 'explainTheProject-main-text')->first();
         return view('Backoffice.explainTheProject', [
-            'catdata' => $catData,
+            'catData' => $catData,
             'spanishData' => $spanishData,
-            'sectionId' => $sectionId,
+            'section' => $section,
         ]);
     }
 
@@ -48,6 +48,8 @@ class ExplainTheProjectController extends Controller
             $this->createExplainTheProjectMainTextCat($catText);
             $this->createExplainTheProjectMainTextEs($esText);
         });
+
+        return redirect( route('explainTheProject'), 302);
     }
 
     public function createExplainTheProjectMainTextCat($text) {
@@ -55,7 +57,7 @@ class ExplainTheProjectController extends Controller
         $section = ContentSection::getId('explain-the-project');
 
         CatalanData::create([
-            'title_content' => 'explainTheProject_main_text',
+            'title_content' => 'explainTheProject-main-text',
             'text_content' => $text,
             'lang_id' => $catCode,
             'section_id' => $section,
@@ -68,7 +70,7 @@ class ExplainTheProjectController extends Controller
         $section = ContentSection::getId('explain-the-project');
 
         SpanishData::create([
-            'title_content' => 'explainTheProject_main_text',
+            'title_content' => 'explainTheProject-main-text',
             'text_content' => $text,
             'lang_id' => $esCode,
             'section_id' => $section,
@@ -87,17 +89,19 @@ class ExplainTheProjectController extends Controller
         if($language->language_code === 'es'){
             $this->updateSpanish($request, $id);
         }
+
+        return redirect( route('explainTheProject'), 302 );
     }
 
     public function updateCat($data, $id) 
     {
        
-        $catData = CatalanData::find($id);
+        $catData = CatalanData::where('section_id', '=', $id)->first();
 
         $catData->update([
-            'language_id' => $catData->language_id,
+            'language_id' => $catData->lang_id,
             'section_id' => $catData->section_id,
-            'title_content' => $data->title_content,
+            'title_content' => $catData->title_content,
             'text_content' => $data->text_content,
         ]);
     }
@@ -105,11 +109,11 @@ class ExplainTheProjectController extends Controller
     public function updateSpanish($data, $id) 
     {
        
-        $spanishData = SpanishData::find($id);
+        $spanishData = SpanishData::where('section_id', '=', $id)->first();
         $spanishData->update([
-            'language_id' => $spanishData->language_id,
+            'language_id' => $spanishData->lang_id,
             'section_id' => $spanishData->section_id,
-            'title_content' => $data->title_content,
+            'title_content' => $spanishData->title_content,
             'text_content' => $data->text_content,
         ]);
     }
