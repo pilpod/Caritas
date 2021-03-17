@@ -5,7 +5,7 @@
     }
 
     ::selection {
-    @apply bg-red text-white
+    @apply bg-red text-white-dark
 }
 
     body {
@@ -34,5 +34,25 @@
 }
 
 .nav__btn {
-    @apply hidden text-d-ui-sub font-medium uppercase rounded-b-sm border-b-4 border-white-dark hover:border-red lg:block transition-colors duration-150 ease-out
+    @apply hidden font-medium uppercase rounded-b-sm border-b-4 border-white-dark hover:border-red lg:block transition-colors duration-150 ease-out
+}
+
+.nav__btn button {
+    @apply uppercase
+}
+
+.modal__overlay {
+    @apply absolute top-0 left-0 flex flex-col-reverse md:flex-col items-center md:justify-center w-full h-screen bg-black bg-opacity-50
+}
+
+.modal__dialog {
+    @apply h-4/5 mb-8 md:mb-0 overflow-y-auto w-11/12 p-4 bg-white-dark rounded shadow-xl md:p-6 lg:w-4/5
+}
+
+.modal__close {
+    @apply relative mb-2 md:mb-0 md:bottom-8 rounded-full flex justify-center items-center w-24 h-24 bg-white-dark border-b-4 border-white hover:shadow-hr hover:border-red transition-colors duration-150 ease-out
+}
+
+.modal__close-svg {
+    @apply w-14 h-14
 }

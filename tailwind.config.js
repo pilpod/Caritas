@@ -80,6 +80,12 @@ module.exports = {
         '450px': '45rem',
         '540px': '54rem',
       },
+      maxHeight: {
+        '80%': '80%',
+      },
+      minHeight: {
+        '50%': '50%',
+      }
     },
     variants: {
       extend: {
