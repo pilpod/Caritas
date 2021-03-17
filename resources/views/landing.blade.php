@@ -1,6 +1,13 @@
 <x-layout>
 <x-nav />
 <main class="flex flex-col items-center gap-20">
+    <div>
+        <img src="{{asset('storage/section/' . $donateImg )}}" alt="">
+        <p>
+            {{ $donateEs }} <br>
+            {{ $donateCat }}
+        </p>
+    </div>
     <section>
         <x-hero />
         <x-iframe src="https://www.youtube.com/embed/Rqt5B2Ko0Es"/>
