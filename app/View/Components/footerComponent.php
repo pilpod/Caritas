@@ -5,7 +5,7 @@ namespace App\View\Components;
 use Illuminate\View\Component;
 use App\Models\User;
 
-class footerComponent extends Component
+class FooterComponent extends Component
 {
     /**
      * Create a new component instance.

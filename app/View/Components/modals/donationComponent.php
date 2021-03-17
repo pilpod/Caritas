@@ -5,7 +5,7 @@ namespace App\View\Components\modals;
 use Illuminate\View\Component;
 use App\Models\User;
 
-class donationComponent extends Component
+class DonationComponent extends Component
 {
     /**
      * Create a new component instance.
