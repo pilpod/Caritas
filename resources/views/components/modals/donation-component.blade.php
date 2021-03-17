@@ -1,13 +1,13 @@
 <a href="#"><h1 class="text-h1 text-right mr-6">x</h1></a>
-<div id="container" class="bg-white-dark text-center mx-4 text-mobile-main rounded-3xl">
+<div id="container" class="bg-white-dark text-black text-center mx-4 text-mobile-main rounded-3xl">
     <h1 class="text-h1 m-4"> Donar</h1>
     <p class="my-4">
-        Puedes hacer una donación por transferencia bancaria o con el número de Bizum:
+        Puedes hacer una donación por transferencia bancaria 
         <br>
         <br>
-        {{ 'Fiare. Banca Ética 
-        ES05 – 1550 – 0001 – 2800 – 0193 – 5626' }}
-        {{ 'codigo 33432' }}
+        {{ $profile->bankAccount }} <br>
+        o con el número de Bizum: <br>
+        {{ $profile->bizum }}
     </p>
     <p  class="my-4">
         BENEFICIOS FISCALES

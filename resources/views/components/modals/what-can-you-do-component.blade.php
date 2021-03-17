@@ -2,21 +2,29 @@
     <div class="flex justify-center">
      
       <x-cards filename="{{ $volunteerImg }}" titleCard="Voluntario" button="Voluntariado">
-        {{ $volunteerEs }}
+        @if(app()->getLocale() == 'es' ) {{ $volunteerEs }} 
+        @else {{ $volunteerCat }}
+        @endif
       </x-cards>
     </div>
     <div class="flex justify-center">
       <x-cards filename="{{ $explainTheProjectImg }}" titleCard="Difusion" button="Difundir">
-        {{ $explainTheProjectEs }}
+        @if(app()->getLocale() == 'es') {{ $explainTheProjectEs }}
+        @else {{ $explainTheProjectCat }}
+        @endif
       </x-cards>
     </div>
     <div class="flex justify-center">
       <x-cards filename="{{ $partnerImg }}" titleCard="Colaborador" button="Colaborar">
-          {{ $partnerEs }}
+        @if(app()->getLocale() == 'es') {{ $partnerEs }}
+        @else {{ $partnerCat }}
+        @endif
       </x-cards>
     </div>
     <div class="flex justify-center">
       <x-cards filename="{{ $donateImg }}" titleCard="Donar" button="Donar">
-        {{ $donateEs }}
+        @if(app()->getLocale() == 'es') {{ $donateEs }}
+        @else {{ $donateCat }}
+        @endif
       </x-cards>
     </div>
