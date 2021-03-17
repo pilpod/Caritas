@@ -1,45 +1,44 @@
 <a href="#"><h1 class="text-h1 text-right mr-6">x</h1></a>
 <div id="container" class="bg-white-dark text-black text-center mx-4 text-mobile-main rounded-3xl">
-    <h1 class="text-h1 m-4"> Donar</h1>
+    <h1 class="text-h1 m-4"> {{__('donation-title')}}</h1>
     <p class="my-4">
-        Puedes hacer una donación por transferencia bancaria 
+        {{__('donation-account')}} 
         <br>
         <br>
         {{ $profile->bankAccount }} <br>
-        o con el número de Bizum: <br>
+        {{__('donation-bizum')}}<br>
         {{ $profile->bizum }}
     </p>
     <p  class="my-4">
-        BENEFICIOS FISCALES
+        {{__('donation-tax-relief-title')}}
         <br>
         <br>
-        Con tu aportación económica disfrutarás de beneficios fiscales que te permitirán desgravar los donativos en la Declaración de la Renta o Impuesto de Sociedades. Si quieres desgravar envianos al correo
+        {{__('donation-tax-relief-text')}}
         <x-anchor
         href="mailto:santjosepbdn@gmail.com" 
-        txt="santjosepbdn@mail.com"/> con los siguientes datos: 
+        txt="santjosepbdn@mail.com"/>{{__('donation-tax-relief-text-2')}} 
         <br>
-        PARTICULAR: Nombre i Apellido / DNI / dirección postal
-        EMPRESA 
+        {{__('donation-tax-relief-data-particular')}}
         <br>
-        ENTITAD: Razón social / CIF / dirección postal          
+        {{__('donation-tax-relief-data-entidad')}}         
 
     </p>
     <div class="flex flex-col items-center border-2 border-red bg-donar bg-center bg-cover rounded-3xl my-10">
         <img class="relative left-20 bottom-16" src="{{ asset('storage/img/decoLogoIzq.png')}}" alt="">
         <p class="m-2">
-            con 10 € aportarás leche para una pareja durante un mes.
+            {{__('donation-10')}}
         </p>
         <img class="w-20 h-20 m-4" src="{{ asset('storage/img/milk.png')}}" alt="">
         <p class="m-2">
-            con 20 € tendrán también un plato de legumbres, pasta o arróz.
+            {{__('donation-20')}}
         </p>  
         <img class="w-20 h-20 m-4" src="{{ asset('storage/img/pasta.png')}}" alt="">
         <p class="m-2"> 
-            con 50 € podrán comprar pescado y carne para un mes 
+             {{__('donation-50')}}
         </p>
         <img class="w-32 h-32 m-4" src="{{ asset('storage/img/fish.png')}}" alt="">
         <p class="m-2">
-            amb més € hi afegiràs productes de neteja
+            {{__('donation-+50')}}
         </p>
         <img class="w-20 h-20 m-6" src="{{ asset('storage/img/soap.svg')}}" alt="">
         <img class="relative right-24 top-10 w-24 z-2" src="{{ asset('storage/img/decoLogoDrch.png')}}" alt="">
