@@ -4,7 +4,7 @@
 @else
     <x-button txt="{{ __('nav-idioma-castellano') }}" url="{{ route('language', 'es') }}" nav-url/>
 @endif
-    <x-button txt="{{ __('nav-quienes-somos') }}" nav-modal><x-modals.who-we-are /></x-button>
+    <x-button txt="{{ __('nav-quienes-somos') }}" nav-modal><x-modals.who-we-are-component /></x-button>
     <x-logo-component href="https://www.santjosepbadalona.cat/" class="nav__logo" />
     <x-button txt="{{ __('nav-que-puedes-hacer-tu') }}" nav-modal><x-modals.what-u-can-do /></x-button>
     <x-button txt="{{ __('nav-contacto') }}" nav-modal>Content</x-button>
