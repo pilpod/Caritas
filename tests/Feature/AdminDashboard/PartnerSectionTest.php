@@ -66,7 +66,7 @@ class PartnerSectionTest extends TestCase
         ];
 
         $response = $this->actingAs($this->user)->post(route('partner.store', $data));
-        $response->assertStatus(200);
+        $response->assertStatus(302);
     }
 
     public function testAdminCanUpdateTextInSectionPartnerCatalan()
@@ -84,7 +84,7 @@ class PartnerSectionTest extends TestCase
         ];
        
         $response = $this->actingAs($this->user)->put(route('partner.update', $catalanData->id), $data)
-        ->assertStatus(200);
+        ->assertStatus(302);
         $this->assertDatabaseHas('catalan_data', [
             'text_content' => 'This is catalan partner text'
         ]);
@@ -105,7 +105,7 @@ class PartnerSectionTest extends TestCase
         ];
        
         $response = $this->actingAs($this->user)->put(route('partner.update', $spanishData->id), $data)
-        ->assertStatus(200);
+        ->assertStatus(302);
         $this->assertDatabaseHas('spanish_data', [
             'text_content' => 'This is spanish partner text'
         ]);
