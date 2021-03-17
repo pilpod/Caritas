@@ -68,7 +68,7 @@ class DonateSectionTest extends TestCase
         ];
 
         $response = $this->actingAs($this->user)->post(route('donate.store', $data));
-        $response->assertStatus(200);
+        $response->assertStatus(302);
     }
 
     public function testAdminCanUploadDonateSectionImage()
@@ -103,7 +103,7 @@ class DonateSectionTest extends TestCase
         ];
        
         $response = $this->actingAs($this->user)->put(route('donate.update', $catalanData->id), $data)
-        ->assertStatus(200);
+        ->assertStatus(302);
         $this->assertDatabaseHas('catalan_data', [
             'text_content' => 'This is catalan donate text'
         ]);
@@ -124,7 +124,7 @@ class DonateSectionTest extends TestCase
         ];
        
         $response = $this->actingAs($this->user)->put(route('donate.update', $spanishData->id), $data)
-        ->assertStatus(200);
+        ->assertStatus(302);
         $this->assertDatabaseHas('spanish_data', [
             'text_content' => 'This is spanish donate text'
         ]);
