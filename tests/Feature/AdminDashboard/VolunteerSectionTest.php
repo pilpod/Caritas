@@ -62,7 +62,7 @@ class VolunteerSectionTest extends TestCase
         ];
 
         $response = $this->actingAs($this->user)->post(route('volunteer.store', $data));
-        $response->assertStatus(200);
+        $response->assertStatus(302);
         $this->assertDatabaseHas('catalan_data', ['text_content' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem, ab!']);
     }
 
@@ -81,7 +81,7 @@ class VolunteerSectionTest extends TestCase
         ];
        
         $response = $this->actingAs($this->user)->put(route('volunteer.update', $catalanData->id), $data)
-        ->assertStatus(200);
+        ->assertStatus(302);
         $this->assertDatabaseHas('catalan_data', [
             'text_content' => 'Lorem ipsum dolor sit amet consectetur.'
         ]);
@@ -102,7 +102,7 @@ class VolunteerSectionTest extends TestCase
         ];
        
         $response = $this->actingAs($this->user)->put(route('volunteer.update', $spanishData->id), $data)
-        ->assertStatus(200);
+        ->assertStatus(302);
         $this->assertDatabaseHas('spanish_data', [
             'text_content' => 'fldsjflj fjsdlfkjsdf jljf sdlfkjsdlj lsjdfj'
         ]);
