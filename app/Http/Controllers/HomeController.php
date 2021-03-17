@@ -24,8 +24,19 @@ class HomeController extends Controller
         $donateCat = CatalanData::where('section_id', '=', $donateSection->id)->first();
         $donateEs =  SpanishData::where('section_id', '=', $donateSection->id)->first();
 
+        $explainTheProjectSection = ContentSection::where('section_name', '=', 'explain-the-project')->first();
+        $explainTheProjectCat = CatalanData::where('section_id', '=', $explainTheProjectSection->id)->first();
+        $explainTheProjectEs =  SpanishData::where('section_id', '=', $explainTheProjectSection->id)->first();
 
-        // dd($aboutImg);
+        $partnerSection = ContentSection::where('section_name', '=', 'partner')->first();
+        $partnerCat = CatalanData::where('section_id', '=', $partnerSection->id)->first();
+        $partnerEs =  SpanishData::where('section_id', '=', $partnerSection->id)->first();
+
+        $volunteerSection = ContentSection::where('section_name', '=', 'volunteer')->first();
+        $volunteerCat = CatalanData::where('section_id', '=', $volunteerSection->id)->first();
+        $volunteerEs =  SpanishData::where('section_id', '=', $volunteerSection->id)->first();
+
+        // dd($donateCat);
         $user = User::where('role_id', '=', 1)->firstOrFail();
         $profile = $user->profile;
         return view('landing', 
@@ -39,6 +50,20 @@ class HomeController extends Controller
             'donateImg' => $donateSection->section_image, 
             'donateCat' => $donateCat->text_content,
             'donateEs' => $donateEs->text_content,
+
+            'explainTheProjectImg' => $explainTheProjectSection->section_image, 
+            'explainTheProjectCat' => $explainTheProjectCat->text_content,
+            'explainTheProjectEs' => $explainTheProjectEs->text_content,
+
+            'partnerImg' => $partnerSection->section_image, 
+            'partnerCat' => $partnerCat->text_content,
+            'partnerEs' => $partnerEs->text_content,
+
+            'volunteerImg' => $volunteerSection->section_image, 
+            'volunteerCat' => $volunteerCat->text_content,
+            'volunteerEs' => $volunteerEs->text_content,
+
+
         ]);
     }
 

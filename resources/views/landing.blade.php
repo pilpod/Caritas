@@ -2,10 +2,10 @@
 <x-nav />
 <main class="flex flex-col items-center gap-20">
     <div>
-        <img src="{{asset('storage/section/' . $donateImg )}}" alt="">
+        <img src="{{asset('storage/section/' . $volunteerImg )}}" alt="">
         <p>
-            {{ $donateEs }} <br>
-            {{ $donateCat }}
+            {{ $volunteerEs }} <br>
+            {{ $volunteerCat }}
         </p>
     </div>
     <section>
