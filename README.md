@@ -1,62 +1,142 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# Caritas Sant Josep de Badalona 
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
 
-## About Laravel
+## Team
+- [Alvaro ](https://github.com/raykotab)
+- [Gabri](https://github.com/G4BR1TRZ)
+- [Giacomo](https://github.com/pilpod)
+- [Rene](https://github.com/renejfc)
+- [Vanessa](https://github.com/vanessacor)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Description
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+The aim of this project was to build the webpage for Caritas of S. Josep of Badalona for the Tarjetas Monedero project.
+The project requirements were:
+- A webpage to display information about caritas S.Joseph that highlights the Donate Action.
+- The webpage should have 3 main sections: Homepage, about and how to participate.
+- Must have a call to action so users can easily find information on how to donate to the project.
+- The application should serve as a template for other similar organizations.
+- Must have a backoffice where the organizations can manage the content namely: contact details, bank account, About and How to participate sections. 
+- The design should mainly follow the style of Caritas, but customized in the details.
 
-## Learning Laravel
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Methodologies of work
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- Agile following the Scrum framework with sprints of one week
+- Test Driven Development
+- Pair Programming
 
-## Laravel Sponsors
+## Technologies
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+- [Laravel 8](https://laravel.com/).
+- [MySQL](https://www.mysql.com/).
 
-### Premium Partners
+## Required
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/)**
-- **[OP.GG](https://op.gg)**
+- PHP 7.4
+- Composer ^2.0
+- npm ^6.14
 
-## Contributing
+## Dependencies
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+- [Fortify](https://laravel.com/docs/8.x/fortify)
+- [Tailwind ](https://tailwindcss.com/)
+- [Dusk](https://laravel.com/docs/8.x/dusk)
 
-## Code of Conduct
+## Getting Started
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
-## Security Vulnerabilities
+- instal all composer packages
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+    ```
+    composer install
+    ```
 
-## License
+- create a .env file and set up your database 
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+    ```
+    cp .env.example .env 
+    ```
+
+- generate artisan key
+
+    ```
+    php artisan key:generate
+    ```
+
+- run all the migrations
+
+    ```
+    php artisan migrate
+    ```
+
+- run all the seeders
+
+    ```
+    php artisan db:seed
+    ```
+
+- install all npm packages
+
+    ```
+    npm install
+    ```
+
+- build 
+
+    ```
+    npm run dev
+    ```
+
+## Run Tests
+
+```
+php artisan test
+```
+- For setting up Dusk testing you may need another .env file for that case
+
+
+## Project Structure
+
+### Backoffice
+- All actions performed by Admin are:
+    - Served by main path ``` /dashboard ```
+    - Also accessible under ```/login```
+    - Protected by Admin middleware
+
+- Admin user can:
+    - create organization Profile
+    - update organization Profile
+    - upload  and change organization Logo
+    - upload content to the sections in both languages
+    - upload a image for each section
+    
+ ### Frontend Structure
+ 
+ - Visual elements are created as components for better maintenance
+ - Colors and Fonts available through tailwind are limited to the ones used in the project (see ```tailwind.config.js```)
+
+### Public page
+
+- There is only one main view ```landing.blade.php```
+- All other content is structured in components that are rendered on the same page.
+- In order for the Webpage to show, some contents MUST be present in the database first:
+
+    - Organization Profile Details
+    - Qui Som
+    - Qui Pots fer Tu
+
+- Following the instructions for achieving this.
+
+
+## To customize the page the organization needs to:
+
+- Admin needs to Register (under ```/register```)
+- This route will be available only once
+- Admin can then login
+- Admin then needs to create the organization profile
+- Upload Logo
+- Once the profile is created, Admin can only update the profile (can't be deleted)
+- In order to the webpage to be able to render the Admin MUST FIRST add the content and the images for all the sections
+- If an Admin forgets his password, could be recovered through the forgot password link.
