@@ -63,10 +63,6 @@ li {
   border-bottom-width: 4px;
   font-weight: 700;
   font-size: 1.6rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  padding-left: 6rem;
-  padding-right: 6rem;
   --tw-text-opacity: 1;
   color: rgba(255, 255, 255, var(--tw-text-opacity));
   text-transform: uppercase;
@@ -77,6 +73,13 @@ li {
   .btn {
     font-size: 1.8rem
   }
+}
+
+.btn-space {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 6rem;
+  padding-right: 6rem
 }
 
 .nav {
@@ -128,7 +131,6 @@ li {
   border-bottom-width: 4px;
   display: none;
   font-weight: 500;
-  text-transform: uppercase;
   transition-property: background-color, border-color, color, fill, stroke;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
@@ -159,7 +161,7 @@ li {
   left: 0px;
   text-transform: none;
   width: 100%;
-  z-index: 20
+  z-index: 30
 }
 
 @media (min-width: 768px) {

@@ -22,7 +22,11 @@
 }
 
 .btn {
-    @apply text-ui-main font-bold uppercase text-white py-4 px-24 w-262px border-b-4 border-red-light rounded-md bg-red hover:bg-red-light hover:border-red-lighter lg:text-d-ui-main
+    @apply text-ui-main font-bold uppercase text-white w-262px border-b-4 border-red-light rounded-md bg-red hover:bg-red-light hover:border-red-lighter lg:text-d-ui-main
+}
+
+.btn-space {
+   @apply py-4 px-24
 }
 
 .nav {
@@ -34,7 +38,7 @@
 }
 
 .nav__btn {
-    @apply hidden font-medium uppercase rounded-b-sm border-b-4 border-white-dark hover:border-red lg:block transition-colors duration-150 ease-out
+    @apply hidden font-medium rounded-b-sm border-b-4 border-white-dark hover:border-red lg:block transition-colors duration-150 ease-out
 }
 
 .nav__btn button {
@@ -42,7 +46,7 @@
 }
 
 .modal__overlay {
-    @apply fixed z-20 normal-case top-0 left-0 flex flex-col-reverse md:flex-col items-center md:justify-center w-full h-screen bg-black bg-opacity-50
+    @apply fixed z-30 normal-case top-0 left-0 flex flex-col-reverse md:flex-col items-center md:justify-center w-full h-screen bg-black bg-opacity-50
 }
 
 .modal__dialog {

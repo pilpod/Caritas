@@ -8,6 +8,6 @@
     <x-logo-component href="https://www.santjosepbadalona.cat/" class="nav__logo" />
     <x-button txt="{{ __('nav-que-puedes-hacer-tu') }}" nav-modal><x-modals.what-can-you-do-component /></x-button>
     <x-button txt="{{ __('nav-contacto') }}" nav-modal>Content</x-button>
-    <x-burguer-menu class="lg:hidden"/>
+    <x-burguer-menu />
 </nav>
 
