@@ -50,7 +50,8 @@ class DonationComponent extends Component
 
         $bankAccount = implode("-", $accountFormated);
         $bankAccount = substr($bankAccount, 0, -1);
-        return $bankAccount;
+
+        $this->profile->bankAccount = $bankAccount;
     }
     
 }
