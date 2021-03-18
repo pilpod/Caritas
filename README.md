@@ -139,5 +139,6 @@ php artisan test
 - Admin can then login (under ```/login```)
 - Admin then needs to create the organization profile
 - Upload Logo
+- Uploaded images are limited to 500 KB in order to avoid a slowing down the page.
 - Once the profile is created, Admin can only update the profile (can't be deleted)
 - If an Admin forgets his password, could be recovered through the forgot password link.
