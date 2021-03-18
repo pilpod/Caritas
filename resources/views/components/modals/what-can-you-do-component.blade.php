@@ -1,33 +1,30 @@
 <h2 class="text-h3 lg:text-h2 flex text-center justify-center mb-6">{{__('nav-que-puedes-hacer-tu')}}</h2>
     <div class="flex justify-center text-body lg:text-d-body">
      
-      <x-cards filename="{{ $volunteerImg }}" titleCard="Voluntario" button="Voluntariado">
+      <x-cards filename="{{ $volunteerImg }}" titleCard="{{__('volunteer-title-card')}}" button="Voluntariado">
         @if(app()->getLocale() == 'es' )  {!! html_entity_decode($volunteerEs) !!}
         @else  {!! html_entity_decode($volunteerCat) !!}
         @endif
-        <div class="h-8 w-12">
-          <x-button txt="{{ __('volunteer-btn') }}" normal></x-button>
-        </div> 
+        <x-button txt="{{ __('volunteer-btn') }}" url="mailto:santjosepbdn@gmail.com" normal-url></x-button>
+        
       </x-cards>
     </div>
     <div class="flex justify-center">
-      <x-cards filename="{{ $explainTheProjectImg }}" titleCard="Difusion" button="Difundir">
+      <x-cards filename="{{ $explainTheProjectImg }}" titleCard="{{__('explain-the-project-title-card')}}" button="Difundir">
         @if(app()->getLocale() == 'es')  {!! html_entity_decode($explainTheProjectEs) !!}
         @else  {!! html_entity_decode($explainTheProjectCat) !!}
         @endif
-        <div class="h-8 w-12">
-          <x-button txt="{{ __('explain-the-project-btn') }}" normal></x-button>
-        </div> 
+        <x-button txt="{{ __('explain-the-project-btn') }}" url="mailto:santjosepbdn@gmail.com" normal-url></x-button>
+      
       </x-cards>
     </div>
     <div class="flex justify-center">
-      <x-cards filename="{{ $partnerImg }}" titleCard="Colaborador" button="Colaborar">
+      <x-cards filename="{{ $partnerImg }}" titleCard="{{__('partner-title-card')}}" button="Colaborar">
         @if(app()->getLocale() == 'es')  {!! html_entity_decode( $partnerEs) !!}
         @else  {!! html_entity_decode($partnerCat) !!}
         @endif
-        <div class="h-12 w-24">
-          <x-button txt="{{ __('partner-btn') }}" normal></x-button>
-        </div> 
+        <x-button txt="{{ __('partner-btn') }}" url="mailto:santjosepbdn@gmail.com" normal-url></x-button>
+       
       </x-cards>
     </div>
     <div class="flex justify-center">
@@ -35,8 +32,7 @@
         @if(app()->getLocale() == 'es')  {!! html_entity_decode($donateEs) !!}
         @else  {!! html_entity_decode($donateCat) !!}
         @endif
-        <div class="">
+    
           <x-button txt="{{ __('donation-title') }}" normal-modal><x-modals.donation-component /></x-button>
-        </div>  
       </x-cards>
     </div>

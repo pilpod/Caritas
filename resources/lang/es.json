@@ -118,7 +118,11 @@
 
 		"volunteer-btn": "Voluntariado",
 		"explain-the-project-btn": "Difusión",
-		"partner-btn": "Colaborador"
+		"partner-btn": "Colaborador",
+
+		"volunteer-title-card": "Voluntariado",
+		"explain-the-project-title-card": "Difusion",
+		"partner-title-card": "Colaborador"
 
 
 }
