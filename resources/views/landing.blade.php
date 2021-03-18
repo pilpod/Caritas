@@ -61,7 +61,7 @@
         </section>
     <x-separator />
         <section class="flex flex-col mx-6 gap-40">
-        <h2 class="text-h2 text-center p-3 font-bold max-w-7xl md:text-d-h3">{{ __('nuestro-modelo-titulo') }}</h2>
+        <h2 class="text-h2 text-center p-3 font-bold max-w-7xl place-self-center md:text-d-h3">{{ __('nuestro-modelo-titulo') }}</h2>
             <x-mini-hero filename="innovation.svg" alt="" class="gap-20" class="lg:flex-row-reverse">
                 <ul class="font-bold gap-12">
                     <li>{{ __('nuestro-modelo-punto1') }}</li>
@@ -82,7 +82,7 @@
             </x-mini-hero>
         </section>
     <x-separator />
-        <section class="flex flex-row justify-around w-full mx-3 px-3 max-w-screen-xl">
+        <section class="flex flex-col md:flex-row justify-around w-full mx-3 px-3 max-w-screen-xl">
             <x-iframe src="https://www.youtube.com/embed/sVGOeoHe8hQ" class="lg:h-80 xl:w-375px xl:h-350px"/>
             <x-iframe src="https://www.youtube.com/embed/XHnDWb9FzAM" class="lg:h-80 xl:w-375px xl:h-350px"/>
             <x-iframe src="https://www.youtube.com/embed/sHxuuPIcwbo" class="lg:h-80 xl:w-375px xl:h-350px"/>
@@ -90,7 +90,7 @@
         <section class="text-center flex flex-col items-center mx-6 gap-20">
             <div class="flex flex-col gap-8">
                 <p class="text-h5 font-black md:text-d-h5">{{ __('seccion-videos-subtitulo') }}</p>
-                <h2 class="text-h2 font-black md:text-d-h3">{{ __('seccion-videos-titulo') }}</h2>
+                <h2 class="text-h2 font-black max-w-980px md:text-d-h3">{{ __('seccion-videos-titulo') }}</h2>
             </div>
             <button class="btn">{{ __('hero-boton') }}</button>
         </section>

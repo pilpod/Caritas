@@ -73,6 +73,9 @@ module.exports = {
         '660px': '66rem',
         '850px': '85rem'
       },
+      maxWidth: {
+        '980px': '98rem',
+      },
       height: {
         '150px': '15rem',
         '350px': '35rem',
