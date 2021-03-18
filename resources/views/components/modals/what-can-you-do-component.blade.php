@@ -26,5 +26,8 @@
         @if(app()->getLocale() == 'es')  {!! html_entity_decode($donateEs) !!}
         @else  {!! html_entity_decode($donateCat) !!}
         @endif
+        <div class="h-8 w-12">
+          <x-button txt="{{ __('donation-title') }}" normal-modal><x-modals.donation-component /></x-button>
+        </div>  
       </x-cards>
     </div>

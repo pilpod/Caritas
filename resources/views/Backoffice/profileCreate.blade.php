@@ -30,6 +30,16 @@
                 </div>
 
                 <div class="flex flex-col">
+                    <label for="org_email">Email de la organización</label>
+                    <input type="text" name="org_email" id="org_email" class="border-grey border-2 p-2 rounded mb-5 @error('org_email') is-invalid @enderror" placeholder="Email de la organización">
+                    @error('org_email')
+                    <div class="alert alert-danger">{{ $message }}
+                    </div>
+                    @enderror
+
+                </div>
+
+                <div class="flex flex-col">
                     <label for="direction">Dirección</label>
                     <input type="text" name="direction" id="direction" class="border-grey border-2 p-2 rounded mb-5 @error('direction') is-invalid @enderror" placeholder="Dirección">
                     @error('direction')

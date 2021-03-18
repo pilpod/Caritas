@@ -7,4 +7,4 @@
     @if(app()->getLocale() == 'es') {!! html_entity_decode($aboutEs) !!}
     @else {!! html_entity_decode($aboutCat) !!}
     @endif</p>
-<x-anchor class="mx-6 my-4" href="#" txt="LINK POR PONER"/>
+<x-anchor class="mx-6 my-4" href="#" txt="{{ 'santjosepbdn@gmail.com' }}"/>

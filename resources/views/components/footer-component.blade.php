@@ -19,7 +19,7 @@
 <x-separator skinny traslucid/>
   <section class="flex flex-col text-ui-tiny mx-6 gap-10 text-center mb-4">
         <div class="flex flex-col gap-4 items-center">
-          <x-anchor href="mailto:santjosepbdn@gmail.com" filename="location.svg" txt="santjosepbdn@mail.com" />
+          <x-anchor href="mailto:{{ $profile->org_email }}" filename="location.svg" txt="{{ $profile->org_email }}" />
           <x-anchor href="#" filename="message.svg" txt="{{ $profile->direction }}, {{ $profile->postcode }} {{ $profile->city }}" />
         </div>
         <x-anchor href="#" txt="Copyright © 2021 • Cáritas Española"  class="opacity-50 self-center" />

@@ -26,6 +26,7 @@ class StoreProfileRequest extends FormRequest
        
         return [
             'name' => 'required |string',
+            'org_email' => 'required | string',
             'direction' => 'required | string',
             'city' => 'required | string ',
             'postcode' => 'required | regex:/^[0-9]{5}/',

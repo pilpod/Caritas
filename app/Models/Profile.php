@@ -12,6 +12,7 @@ class Profile extends Model
 
     protected $fillable = [
         'name',
+        'org_email',
         'direction',
         'city',
         'postcode',
