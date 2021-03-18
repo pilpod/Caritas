@@ -101,7 +101,28 @@
 		"footer-caritas-europa": "Càritas Europa",
 		"footer-caritas-internacional": "Càritas Internacional",
 
-		"footer-direccion": "Església"
+		"footer-direccion": "Església",
+
+		
+	"donation-title": "Donar",
+	"donation-account": "Pots fer una doinaciò per transferència bancària:",
+	"donation-bizum": "o amb el número de Bizum",
+	"donation-tax-relief-title": "Beneficis Fiscals",
+	"donation-tax-relief-text": "Amb la teva aportació econòmica gaudiràs de beneficis fiscals que et permetran deduir els teus donatius en la Declaració de la Renda o Impost de Societats. Si vols desgravar envia'ns al correu",
+	"donation-tax-relief-text-2": "les següents dades:",
+	"donation-tax-relief-data": "PARTICULAR Nom i Cognom DNI adreça postal EMPRESA",
+	"donation-tax-relief-data-entidad": "ENTITAT Raó social CIF i adreça postal",
+	"donation-10": "amb 10 € aportaràs llet per una parella durant un mes.",
+	"donation-20": "amb 20 € tindran també un plat de llegums, pasta o arròs.",
+	"donation-50": "amb 50 € podran comprar peix y carn per tot un mes",
+	"donation-+50": "amb més € hi afegiràs productes de neteja",
+
+	"contact-title": "CONTACTE",
+	"contact-text": "Pots contactar amb nosaltres a la parròquia Sant Josep de Badalona, els divendres de 18:00 a 20:00, entrada pel passatje Ventós Mir número 22 tambè pots escriure'ns un correu electrónic a "
+	
+
+
+
 
 
 }

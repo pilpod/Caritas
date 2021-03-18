@@ -95,5 +95,5 @@
             <button class="btn">{{ __('hero-boton') }}</button>
         </section>
     </main>
-        <x-footer :profile="$profile" class="mt-20"/>
+        <x-footer-component class="mt-20"/>
 </x-layout>
