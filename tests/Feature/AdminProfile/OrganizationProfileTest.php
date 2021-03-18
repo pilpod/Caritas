@@ -68,6 +68,7 @@ class OrganizationProfileTest extends TestCase
         $data = [
             'user_id'=> 1,
             'name' => 'Caritas Badalona',
+            'org_email' => 'orga@email.com',
             'direction' => 'carrer blablabla',
             'city' => 'Badalona',
             'postcode' => '08500',
@@ -98,6 +99,7 @@ class OrganizationProfileTest extends TestCase
         $profile = Profile::factory()->create();
         $data = [
             'name' => 'Caritas Badalona',
+            'org_email' => 'orga@email.com',
             'direction' => 'carrer blablabla',
             'city' => 'Badalona',
             'postcode' => '08500',

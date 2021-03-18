@@ -53,6 +53,7 @@ class DashboardController extends Controller
         if(!$user->profile){
             $profile = Profile::create([
                 'name' => $request->name,
+                'org_email' => $request->org_email,
                 'direction' => $request->direction,
                 'city' => $request->city,
                 'postcode' => $request->postcode,
@@ -81,6 +82,7 @@ class DashboardController extends Controller
         $profile = Profile::find($id);
         $profile->update([
             'name' => $request->name,
+            'org_email' => $request->org_email,
             'direction' => $request->direction,
             'city' => $request->city,
             'postcode' => $request->postcode,

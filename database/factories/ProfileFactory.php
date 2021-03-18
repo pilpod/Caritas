@@ -23,6 +23,7 @@ class ProfileFactory extends Factory
     {
         return [
             'name' => 'Caritas Badalona',
+            'org_email' => 'santjosepbdn@gmail.com',
             'direction' => 'Carrer blablabla',
             'city' => 'Badalona',
             'postcode' => '08500',

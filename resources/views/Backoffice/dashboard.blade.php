@@ -91,6 +91,11 @@
                             {{$profile->name}}
                         </span>
                     </h4>
+                    <h4 class="font-bold mb-3">Email:
+                        <span class="font-normal">
+                            {{$profile->org_email}}
+                        </span>
+                    </h4>
                     <h4 class="font-bold mb-3">Dirección:
                         <span class="font-normal">
                             {{$profile->direction}}
