@@ -157,6 +157,7 @@ li {
   position: fixed;
   top: 0px;
   left: 0px;
+  text-transform: none;
   width: 100%;
   z-index: 20
 }
