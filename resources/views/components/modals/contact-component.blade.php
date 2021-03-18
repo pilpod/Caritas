@@ -3,10 +3,8 @@
     <h1 class="text-h1 m-4"> {{__('contact-title')}}</h1>
     
     <div class="flex flex-col items-center border-2 border-red bg-donar bg-center bg-cover rounded-3xl my-10 lg:text-d-ui-main h-full ">
-        <p class="my-4">
+        <p class="my-4 mx-10 w-3/4">
             {{__('contact-text')}} 
-            <br>
-            <br>
         </p>
         <p class="text-d-h4">
             {{ $profile->org_email }} <br>
