@@ -1,5 +1,6 @@
 # Caritas Sant Josep de Badalona 
 
+<p align="center"><a href="#" target="_blank"><img src="https://github.com/pilpod/Caritas/blob/master/repository/img/landing-caritas.JPG" width="400"></a></p>
 
 ## Team
 - [Alvaro ](https://github.com/raykotab)
